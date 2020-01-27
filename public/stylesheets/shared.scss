@@ -1,0 +1,119 @@
+$pink: #ed8eba;
+$grey: #424b54;
+$white: #ffffff;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+main {
+    height: 97%;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100vw;
+    margin: 0;
+
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.brand img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.toggle-button {
+    background-color: transparent;
+    padding: 0;
+    height: 1rem;
+    
+    border: none;
+    cursor: pointer;
+
+}
+
+.toggle-button__bar {
+    display: block;
+    width: 100%;
+    background: black;
+    padding: 0.1rem 0.7rem;
+    margin: 0.3rem 0;
+    
+}
+
+.mobile-nav {
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    background-color: $white;
+    width: 50%;
+}
+
+.mobile-nav__hidden{
+    display: none;
+}
+
+.mobile-nav__reveal{
+    display: flex;
+}
+
+.mobile-nav__items {
+    list-style: none;
+}
+
+.hero-section {
+    height: 40%;
+    margin: 0;
+}
+
+.hero-section__image {
+    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('../images/hero-image-1.jpg') center no-repeat;
+    background-size: cover;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section__text {
+    color: white;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    0px 8px 13px rgba(0,0,0,0.1),
+    0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.introduction h1 {
+    margin: 1rem 3rem;
+    padding: 0.5rem 0rem;
+
+    color: $pink;
+    border-bottom: 3px solid $grey;
+    width: 30%;
+
+    text-align: center;
+
+    font-size: 1rem;
+}
+
+.introduction p {
+    margin: 2rem 4rem;
+    text-align: center;
+}
