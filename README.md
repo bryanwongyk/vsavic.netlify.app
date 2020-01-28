@@ -8,7 +8,7 @@ The goal of this project is to practice my basic front-end web development skill
 
 # 2. Organisation
 ## 2.1 Progress Tracking
-A kanban board (Trello) will be used to document tasks in the form of user stories to be completed. Each user story will be in the template 'As a <role>, I want to <goal> so that <reason>'. These user stories will be categorised into one of three columns:
+A kanban board (Trello) will be used to document tasks to be copleted. These tasks will be categorised into one of three columns:
 * TO DO
 * IN PROGRESS
 * COMPLETED
