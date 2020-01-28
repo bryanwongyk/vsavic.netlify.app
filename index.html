@@ -10,16 +10,17 @@
     <script src="https://kit.fontawesome.com/045284b3ec.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="main-header">
+    <header class="main-header main-header__transparent">
         <!-- Brand -->
         <div class="brand">
-            <img src="./public/images/vsa-vic-logo.jpg" alt="VSA Victoria">
+            <img id="logo--alt" class="image_on" src="./public/images/vsa-vic-header-alternate.png" alt="VSA Victoria">
+            <img id="logo" class="image_off" src="./public/images/vsa-vic-header.png" alt="VSA Victoria">
         </div>
         <!-- Mobile navigation button toggle -->
         <button class="toggle-button">
-            <span class="toggle-button__bar"></span>
-            <span class="toggle-button__bar"></span>
-            <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar header__element--white"></span>
+            <span class="toggle-button__bar header__element--white"></span>
+            <span class="toggle-button__bar header__element--white"></span>
         </button>
         <!-- Mobile navigation bar-->
         <nav class="mobile-nav mobile-nav__hidden">
@@ -47,13 +48,23 @@
         <section class="hero-section">
             <div class="hero-section__image">
                 <div class="hero-section__text">
-                    <h1> VSA Victoria </h1>
+                    <h1> <span id="hero-section__text-highlight">Vietnamese Students'</span> Association </h1>
                 </div>
             </div>
         </section>
         <section class="introduction">
             <h1> WHO ARE WE? </h1>
             <p> We are a university student-run organisation that aims to preserve and promote the Vietnamese Australian identity.</p>
+        </section>
+        <section>
+            <p> Monash University</p>
+            <p> Melbourne University</p>
+            <p> RMIT University</p>
+        </section>
+        <section>
+            <h1> WHAT WE DO </h1>
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum error dicta a explicabo quasi iste architecto nobis laudantium et, nam rem perferendis quaerat necessitatibus nostrum reiciendis? Fuga praesentium quod voluptatibus.</p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure illo atque, tempora amet totam omnis, itaque voluptatibus mollitia minus dignissimos quia labore aut a. Tempore modi molestiae at nostrum hic!</p>
         </section>
     </main>
 
@@ -76,5 +87,6 @@
     </footer>
 
     <script src="./public/scripts/shared.js"></script>
+    
 </body>
 </html>
