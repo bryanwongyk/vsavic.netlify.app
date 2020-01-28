@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:400,900&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -9,28 +10,74 @@ html {
 body {
   margin: 0;
   height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 12, [col-start] 1fr;
+  grid-template-areas: "main main main main main main main main main main main main" "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 main {
   height: 97%;
+  grid-area: main;
+  font-family: Roboto, san-serif;
+}
+main h1 {
+  font-weight: 900;
+}
+main p {
+  font-weight: 400;
 }
 
 .main-header {
+  grid-area: header;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  margin: 0;
-  background: #ffffff;
+  height: 4.4rem;
   position: fixed;
   top: 0;
   left: 0;
+  transition: background-color 300ms;
+}
+
+.main-header--transparent {
+  background: transparent;
+}
+
+.header__element--white {
+  background: #ffffff;
+}
+
+.header__element--grey {
+  background: #424b54;
+}
+
+.brand {
+  margin-right: 10rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
 }
 
 .brand img {
-  width: 4rem;
-  height: 4rem;
+  height: 3rem;
+}
+
+.image_off, .brand:hover .image_on {
+  display: none;
+}
+
+.image_on, .brand:hover .image_off {
+  display: block;
+}
+
+.brand-hover--disable {
+  display: block !important;
+}
+
+.brand-alt-hover--disable {
+  display: none !important;
 }
 
 .toggle-button {
@@ -44,7 +91,6 @@ main {
 .toggle-button__bar {
   display: block;
   width: 100%;
-  background: black;
   padding: 0.1rem 0.7rem;
   margin: 0.3rem 0;
 }
@@ -70,37 +116,51 @@ main {
 }
 
 .hero-section {
-  height: 40%;
-  margin: 0;
+  overflow: hidden;
+  height: 100vh;
 }
-
-.hero-section__image {
-  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/hero-image-1.jpg") center no-repeat;
+.hero-section .hero-section__image {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/hero-image-1.jpg") center no-repeat;
   background-size: cover;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.hero-section__text {
-  color: white;
+.hero-section .hero-section__text {
+  width: 80%;
+}
+.hero-section .hero-section__text h1 {
+  font-family: Bebas Neue;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #ffffff;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
-
-.introduction h1 {
-  margin: 1rem 3rem;
-  padding: 0.5rem 0rem;
+.hero-section .hero-section__text h1 #hero-section__text-highlight {
   color: #ed8eba;
-  border-bottom: 3px solid #424b54;
+}
+
+.introduction {
+  padding: 1rem 0rem;
+}
+.introduction h1 {
+  margin-left: 3rem;
+  color: #ed8eba;
   width: 30%;
   text-align: center;
   font-size: 1rem;
 }
-
 .introduction p {
   margin: 2rem 4rem;
   text-align: center;
+}
+
+.main-footer {
+  grid-area: footer;
+  padding: 2rem;
+  background-color: black;
 }
 
 /*# sourceMappingURL=shared.css.map */
