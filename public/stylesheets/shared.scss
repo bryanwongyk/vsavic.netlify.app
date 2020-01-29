@@ -2,7 +2,7 @@ $pink: #ed8eba;
 $grey: #424b54;
 $white: #ffffff;
 
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:400,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -28,12 +28,17 @@ main {
     grid-area: main;
 
     height: 97%;
-    font-family: Roboto, san-serif;
     h1 {
         font-weight: 900;
+        font-family: Roboto, san-serif;
+    }
+    h3 {
+        font-family: Montserrat, sans-serif;
+        font-weight: 600;  
     }
     p {
-        font-weight: 400;
+        font-family: Montserrat, sans-serif;
+        line-height: 1.9rem;
     }
 }
 
@@ -138,7 +143,7 @@ main {
 
 
     display: grid;
-    grid-template-rows: [row-1-start] 84% [row-1-end row-2-start] 16% [row-2-end];
+    grid-template-rows: [row-1-start] 75% [row-1-end row-2-start] 25% [row-2-end];
     grid-template-columns: repeat(12, [col-start] 1fr);
 
     text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
@@ -189,6 +194,37 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        
+
+        #scroll-cta__link {
+            #scroll-cta__button {
+
+                border: 2px white solid;
+                padding: 10%;
+
+                font-family: Roboto, san-serif;
+                font-weight: 900;
+                font-size: 1rem;
+                text-align: center;
+                color: white;
+                text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+
+                background: transparent;
+
+                &:hover {
+                    cursor: pointer;
+                    background: white;
+                    text-shadow: none;
+                    color: black !important;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
 
         .scroll-cta__arrow span{
             display: block;
@@ -199,73 +235,41 @@ main {
             transform: rotate(45deg);
             animation: animate 2s infinite;
         }
-
-        #scroll-cta__text {
-            width: 40%;
-            a {
-                text-decoration: none;
-                color: white;
-            }
-            &:focus {
-                outline: none;
-            }
-
-            &:hover {
-                cursor: pointer;
-                background: white;
-                text-shadow: none;
-
-                a {
-                    color: black;
-                }
-            }
-            background: transparent;
-            font-family: Roboto, san-serif;
-            font-weight: 900;
-            font-size: 1rem;
-            position: sticky;
-            top: 10%;
-
-            border: 2px white solid;
-            padding: 3%;
-            text-align: center;
-            vertical-align: center;
-
-            text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-            0px 8px 13px rgba(0,0,0,0.1),
-            0px 18px 23px rgba(0,0,0,0.1);
-        }
-
     }
-    
 }
+    
 
-.introduction {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
+.presentation-section {
+    padding: 6rem 0rem;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 300px;
     background: $white;
-    padding: 4rem 0rem;
 
     h1 {
-        margin: 0 0 0 3rem;
         color: $pink;
-        max-width: 9.6rem;
+        max-width: 15rem;
     
-        text-align: left;
     
         font-size: 2.2rem;
     }
 
     p {
-        margin: 2.5rem 4rem;
+        margin: 4rem 4rem;
         text-align: center;
     }
 }
 
 .chapter {
+    margin-top: 4rem;
+
     h1 {
-        color: $grey;
+        color: lightblue;
         text-align: center;
         font-size: 2.2rem;
         margin: 0;
@@ -275,14 +279,26 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 2.5rem 0;
+        margin: 2rem 0;
 
-
-        img {
-            max-width: 30%;
-
+        .chapter__item {
+            padding: 3rem 0;
+            background: lightblue;
+            text-align: center;
+            img {
+                max-width: 30%;
+                max-height: 30%;
+            }
+            &:nth-child(2) {
+                padding: 0;
+            }
         }
 
+    }
+
+    #chapter-header {
+        opacity: 0;
+        
     }
 }
 
@@ -293,8 +309,6 @@ main {
     background-color: black;
 }
 
-
-
 .hidden {
     opacity: 0;
 }
@@ -303,16 +317,69 @@ main {
     border-width: 0;
 }
 
+.font-alt {
+    color: black;
+    text-shadow: none;
+}
+
+.left-reveal {
+    animation: chapter-left-animation 0.8s 1 forwards;
+}
+
+.right-reveal {
+    animation: chapter-right-animation 0.8s 1 forwards;
+}
+
+.fade-reveal {
+    animation: fade-animation 1s 1 forwards; 
+}
+
+.chapter-left {
+    transform: translateX(-700px);
+}
+
+.chapter-right {
+    transform: translateX(700px);
+}
+
+@keyframes fade-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes chapter-left-animation {
+    0% {
+        transform: translateX(-700px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes chapter-right-animation {
+    0% {
+        transform: translateX(700px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 @keyframes animate {
     0%{
         opacity: 0;
-        transform: rotate(45deg) translate(-16px,-16px);
+        transform: rotate(45deg) translate(-32px,-32px);
     }
     50%{
         opacity: 1;
     }
     100%{
         opacity: 0;
-        transform: rotate(45deg) translate(-8px,-8px);
+        transform: rotate(45deg) translate(0px,0px);
     }
 }
