@@ -245,6 +245,7 @@ main {
 .presentation-section {
     padding: 6rem 0rem;
 }
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -268,7 +269,7 @@ main {
     }
 }
 
-.chapter {
+.chapter-section {
     margin-top: 4rem;
     h2 {
         color: lightblue;
@@ -277,10 +278,10 @@ main {
         margin: 0;
         padding: 0 5%;
     }
-    .chapter__items {
+    .chapter-section__items {
         margin: 2rem 0;
 
-        .chapter__item {
+        .chapter-section__item {
             padding: 3rem 0;
             background: lightblue;
             text-align: center;
@@ -313,6 +314,26 @@ main {
     }
 }
 
+#latest-events__section {
+    margin-top: 6rem;
+  }
+  #latest-events__section h2 {
+    color: #424b54;
+    text-align: center;
+    padding: 0 5%;
+  }
+  #latest-events__section #latest-events__feed {
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  #latest-events__section #latest-events__feed .thumbnail {
+    width: 30%;
+    height: 30%;
+    background: cover center;
+  }
 
 .main-footer {
     grid-area: footer;

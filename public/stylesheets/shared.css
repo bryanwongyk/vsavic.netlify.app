@@ -214,46 +214,70 @@ main p {
   text-align: center;
 }
 
-.chapter {
+.chapter-section {
   margin-top: 4rem;
 }
-.chapter h2 {
+.chapter-section h2 {
   color: lightblue;
   text-align: center;
   font-size: 2.2rem;
   margin: 0;
   padding: 0 5%;
 }
-.chapter .chapter__items {
+.chapter-section .chapter-section__items {
   margin: 2rem 0;
 }
-.chapter .chapter__items .chapter__item {
+.chapter-section .chapter-section__items .chapter-section__item {
   padding: 3rem 0;
   background: lightblue;
   text-align: center;
 }
-.chapter .chapter__items .chapter__item img {
+.chapter-section .chapter-section__items .chapter-section__item img {
   max-width: 30%;
   max-height: 30%;
 }
-.chapter .chapter__items .chapter__item:nth-child(1) {
+.chapter-section .chapter-section__items .chapter-section__item:nth-child(1) {
   padding-top: 3rem;
   padding-bottom: 1.5rem;
 }
-.chapter .chapter__items .chapter__item:nth-child(2) {
+.chapter-section .chapter-section__items .chapter-section__item:nth-child(2) {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.chapter .chapter__items .chapter__item:nth-child(3) {
+.chapter-section .chapter-section__items .chapter-section__item:nth-child(3) {
   padding-top: 1.5rem;
   padding-bottom: 3rem;
 }
-.chapter p {
+.chapter-section p {
   text-align: center;
   padding: 0 5%;
 }
-.chapter #chapter-header {
+.chapter-section #chapter-header {
   opacity: 0;
+}
+
+#latest-events__section {
+  margin-top: 6rem;
+}
+
+#latest-events__section h2 {
+  color: #424b54;
+  text-align: center;
+  padding: 0 5%;
+}
+
+#latest-events__section #latest-events__feed {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+#latest-events__section #latest-events__feed .thumbnail {
+  width: 30%;
+  height: 30%;
+  background: cover center;
 }
 
 .main-footer {
