@@ -22,8 +22,13 @@ main {
   height: 97%;
 }
 main h1 {
+  font-family: Bebas Neue, san-serif;
+  font-size: 4.5rem;
+}
+main h2 {
   font-weight: 900;
   font-family: Roboto, san-serif;
+  font-size: 2.2rem;
 }
 main h3 {
   font-family: Montserrat, sans-serif;
@@ -142,9 +147,7 @@ main p {
   transition: opacity 0.3s linear;
 }
 .hero-section .hero-section__text h1 {
-  font-family: Bebas Neue;
   letter-spacing: 0.2rem;
-  font-size: 4.5rem;
   text-align: center;
   color: #ffffff;
 }
@@ -201,7 +204,7 @@ main p {
   height: 300px;
   background: #ffffff;
 }
-.intro h1 {
+.intro h2 {
   color: #ed8eba;
   max-width: 15rem;
   font-size: 2.2rem;
@@ -214,17 +217,14 @@ main p {
 .chapter {
   margin-top: 4rem;
 }
-.chapter h1 {
+.chapter h2 {
   color: lightblue;
   text-align: center;
   font-size: 2.2rem;
   margin: 0;
+  padding: 0 5%;
 }
 .chapter .chapter__items {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 2rem 0;
 }
 .chapter .chapter__items .chapter__item {
@@ -236,8 +236,21 @@ main p {
   max-width: 30%;
   max-height: 30%;
 }
+.chapter .chapter__items .chapter__item:nth-child(1) {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
 .chapter .chapter__items .chapter__item:nth-child(2) {
-  padding: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.chapter .chapter__items .chapter__item:nth-child(3) {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+.chapter p {
+  text-align: center;
+  padding: 0 5%;
 }
 .chapter #chapter-header {
   opacity: 0;
@@ -262,27 +275,15 @@ main p {
   text-shadow: none;
 }
 
-.left-reveal {
-  animation: chapter-left-animation 0.8s 1 forwards;
-}
-
-.right-reveal {
-  animation: chapter-right-animation 0.8s 1 forwards;
-}
-
 .fade-reveal {
-  animation: fade-animation 1s 1 forwards;
+  animation: fade-reveal-animation 1s 1 forwards;
 }
 
-.chapter-left {
-  transform: translateX(-700px);
+.fade-hide {
+  animation: fade-hide-animation 1s 1 forwards;
 }
 
-.chapter-right {
-  transform: translateX(700px);
-}
-
-@keyframes fade-animation {
+@keyframes fade-reveal-animation {
   0% {
     opacity: 0;
   }
@@ -290,20 +291,12 @@ main p {
     opacity: 1;
   }
 }
-@keyframes chapter-left-animation {
+@keyframes fade-hide-animation {
   0% {
-    transform: translateX(-700px);
+    opacity: 1;
   }
   100% {
-    transform: translateX(0px);
-  }
-}
-@keyframes chapter-right-animation {
-  0% {
-    transform: translateX(700px);
-  }
-  100% {
-    transform: translateX(0px);
+    opacity: 0;
   }
 }
 @keyframes animate {

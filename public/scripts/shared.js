@@ -50,15 +50,6 @@ window.onscroll = () => {
         // heroImage.classList.remove('hidden');
         heroHidden = false;
     }
-    if (window.scrollY > 630) {
-        chapLeft[0].classList.add('left-reveal');
-    }
-    if (window.scrollY > 880) {
-        chapRight.classList.add('right-reveal');
-    }
-    if (window.scrollY > 1140) {
-        chapLeft[1].classList.add('left-reveal');
-    }
     // Transitions when the bottom of the header reaches the intro section, rather than when the top reaches it, as the offset calculates how far the intro section is from the top of the window/header.
     if (heroHidden) {
         mainHeader.classList.remove('main-header--transparent');
@@ -68,6 +59,7 @@ window.onscroll = () => {
         logo.classList.remove('image_off');
         logo.classList.add('brand-hover--disable');
         brand.classList.remove('disable-hover');
+        chapHeader.classList.remove('fade-hide');
         chapHeader.classList.add('fade-reveal');
         
 
@@ -85,6 +77,9 @@ window.onscroll = () => {
         logo.classList.add('image_off');
         logoAlt.classList.remove('brand-alt-hover--disable');
         logoAlt.classList.add('image_on');
+
+        chapHeader.classList.add('fade-hide');
+        chapHeader.classList.remove('fade-reveal');
 
         brand.classList.add('disable-hover');
 
