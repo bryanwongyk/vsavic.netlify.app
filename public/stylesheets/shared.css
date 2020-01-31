@@ -137,7 +137,10 @@ main p {
 .hero-section .hero-section__image {
   grid-row: row-1-start/row-2-end;
   grid-column: col-start 1/col-start 13;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/hero-image-1.jpg") center no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/hero-image-1.jpg") center center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100%;
   display: flex;
@@ -194,6 +197,7 @@ main p {
 
 .presentation-section {
   padding: 6rem 0rem;
+  background: #ffffff;
 }
 
 .intro {
@@ -202,7 +206,6 @@ main p {
   justify-content: space-around;
   align-items: center;
   height: 300px;
-  background: #ffffff;
 }
 .intro h2 {
   color: #ed8eba;
@@ -334,6 +337,11 @@ main p {
   100% {
     opacity: 0;
     transform: rotate(45deg) translate(0px, 0px);
+  }
+}
+@media only screen and (max-device-width: 1366px) {
+  .hero-section__image {
+    background-attachment: scroll;
   }
 }
 
