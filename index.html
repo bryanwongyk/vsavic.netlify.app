@@ -98,18 +98,30 @@
 
     <footer class="main-footer">
         <nav>
-            <div class="main-footer__copyright">
-                <!-- date to be changed via JavaScript-->
-                <p> VSA Victoria 2020</p>
-            </div>
             <ul class="main-footer__links">
                 <li class="main-footer__link">
-                    <!-- Social media icons/links -->
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#">
+                        Contact us
+                    </a>
                 </li>
+                <li class="main-footer__link" id="social-media__links">
+                    <!-- Social media icons/links -->
+                    <div class="social-media-icon__circle">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="social-media-icon__circle">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="social-media-icon__circle">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </li>
+                
             </ul>
+            <div class="main-footer__copyright">
+                <!-- date to be changed via JavaScript-->
+                <p> © VSA Victoria <span id="copyright-year"></span></p>
+            </div>
         </nav>
 
     </footer>

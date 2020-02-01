@@ -13,7 +13,12 @@ var ctaArrow = document.querySelector('.scroll-cta__arrow');
 var ctaButton = document.querySelector('#scroll-cta__button');
 var chapLeft = document.querySelectorAll('.chapter-left');
 var chapRight = document.querySelector('.chapter-right');
-var chapHeader = document.querySelector('#chapter-header')
+var chapHeader = document.querySelector('#chapter-header');
+var copyrightYear = document.querySelector('#copyright-year');
+var currentDate = new Date();
+var currentYear = currentDate.getFullYear();
+
+copyrightYear.textContent = currentYear;
 
 const mainHeaderHeight = 70.4;
 const toggleButtonBars = document.querySelectorAll('.toggle-button__bar')
