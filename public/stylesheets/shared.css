@@ -341,10 +341,5 @@ main p {
     transform: rotate(45deg) translate(0px, 0px);
   }
 }
-@media only screen and (max-device-width: 1366px) {
-  .hero-section__image {
-    background-attachment: scroll;
-  }
-}
 
 /*# sourceMappingURL=shared.css.map */
