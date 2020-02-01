@@ -142,6 +142,7 @@ main p {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
   display: flex;
@@ -338,6 +339,11 @@ main p {
   100% {
     opacity: 0;
     transform: rotate(45deg) translate(0px, 0px);
+  }
+}
+@media only screen and (max-device-width: 1366px) {
+  .hero-section .hero-section__image {
+    background-attachment: scroll;
   }
 }
 
