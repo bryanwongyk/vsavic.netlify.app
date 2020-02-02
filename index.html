@@ -17,28 +17,33 @@
             <img id="logo" class="image_off" src="./public/images/vsa-vic-header.png" alt="VSA Victoria">
         </div>
         <!-- Mobile navigation button toggle -->
-        <button class="toggle-button">
-            <span class="toggle-button__bar header__element--white"></span>
-            <span class="toggle-button__bar header__element--white"></span>
-            <span class="toggle-button__bar header__element--white"></span>
-        </button>
+        <div class="menu">
+            <button class="toggle-button">
+                <span class="toggle-button__bar header__element--white" id="bar-1"></span>
+                <span class="toggle-button__bar header__element--white" id="bar-2"></span>
+                <span class="toggle-button__bar header__element--white" id="bar-3"></span>
+            </button>
+            <!-- Provide label for accessability -->
+            <label id="menu__label">MENU</label>
+        </div>
         <!-- Mobile navigation bar-->
         <nav class="mobile-nav mobile-nav__hidden">
+            <div class="mobile-nav__background"></div>
             <ul class="mobile-nav__items">
                 <li class="mobile-nav__item"> 
-                    <a href="./routes/about.html">About</a>
+                    <a href="./routes/about.html">ABOUT</a>
                 </li>
                 <li class="mobile-nav__item"> 
-                    <a href="./routes/committee.html">Committee</a>
+                    <a href="./routes/committee.html">COMMITTEE</a>
                 </li>
                 <li class="mobile-nav__item"> 
-                    <a href="./routes/events.html">Events</a>
+                    <a href="./routes/events.html">EVENTS</a>
                 </li>
                 <li class="mobile-nav__item"> 
-                    <a href="./routes/sponsors.html">Sponsors</a>
+                    <a href="./routes/sponsors.html">SPONSORS</a>
                 </li>
                 <li class="mobile-nav__item"> 
-                    <a href="./routes/contact.html">Contact</a>
+                    <a href="./routes/contact.html">CONTACT</a>
                 </li>
             </ul>
         </nav>

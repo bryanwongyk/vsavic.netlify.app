@@ -1,5 +1,8 @@
 var toggleButton = document.querySelector('.toggle-button');
+var toggleButtonClicked = false;
 var mobileNav = document.querySelector('.mobile-nav');
+var mobileNavBg = document.querySelector('.mobile-nav__background');
+var mobileNavItems = document.querySelector('.mobile-nav__items');
 var logo = document.querySelector('#logo');
 var logoAlt = document.querySelector('#logo--alt')
 var mainHeader = document.querySelector('.main-header');
@@ -17,19 +20,108 @@ var chapHeader = document.querySelector('#chapter-header');
 var copyrightYear = document.querySelector('#copyright-year');
 var currentDate = new Date();
 var currentYear = currentDate.getFullYear();
+var menuLabel = document.querySelector('#menu__label');
 
 copyrightYear.textContent = currentYear;
 
 const mainHeaderHeight = 70.4;
 const toggleButtonBars = document.querySelectorAll('.toggle-button__bar')
+var toggleButtonBar1 = toggleButtonBars[0];
+var toggleButtonBar2 = toggleButtonBars[1];
+var toggleButtonBar3 = toggleButtonBars[2];
+
 
 var heroHidden = false;
 
 
 toggleButton.addEventListener('click', () => {
-    mobileNav.classList.remove('mobile-nav__hidden');
-    mobileNav.classList.add('mobile-nav__reveal');
+    if (!toggleButtonClicked) {
+        mobileNav.classList.remove('mobile-nav__hidden');
+        mobileNav.classList.add('mobile-nav__reveal');
+        setTimeout(() => {
+            // Need to do background transition AFTER the mobile-nav is revealed (i.e. has its display changed from none to block), otherwise the transition will not execute.
+            mobileNavBg.classList.add('mobile-nav__background--open');  
+            mainHeader.classList.add('main-header--transparent');
+            mainHeader.classList.remove('header__element--white');
+            logoAlt.classList.remove('brand-alt-hover--disable');
+            logoAlt.classList.add('image_on');
+            logo.classList.remove('brand-hover--disable');
+            logo.classList.add('image_off');
+            // reset header to state it was at top of page as when we click on toggle it brings user bcak to top of page
+            mobileNavItems.classList.add('mobile-nav__items--reveal');
+        }, 100);
+
+        // Only change logos, and allow us to click on the toggle button again AFTER it has finished loading (to prevent possible bug where user spams on button)
+        // setTimeout(() => {
+        //     toggleButton.style.pointerEvents = 'auto';
+        // }, 1000)
+
+        brand.classList.add('hidden');
+        brand.classList.add('unclickable');
+        toggleButtonBars.forEach((bar) => {
+            bar.classList.add('header__element--grey');
+            bar.classList.remove('header__element--white');
+        });
+        toggleButtonBar1.classList.add('toggle-button__bar-1--clicked');
+        toggleButtonBar2.classList.add('toggle-button__bar-2--clicked');
+        toggleButtonBar3.classList.add('toggle-button__bar-3--clicked');
+
+        menuLabel.textContent = "CLOSE";
+
+        toggleButtonClicked = true;
+
+        // mobileNav.style.overflow = 'hidden';
+
+        // To prevent scrolling on the body while the mobile nav is open, there are several possible solutions. 
+        // (1) Change hte position of the body to 'fixed'.
+        // (2) Change the overflow of the body to "hidden".
+        // However, these solutions will automatically scroll back up to the top of hte page, and neither of these will allow us to animate the transition of scrolling back up as they are binary options.
+        // We can set position of the body to absolute instead.
+        document.querySelector('body').style.position = 'fixed';
+    } else {
+        mobileNavItems.classList.remove('mobile-nav__items--reveal');
+        mobileNavItems.classList.add('mobile-nav__items--hide');
+        mobileNavBg.classList.add('mobile-nav__background--close');
+        mobileNavBg.classList.remove('mobile-nav__background--open');
+        setTimeout(() => {
+            // Need to hide (i.e. set display to none) AFTER the transition is done.
+            mobileNav.classList.remove('mobile-nav__reveal');
+            mobileNav.classList.add('mobile-nav__hidden');
+            mobileNavBg.classList.remove('mobile-nav__background--close');
+            mobileNavItems.classList.remove('mobile-nav__items--hide');
+        }, 500);
+
+        document.querySelector('body').style.position = 'static';
+        brand.classList.remove('hidden');
+        brand.classList.remove('unclickable');
+        toggleButtonBars.forEach((bar) => {
+            // Only keep header element as grey if the hero is hidden (i.e. the user has scrolled to that point)
+            // Else, make header element white.
+            if (!heroHidden) {
+                bar.classList.remove('header__element--grey');
+                bar.classList.add('header__element--white');
+            }
+        });
+        toggleButtonBar1.classList.remove('toggle-button__bar-1--clicked');
+        toggleButtonBar2.classList.remove('toggle-button__bar-2--clicked');
+        toggleButtonBar3.classList.remove('toggle-button__bar-3--clicked');
+
+        toggleButtonBar1.classList.add('toggle-button__bar-1--clicked-off');
+        toggleButtonBar2.classList.add('toggle-button__bar-2--clicked-off');
+        toggleButtonBar3.classList.add('toggle-button__bar-3--clicked-off');
+
+        // Remove classes after animations
+        setTimeout(() => {
+            toggleButtonBar1.classList.remove('toggle-button__bar-1--clicked-off');
+            toggleButtonBar2.classList.remove('toggle-button__bar-2--clicked-off');
+            toggleButtonBar3.classList.remove('toggle-button__bar-3--clicked-off');
+        }, 500)
+        toggleButtonClicked = false;
+
+        menuLabel.textContent = "MENU";
+    }
 });
+
 
 window.onscroll = () => {
     if (window.scrollY > 130) {
@@ -56,7 +148,7 @@ window.onscroll = () => {
         heroHidden = false;
     }
     // Transitions when the bottom of the header reaches the intro section, rather than when the top reaches it, as the offset calculates how far the intro section is from the top of the window/header.
-    if (heroHidden) {
+    if (heroHidden && !toggleButtonClicked) {
         mainHeader.classList.remove('main-header--transparent');
         mainHeader.classList.add('header__element--white');
         logoAlt.classList.remove('image_on');
@@ -75,7 +167,7 @@ window.onscroll = () => {
 
 
     }
-    else {
+    if (!heroHidden && !toggleButtonClicked) {
         mainHeader.classList.remove('header__element--white');
         mainHeader.classList.add('main-header--transparent');
         logo.classList.remove('brand-hover--disable');
