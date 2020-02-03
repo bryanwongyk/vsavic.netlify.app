@@ -16,7 +16,7 @@ var ctaArrow = document.querySelector('.scroll-cta__arrow');
 var ctaButton = document.querySelector('#scroll-cta__button');
 var chapLeft = document.querySelectorAll('.chapter-left');
 var chapRight = document.querySelector('.chapter-right');
-var chapHeader = document.querySelector('#chapter-header');
+var chapHeader = document.querySelectorAll('.chapter-header');
 var copyrightYear = document.querySelector('#copyright-year');
 var currentDate = new Date();
 var currentYear = currentDate.getFullYear();
@@ -132,10 +132,10 @@ window.onscroll = () => {
     if (window.scrollY > 500) {
         ctaArrow.style.opacity = 0;
         ctaButton.style.opacity = (1-(window.scrollY/700));
+        
     } else {
         ctaArrow.style.opacity = 1;
         ctaButton.style.opacity = 1;
-        ctaButton.style.textShadow = 'inherit';
     }
     if (window.scrollY > 500) {
         heroImage.style.opacity = (1-(window.scrollY/700));
@@ -147,6 +147,15 @@ window.onscroll = () => {
         // heroImage.classList.remove('hidden');
         heroHidden = false;
     }
+    if (window.scrollY > 680) {
+        chapLeft[0].classList.add('wipe-in');
+    }
+    if (window.scrollY > 950) {
+        chapRight.classList.add('wipe-in');
+    }
+    if (window.scrollY > 1190) {
+        chapLeft[1].classList.add('wipe-in');
+    }
     // Transitions when the bottom of the header reaches the intro section, rather than when the top reaches it, as the offset calculates how far the intro section is from the top of the window/header.
     if (heroHidden && !toggleButtonClicked) {
         mainHeader.classList.remove('main-header--transparent');
@@ -156,8 +165,12 @@ window.onscroll = () => {
         logo.classList.remove('image_off');
         logo.classList.add('brand-hover--disable');
         brand.classList.remove('disable-hover');
-        chapHeader.classList.remove('fade-hide');
-        chapHeader.classList.add('fade-reveal');
+
+        chapHeader.forEach((header) => {
+            header.classList.remove('fade-hide');
+            header.classList.add('fade-reveal');
+        });
+        
         
 
         toggleButtonBars.forEach((bar) => {
@@ -175,8 +188,10 @@ window.onscroll = () => {
         logoAlt.classList.remove('brand-alt-hover--disable');
         logoAlt.classList.add('image_on');
 
-        chapHeader.classList.add('fade-hide');
-        chapHeader.classList.remove('fade-reveal');
+        chapHeader.forEach((header) => {
+            header.classList.add('fade-hide');
+            header.classList.remove('fade-reveal');
+        });
 
         brand.classList.add('disable-hover');
 

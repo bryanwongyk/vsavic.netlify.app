@@ -140,6 +140,7 @@ footer {
     padding: 0.1rem 0.7rem;
     margin: 0.3rem 0;
     transition: background 0.3s;
+    border-radius: 15%;
 
 
 }
@@ -393,6 +394,8 @@ footer {
 
 .chapter-section {
     margin-top: 4rem;
+    height: 870px; // 377px height each. 724.5px for the chapters, 84 for the header, 60 for description 
+    width: 100%;
     h2 {
         color: lightblue;
         text-align: center;
@@ -400,28 +403,49 @@ footer {
         margin: 0;
         padding: 0 5%;
     }
+
+    h3 {
+        margin: 0;
+    }
     .chapter-section__items {
+        position: relative;
         margin: 2rem 0;
 
         .chapter-section__item {
+            position: absolute;
             padding: 3rem 0;
             background: lightblue;
-            text-align: center;
+            max-height: 330px;
+            width: 100vw;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            transition: transform 0.3s linear;
+
             img {
                 max-width: 30%;
                 max-height: 30%;
+                margin-bottom: 20px;
             }
             &:nth-child(1) {
                 padding-top: 3rem;
-                padding-bottom: 1.5rem;
+                padding-bottom: 3rem;
+                transform: translateX(-100vw);
             }
             &:nth-child(2) {
-                padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                top: 251.5px;
+                transform: translateX(100vw);
             }
             &:nth-child(3) {
-                padding-top: 1.5rem;
+                padding-top: 3rem;
                 padding-bottom: 3rem;
+                top: 503px;
+                transform: translateX(-100vw);
             }
         }
 
@@ -431,9 +455,13 @@ footer {
         padding: 0 5%;
     }
 
-    #chapter-header {
+    .chapter-header {
         opacity: 0;
     }
+}
+
+.wipe-in {
+    transform: translateX(0vw) !important;
 }
 
 #latest-events__section {
