@@ -100,7 +100,8 @@ function initOnScrollHeaderAnimations() {
     */
 
     // If the hero section is hidden (i.e. has been scrolled past)
-    if (heroHidden) {
+    // Note: toggleBtnClicked is a variable being accessed from shared.js, therefore shared.js must be loaded on the webpage first before this file.
+    if (heroHidden && !toggleBtnClicked) {
         // Turn header background white
         $MAIN_HEADER.classList.remove('main-header--transparent');
         $MAIN_HEADER.classList.add('header__element--white');
@@ -118,7 +119,7 @@ function initOnScrollHeaderAnimations() {
 
     }
     // If the hero section is not hidden
-    if (!heroHidden) {
+    if (!heroHidden && !toggleBtnClicked) {
         // Turn header background transparent
         $MAIN_HEADER.classList.remove('header__element--white');
         $MAIN_HEADER.classList.add('main-header--transparent');
