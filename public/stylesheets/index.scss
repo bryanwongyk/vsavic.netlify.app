@@ -230,3 +230,25 @@ $white: #ffffff;
     height: 30%;
     background: cover center;
   }
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-32px,-32px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(0px,0px);
+    }
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .hero-section .hero-section__image {
+      background-attachment: scroll;
+    }
+  }
+
+  
