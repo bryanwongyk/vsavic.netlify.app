@@ -9,6 +9,8 @@ const   $BRAND                      = document.querySelector('.main-header__bran
         $MOBILE_NAV                 = document.querySelector('.mobile-nav'),
         $MOBILE_NAV_BG              = document.querySelector('.mobile-nav__background'),
         $MOBILE_NAV_ITEMS           = document.querySelector('.mobile-nav__items'),
+        $MOBILE_NAV_ITEM            = document.querySelectorAll('.mobile-nav__item'),
+        $MOBILE_NAV_ITEM_HIGHLIGHT  = document.querySelectorAll('.mobile-nav__item-highlight'),
         $TOGGLE_BTN                 = document.querySelector('.toggle-button'),
         $TOGGLE_BTN_BARS            = document.querySelectorAll('.toggle-button__bar');
 
@@ -19,6 +21,8 @@ init();
 function init() {
     // Initialise header mobile nav bar
     initToggleBtn();
+    // Initialise mobile menu event listeners
+    initMobileMenu();
     // Initialise footer copyright year
     let copyrightYear = document.querySelector('#copyright-year');
     let currentYear = new Date().getFullYear();
@@ -44,6 +48,20 @@ function initToggleBtn() {
         }
         });
     
+}
+
+function initMobileMenu() {
+    /**
+     * initMobileMenu initialises event listeners required for animations in the mobile menu.
+     */
+    for (let i=0; i<$MOBILE_NAV_ITEM.length; i++) {
+        $MOBILE_NAV_ITEM[i].addEventListener('mouseenter', () => {
+            $MOBILE_NAV_ITEM_HIGHLIGHT[i].classList.add('mobile-nav__item-highlight--active')
+        });
+        $MOBILE_NAV_ITEM[i].addEventListener('mouseleave', () => {
+            $MOBILE_NAV_ITEM_HIGHLIGHT[i].classList.remove('mobile-nav__item-highlight--active')
+        });
+    }
 }
 
 function openMobileMenu() {
@@ -131,7 +149,7 @@ function openToggleAnimation() {
     /**
      * openToggleAnimation executes animation of toggle button menu hamburger turning into 'x' exit button.
      */
-    for (let i=0; i<3; i++) {
+    for (let i=0; i<$TOGGLE_BTN_BARS.length; i++) {
         $TOGGLE_BTN_BARS[i].classList.add('header__element--grey');
         $TOGGLE_BTN_BARS[i].classList.remove('header__element--white');
         $TOGGLE_BTN_BARS[i].classList.add(`toggle-button__bar-${i+1}--clicked`);
@@ -148,7 +166,7 @@ function closeToggleAnimation() {
 
     let timeOutDelay = 500;
 
-    for (let i=0; i<3; i++) {
+    for (let i=0; i<$TOGGLE_BTN_BARS.length; i++) {
         $TOGGLE_BTN_BARS[i].classList.remove('header__element--grey');   
         $TOGGLE_BTN_BARS[i].classList.add('header__element--white');
         $TOGGLE_BTN_BARS[i].classList.remove(`toggle-button__bar-${i+1}--clicked`);
@@ -157,7 +175,7 @@ function closeToggleAnimation() {
 
     // Remove animation classes after animations are complete
     setTimeout(() => {
-        for (let i=0; i<3; i++) {
+        for (let i=0; i<$TOGGLE_BTN_BARS.length; i++) {
             $TOGGLE_BTN_BARS[i].classList.remove(`toggle-button__bar-${i+1}--clicked-off`);
         }
     }, timeOutDelay)

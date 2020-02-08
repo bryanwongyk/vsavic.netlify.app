@@ -293,13 +293,13 @@ footer {
             margin: 32px 0;
     
             a {
-                font-size: 1.5rem;
+                font-size: 2rem;
                 color: black;
                 text-decoration: none;
                 &:hover {
                     color: $pink;
                 }
-            }
+            } 
         }
     }
 
@@ -312,6 +312,27 @@ footer {
         opacity: 0;
         transition-delay: 0s;
     }    
+}
+
+.mobile-nav__item-highlight {
+    width: 0%;
+    height: 3px;
+    background: $pink;
+    transition: width 0.5s;
+    margin-top: 5px;
+}
+
+.mobile-nav__item-highlight--active {
+    animation: mobile-nav__item-highlight-animation 0.4s forwards;
+}
+
+@keyframes mobile-nav__item-highlight-animation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 .mobile-nav__hide{
