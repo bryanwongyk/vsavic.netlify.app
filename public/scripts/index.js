@@ -7,7 +7,7 @@ const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item
         $CTA_BUTTON                 = document.querySelector('.scroll-cta__button'),
         $HERO_IMAGE                 = document.querySelector('.hero-section__image'),
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
-        $INTRO                      = document.querySelector('.intro'),
+        $INTRO                      = document.querySelector('.presentation-section__intro'),
         SCROLL_Y_BREAKPOINTS        = [130, 500, 680, 950, 1190];
         
 var heroHidden = false;
@@ -86,6 +86,7 @@ function initOnScrollContentAnimations() {
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
         $CHAP_LEFT[1].classList.add('slide-in');
+
     }
 }
 

@@ -18,9 +18,8 @@ body {
     height: 100%;
     display: grid;
     grid-template-rows: 1fr auto;
-    grid-template-areas:    
-        "main"
-        "footer";
+    grid-template-areas:    "main"
+                            "footer";
 }
 
 header {
@@ -50,6 +49,10 @@ main {
     p {
         font-family: Montserrat, sans-serif;
         line-height: 1.9rem;
+    }
+    a {
+        font-weight: 400;
+        font-family: Roboto, san-serif;  
     }
 }
 
@@ -91,7 +94,7 @@ footer {
     background: $grey;
 }
 
-.brand {
+.main-header__brand {
     cursor: pointer;
 
     margin-right: 160px;
@@ -102,11 +105,11 @@ footer {
     }
 }
 
-.image_off, .brand:hover .image_on {
+.image_off, .main-header__brand:hover .image_on {
     display: none;
 }
 
-.image_on, .brand:hover .image_off {
+.image_on, .main-header__brand:hover .image_off {
     display: block;
 }
 
@@ -118,7 +121,7 @@ footer {
     display: none;
 }
 
-.menu {
+.main-header__menu {
     display: flex;
     align-items: center;
 
@@ -247,6 +250,7 @@ footer {
 
 .mobile-nav {
     position: fixed;
+    // menu has a z-index of 100, and as mobile-nav is defined after menu in the html file, it will overlay the MENU button with the same z-index. Note that z-index is relative. Therefore, mobile-nav by default is on the same level as main-header at z-level: 100. Therefore, mobile-nav needs to have a lower z-index explicitly defined where z-level: -1 really means z-level: 99 (as it is relative!)
     z-index: -1;
     top: 0;
     left: 0;

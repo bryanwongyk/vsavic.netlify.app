@@ -49,7 +49,7 @@ $white: #ffffff;
         }
     }
 
-    .scroll-cta {
+    .hero-section__scroll-cta {
         grid-row: row-2-start;
         grid-column: col-start 1 / col-start 13;
 
@@ -111,11 +111,11 @@ $white: #ffffff;
 }
 
 .presentation-section {
-    padding: 15% 0;
+    padding-top: 15%;
     background: $white;
 }
 
-.intro {
+.presentation-section__intro {
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -135,7 +135,7 @@ $white: #ffffff;
     }
 }
 
-.chapters {
+.presentation-section__chapters {
     margin-top: 10%;
     overflow: hidden;
 
@@ -160,7 +160,7 @@ $white: #ffffff;
             position: absolute;
             background: lightblue;
             width: 100vw;
-            height: 33%;
+            height: 33.33%;
 
             display: flex;
             flex-direction: column;
@@ -204,26 +204,104 @@ $white: #ffffff;
     transform: translateX(0vw) !important;
 }
 
-#latest-events {
-    margin-top: 6rem;
-  }
-  #latest-events h2 {
-    color: #424b54;
+.presentation-section__latest-events {
+    margin-top: 80px;
     text-align: center;
-    padding: 0 5%;
-  }
-  #latest-events #latest-events__feed {
-    display: -webkit-box;
-    display: flex;
-    justify-content: space-around;
-    -webkit-box-align: center;
-    align-items: center;
-  }
-  #latest-events #latest-events__feed .thumbnail {
-    width: 30%;
-    height: 30%;
-    background: cover center;
-  }
+    
+    h2 {
+        color: #424b54;
+        padding: 0 5%;
+    
+    }
+
+    .latest-events__feed {
+        display: grid;
+        grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end col-3-start] 1fr [col-3-end];
+        grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-3-start] 1fr [row-3-end];
+
+        width: 100vw;
+        height: 600px;
+
+        .feed__thumbnail {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            //CSS3 blur filter creates a white outline around the image. To avoid this, scale the image a little larger and clip at the edges.
+            transform: scale(1.02);
+
+            &:nth-child(1) {
+                grid-column: col-1-start / col-3-end;
+                grid-row: row-1-start / span 1;
+                .feed__thumbnail-image {
+                    background-image: url('../images/feed/image-1.jpg');
+                }
+            }
+            &:nth-child(2) {
+                grid-column: col-1-start / col-3-end;
+                grid-row: row-2-start / span 1;
+                .feed__thumbnail-image {
+                    background-image: url('../images/feed/image-2.jpg');
+                }
+            }
+            &:nth-child(3) {
+                grid-column: col-1-start / col-3-end;
+                grid-row: row-3-start / span 1;
+                .feed__thumbnail-image {
+                    background-image: url('../images/feed/image-3.jpg');
+                }
+            }
+
+            .feed__thumbnail-image {
+                background-position: center;
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+            }
+            
+            .feed__thumbnail-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                height: 100%;
+                width: 100%;
+                background-color: rgba(0,0,0,0.5);
+                
+                opacity: 0;
+                transition: opacity 0.5s ease;
+
+                // Text styling
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                    0px 8px 13px rgba(0,0,0,0.1),
+                    0px 18px 23px rgba(0,0,0,0.1);
+
+                    letter-spacing: 0.3rem;
+                    &:hover {
+                        color: $pink;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &:hover {
+                .feed__thumbnail-image {
+                    filter: blur(3px);
+                }
+                .feed__thumbnail-overlay {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
 
 .fade-reveal {
     animation: fade-reveal-animation 1s 1 forwards; 

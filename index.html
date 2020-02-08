@@ -13,19 +13,19 @@
 <body>
     <header class="main-header">
         <!-- Brand -->
-        <div class="brand">
+        <a href="index.html" title="Home" class="main-header__brand">
             <img id="logo--alt" class="image_on" src="./public/images/vsa-vic-header-alternate.png" alt="VSA Victoria">
             <img id="logo" class="image_off" src="./public/images/vsa-vic-header.png" alt="VSA Victoria">
-        </div>
+        </a>
         <!-- Mobile navigation button toggle -->
-        <div class="menu">
+        <div class="main-header__menu">
             <button class="toggle-button">
                 <span class="toggle-button__bar header__element--white"></span>
                 <span class="toggle-button__bar header__element--white"></span>
                 <span class="toggle-button__bar header__element--white"></span>
             </button>
             <!-- Provide label for accessability -->
-            <label id="menu__label">MENU</label>
+            <label id="menu-label">MENU</label>
         </div>
         <!-- Mobile navigation bar-->
         <nav class="mobile-nav mobile-nav__hide">
@@ -56,7 +56,7 @@
                     <h1> <span class="hero-section__text-highlight">Vietnamese Students'</span> Association </h1>
                 </div>
             </div>
-            <div class="scroll-cta">
+            <div class="hero-section__scroll-cta">
                 <a href="#cta-snap">
                     <button class="scroll-cta__button">
                            LEARN MORE
@@ -68,11 +68,11 @@
             </div>
         </section>
         <section class="presentation-section" id="cta-snap">
-            <div class="intro">
+            <div class="presentation-section__intro">
                 <h2> WHO WE ARE </h2>
                 <p> We are a university student-run organisation that aims to preserve and promote the Vietnamese Australian identity.</p>
             </div>
-            <div class="chapters">
+            <div class="presentation-section__chapters">
                 <div class="chapters__header">
                     <h2> CHAPTER LOCATIONS </h1>
                     <p> Sign up as a member with one of the below! </p>
@@ -92,12 +92,28 @@
                     </div>
                 </div>
             </div>
-            <div id="latest-events">
+            <div class="presentation-section__latest-events">
                 <h2> WHAT WE HAVE BEEN UP TO </h2>
-                <div id="latest-events__feed">
-                    <img class="thumbnail" src="./public/images/feed/image-1.jpg">
-                    <img class="thumbnail" src="./public/images/feed/image-2.jpg">
-                    <img class="thumbnail" src="./public/images/feed/image-3.jpg">
+                <p> Tap to view more info. </p>
+                <div class="latest-events__feed">
+                    <div class="feed__thumbnail">
+                        <div class="feed__thumbnail-image"></div>
+                        <div class="feed__thumbnail-overlay">
+                            <a href="https://www.facebook.com/events/534886540698023/">VIEW FACEBOOK EVENT</a>
+                        </div>
+                    </div>
+                    <div class="feed__thumbnail">
+                        <div class="feed__thumbnail-image"></div>
+                        <div class="feed__thumbnail-overlay">
+                            <a href="https://www.facebook.com/events/542014539907293/">VIEW FACEBOOK EVENT</a>
+                        </div>
+                    </div>
+                    <div class="feed__thumbnail">
+                        <div class="feed__thumbnail-image"></div>
+                        <div class="feed__thumbnail-overlay">
+                            <a href="https://www.facebook.com/events/942952329418555/">VIEW FACEBOOK EVENT</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -42,6 +42,10 @@ main p {
   font-family: Montserrat, sans-serif;
   line-height: 1.9rem;
 }
+main a {
+  font-weight: 400;
+  font-family: Roboto, san-serif;
+}
 
 footer {
   font-family: Montserrat, sans-serif;
@@ -78,20 +82,20 @@ footer .main-footer__copyright {
   background: #424b54;
 }
 
-.brand {
+.main-header__brand {
   cursor: pointer;
   margin-right: 160px;
   margin-bottom: 5px;
 }
-.brand img {
+.main-header__brand img {
   height: 3rem;
 }
 
-.image_off, .brand:hover .image_on {
+.image_off, .main-header__brand:hover .image_on {
   display: none;
 }
 
-.image_on, .brand:hover .image_off {
+.image_on, .main-header__brand:hover .image_off {
   display: block;
 }
 
@@ -103,11 +107,11 @@ footer .main-footer__copyright {
   display: none;
 }
 
-.menu {
+.main-header__menu {
   display: flex;
   align-items: center;
 }
-.menu label {
+.main-header__menu label {
   margin-left: 10px;
   font-size: 1.1rem;
   font-family: Montserrat, sans-serif;
