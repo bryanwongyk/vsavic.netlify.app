@@ -106,6 +106,7 @@
 
 .chapters {
   margin-top: 10%;
+  overflow: hidden;
 }
 .chapters h2 {
   color: lightblue;
