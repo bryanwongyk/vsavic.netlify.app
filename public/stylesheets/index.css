@@ -5,16 +5,15 @@
   display: grid;
   grid-template-rows: [row-1-start] 75% [row-1-end row-2-start] 25% [row-2-end];
   grid-template-columns: repeat(12, [col-start] 1fr);
-  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 .hero-section .hero-section__image {
   grid-row: row-1-start/row-2-end;
   grid-column: col-start 1/col-start 13;
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/hero-image-1.jpg") center center no-repeat;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   background-attachment: fixed;
   height: 100%;
   width: 100%;
@@ -28,8 +27,9 @@
   letter-spacing: 0.2rem;
   text-align: center;
   color: #ffffff;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
-.hero-section .hero-section__text h1 #hero-section__text-highlight {
+.hero-section .hero-section__text h1 .hero-section__text-highlight {
   color: #ed8eba;
 }
 .hero-section .scroll-cta {
@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.hero-section .scroll-cta #scroll-cta__link #scroll-cta__button {
+.hero-section .scroll-cta .scroll-cta__button {
   border: 2px white solid;
   padding: 10%;
   font-family: Roboto, san-serif;
@@ -51,13 +51,13 @@
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
   background: transparent;
 }
-.hero-section .scroll-cta #scroll-cta__link #scroll-cta__button:hover {
+.hero-section .scroll-cta .scroll-cta__button:hover {
   cursor: pointer;
   background: white;
   text-shadow: none;
-  color: black !important;
+  color: black;
 }
-.hero-section .scroll-cta #scroll-cta__link #scroll-cta__button:focus {
+.hero-section .scroll-cta .scroll-cta__button:focus {
   outline: none;
 }
 .hero-section .scroll-cta .scroll-cta__arrow span {
@@ -66,12 +66,24 @@
   height: 20px;
   border-bottom: 5px solid #ffffff;
   border-right: 5px solid #ffffff;
-  transform: rotate(45deg);
-  animation: animate 2s infinite;
+  animation: scroll-cta__arrow-animation 2s infinite;
 }
 
+@keyframes scroll-cta__arrow-animation {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-32px, -32px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+}
 .presentation-section {
-  padding: 6rem 0rem;
+  padding: 15% 0;
   background: #ffffff;
 }
 
@@ -85,19 +97,15 @@
 }
 .intro h2 {
   color: #ed8eba;
-  max-width: 15rem;
   font-size: 2.2rem;
 }
 .intro p {
-  margin: 4rem 4rem;
+  margin: 10%;
   text-align: center;
 }
 
 .chapters {
-  margin-top: 4rem;
-  height: 870px;
-  width: 100%;
-  overflow: hidden;
+  margin-top: 10%;
 }
 .chapters h2 {
   color: lightblue;
@@ -108,17 +116,18 @@
 }
 .chapters h3 {
   margin: 0;
+  text-align: center;
 }
 .chapters .chapters__items {
   position: relative;
-  margin: 2rem 0;
+  margin: 5% 0;
+  height: 900px;
 }
 .chapters .chapters__items .chapters__item {
   position: absolute;
-  padding: 3rem 0;
   background: lightblue;
-  max-height: 330px;
   width: 100vw;
+  height: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,25 +135,21 @@
   transition: transform 0.3s linear;
 }
 .chapters .chapters__items .chapters__item img {
-  max-width: 30%;
-  max-height: 30%;
+  max-width: 200px;
+  max-height: 200px;
   margin-bottom: 20px;
 }
 .chapters .chapters__items .chapters__item:nth-child(1) {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   transform: translateX(-100vw);
 }
 .chapters .chapters__items .chapters__item:nth-child(2) {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  top: 251.5px;
+  top: 33%;
+  left: 0%;
   transform: translateX(100vw);
 }
 .chapters .chapters__items .chapters__item:nth-child(3) {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  top: 503px;
+  top: 66%;
+  left: 0%;
   transform: translateX(-100vw);
 }
 .chapters p {
@@ -183,17 +188,16 @@
   background: cover center;
 }
 
-@keyframes animate {
+.fade-reveal {
+  animation: fade-reveal-animation 1s 1 forwards;
+}
+
+@keyframes fade-reveal-animation {
   0% {
     opacity: 0;
-    transform: rotate(45deg) translate(-32px, -32px);
-  }
-  50% {
-    opacity: 1;
   }
   100% {
-    opacity: 0;
-    transform: rotate(45deg) translate(0px, 0px);
+    opacity: 1;
   }
 }
 @media only screen and (max-device-width: 1366px) {

@@ -1,16 +1,17 @@
 // $ prefix to indicate it is a DOM element
 // Toggle button
-const   $TOGGLE_BTN                 = document.querySelector('.toggle-button'),
-        $TOGGLE_BTN_BARS            = document.querySelectorAll('.toggle-button__bar'),
+const   $BRAND                      = document.querySelector('.brand'),
+        $BODY                       = document.querySelector('body'),
+        $LOGO                       = document.querySelector('#logo'),
+        $LOGO_ALT                   = document.querySelector('#logo--alt'),
+        $MAIN_HEADER                = document.querySelector('.main-header'),
         $MENU_LABEL                 = document.querySelector('#menu__label'),
         $MOBILE_NAV                 = document.querySelector('.mobile-nav'),
         $MOBILE_NAV_BG              = document.querySelector('.mobile-nav__background'),
         $MOBILE_NAV_ITEMS           = document.querySelector('.mobile-nav__items'),
-        $LOGO                       = document.querySelector('#logo'),
-        $LOGO_ALT                   = document.querySelector('#logo--alt'),
-        $MAIN_HEADER                = document.querySelector('.main-header'),
-        $BRAND                      = document.querySelector('.brand'),
-        $BODY                       = document.querySelector('body');
+        $TOGGLE_BTN                 = document.querySelector('.toggle-button'),
+        $TOGGLE_BTN_BARS            = document.querySelectorAll('.toggle-button__bar');
+        
 var toggleBtnClicked = false;
 
 init();

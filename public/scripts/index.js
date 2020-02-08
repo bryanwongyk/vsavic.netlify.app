@@ -1,13 +1,13 @@
 // Scroll animations
 
-const   $INTRO                      = document.querySelector('.intro'),
-        $HERO_IMAGE                 = document.querySelector('.hero-section__image'),
-        $HERO_TEXT                  = document.querySelector('.hero-section__text'),
-        $CTA_ARROW                  = document.querySelector('.scroll-cta__arrow'),
-        $CTA_BUTTON                 = document.querySelector('#scroll-cta__button'),
-        $CHAP_LEFT                  = document.querySelectorAll('.chapters__item--left'),
+const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item--left'),
         $CHAP_RIGHT                 = document.querySelector('.chapters__item--right'),
         $CHAP_HEADER                = document.querySelector('.chapters__header'),
+        $CTA_ARROW                  = document.querySelector('.scroll-cta__arrow'),
+        $CTA_BUTTON                 = document.querySelector('.scroll-cta__button'),
+        $HERO_IMAGE                 = document.querySelector('.hero-section__image'),
+        $HERO_TEXT                  = document.querySelector('.hero-section__text'),
+        $INTRO                      = document.querySelector('.intro'),
         SCROLL_Y_BREAKPOINTS        = [130, 500, 680, 950, 1190];
         
 var heroHidden = false;
@@ -30,10 +30,14 @@ function initOnScrollContentAnimations() {
     /*
     As the user scrolls past the 1st breakpoint:
         - The hero text should fade out.
+        - The intro-section text should fade in.
     As the user scrolls back to before this breakpoint, elements should return to their initial state.
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[0]) {
         $HERO_TEXT.style.opacity = (1-(window.scrollY/250));
+
+        $INTRO.classList.remove('fade-hide');
+        $INTRO.classList.add('fade-reveal');
     } else {
         $HERO_TEXT.style.opacity = 1;
     }
@@ -42,12 +46,15 @@ function initOnScrollContentAnimations() {
     As the user scrolls past the 2nd breakpoint:
         - The call to action button in the hero section should fade out.
         - The hero image should fade out.
+        - The chapter section text should fade in.
     As the user scrolls back to before this breakpoint, elements should return to their initial state.
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[1]) {
         $CTA_ARROW.style.opacity = 0;
         $CTA_BUTTON.style.opacity = (1-(window.scrollY/700));
         $HERO_IMAGE.style.opacity = (1-(window.scrollY/700));
+        $CHAP_HEADER.classList.remove('fade-hide');
+        $CHAP_HEADER.classList.add('fade-reveal');
         heroHidden = true;
     } else {
         $CTA_ARROW.style.opacity = 1;
@@ -79,15 +86,6 @@ function initOnScrollContentAnimations() {
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
         $CHAP_LEFT[1].classList.add('slide-in');
-    }
-
-
-    // If the hero section is hidden, fade in content of the intro and chapter header.
-    if (heroHidden) {
-        $INTRO.classList.remove('fade-hide');
-        $INTRO.classList.add('fade-reveal');
-        $CHAP_HEADER.classList.remove('fade-hide');
-        $CHAP_HEADER.classList.add('fade-reveal');
     }
 }
 
