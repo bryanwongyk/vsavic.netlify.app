@@ -283,6 +283,7 @@ $white: #ffffff;
             //CSS3 blur filter creates a white outline around the image. To avoid this, scale the image a little larger and clip at the edges.
             -webkit-transform: scale(1.02);
                     transform: scale(1.02);
+            transition: transform 0.5s;
 
             &:nth-child(1) {
                 grid-column: col-1-start / col-3-end;
@@ -353,9 +354,12 @@ $white: #ffffff;
             }
 
             &:hover {
+                transform: scale(1.1);
+
                 .feed__thumbnail-image {
                     -webkit-filter: blur(3px);
                             filter: blur(3px);
+                    
                 }
                 .feed__thumbnail-overlay {
                     opacity: 0.8;

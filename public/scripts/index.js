@@ -5,6 +5,7 @@ const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item
         $CHAP_HEADER                = document.querySelector('.chapters__header'),
         $CTA_ARROW                  = document.querySelector('.scroll-cta__arrow'),
         $CTA_BUTTON                 = document.querySelector('.scroll-cta__button'),
+        $FEED_THUMBNAILS            = document.querySelector('.feed__thumbnail'),
         $HERO_IMAGE                 = document.querySelector('.hero-section__image'),
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
         $INTRO                      = document.querySelector('.presentation-section__intro'),
@@ -20,6 +21,15 @@ function initIndex(){
         initOnScrollContentAnimations();
         initOnScrollHeaderAnimations();
     };
+    initLatestEventsFeed();
+}
+
+function initLatestEventsFeed() {
+    $FEED_THUMBNAILS.forEach((thumbnail) => {
+        thumbnail.addEventListener('click', () => {
+            this.classList
+        })
+    })
 }
 
 function initOnScrollContentAnimations() {

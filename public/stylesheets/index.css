@@ -231,6 +231,7 @@
   width: 100%;
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
+  transition: transform 0.5s;
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(1) {
   grid-column: col-1-start/col-3-end;
@@ -289,6 +290,9 @@
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail .feed__thumbnail-overlay a:hover {
   color: #ed8eba;
   cursor: pointer;
+}
+.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover {
+  transform: scale(1.1);
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-image {
   -webkit-filter: blur(3px);
