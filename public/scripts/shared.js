@@ -8,9 +8,9 @@ const   $BRAND                      = document.querySelector('.main-header__bran
         $MENU_LABEL                 = document.querySelector('#menu-label'),
         $MOBILE_NAV                 = document.querySelector('.mobile-nav'),
         $MOBILE_NAV_BG              = document.querySelector('.mobile-nav__background'),
-        $MOBILE_NAV_ITEMS           = document.querySelector('.mobile-nav__items'),
         $MOBILE_NAV_ITEM            = document.querySelectorAll('.mobile-nav__item'),
         $MOBILE_NAV_ITEM_HIGHLIGHT  = document.querySelectorAll('.mobile-nav__item-highlight'),
+        $MOBILE_NAV_ITEMS_LIST      = document.querySelector('.mobile-nav__items'),
         $TOGGLE_BTN                 = document.querySelector('.toggle-button'),
         $TOGGLE_BTN_BARS            = document.querySelectorAll('.toggle-button__bar');
 
@@ -27,6 +27,20 @@ function init() {
     let copyrightYear = document.querySelector('#copyright-year');
     let currentYear = new Date().getFullYear();
     copyrightYear.textContent = currentYear;
+}
+
+function isOnPage(html_file) {
+    /**
+     * isOnPage() returns whether or not the user is currently on a given html file (e.g. index.html)
+    */
+
+    // FOR INDEX PAGE: Reset the header as clicking the toggle button to open the mobile menu scrolls the user to the top of the current page, where the logo is different.
+    let path = window.location.pathname;    // Returns the path of the file
+    let page = path.split("/").pop();       // Splits path of file into an array of substrings where '/' is located, and pop last substring which is the name of the html file
+    if (page === html_file) {
+        return true;
+    }
+    return false;
 }
 
 function initToggleBtn() {
@@ -86,10 +100,12 @@ function openMobileMenu() {
     // Execute transition in of menu background AFTER the mobile-nav's display is changed from 'none' (otherwise it will not execute).
     setTimeout(() => {
         $MOBILE_NAV_BG.classList.add('mobile-nav__background--open');  
-        // Reset the header as clicking the toggle button to open the mobile menu scrolls the user to the top of the current page.
-        resetHeader();
+
+        if (isOnPage('index.html')) {
+            resetHeader();
+        }
         // Trigger transition in of menu items.
-        $MOBILE_NAV_ITEMS.classList.add('mobile-nav__items--reveal');
+        $MOBILE_NAV_ITEMS_LIST.classList.add('mobile-nav__items--reveal');
     }, timeOutDelay);
 
     // To prevent scrolling on the body while the mobile menu is open. This will also cause the page to automatically scroll to the top.
@@ -119,8 +135,8 @@ function closeMobileMenu() {
     let timeOutDelay = 500;
    
     // Execute transition that hides the links.
-    $MOBILE_NAV_ITEMS.classList.remove('mobile-nav__items--reveal');
-    $MOBILE_NAV_ITEMS.classList.add('mobile-nav__items--hide');
+    $MOBILE_NAV_ITEMS_LIST.classList.remove('mobile-nav__items--reveal');
+    $MOBILE_NAV_ITEMS_LIST.classList.add('mobile-nav__items--hide');
 
     // Execute transition that hides the mobile menu background.
     $MOBILE_NAV_BG.classList.add('mobile-nav__background--close');
@@ -133,7 +149,7 @@ function closeMobileMenu() {
         $MOBILE_NAV.classList.add('mobile-nav__hide');
 
         // Remove the classes added to animate the closure of the items and background.
-        $MOBILE_NAV_ITEMS.classList.remove('mobile-nav__items--hide');
+        $MOBILE_NAV_ITEMS_LIST.classList.remove('mobile-nav__items--hide');
         $MOBILE_NAV_BG.classList.remove('mobile-nav__background--close');
     }, timeOutDelay);
 
@@ -166,9 +182,12 @@ function closeToggleAnimation() {
 
     let timeOutDelay = 500;
 
+    // Change toggle buttons back to white only if on index page.
     for (let i=0; i<$TOGGLE_BTN_BARS.length; i++) {
-        $TOGGLE_BTN_BARS[i].classList.remove('header__element--grey');   
-        $TOGGLE_BTN_BARS[i].classList.add('header__element--white');
+        if (isOnPage('index.html')) {
+            $TOGGLE_BTN_BARS[i].classList.remove('header__element--grey');   
+            $TOGGLE_BTN_BARS[i].classList.add('header__element--white');
+        }
         $TOGGLE_BTN_BARS[i].classList.remove(`toggle-button__bar-${i+1}--clicked`);
         $TOGGLE_BTN_BARS[i].classList.add(`toggle-button__bar-${i+1}--clicked-off`);
     }

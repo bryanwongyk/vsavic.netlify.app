@@ -7,15 +7,15 @@
     <title>VSA Victoria</title>
     <link rel="stylesheet" href="./public/stylesheets/shared.css">
     <link rel="stylesheet" href="./public/stylesheets/index.css">
-    <link rel="icon" href="./public/images/favicon.jpg">
+    <link rel="icon" href="./public/assets/logos/favicon.jpg">
     <script src="https://kit.fontawesome.com/045284b3ec.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="main-header">
         <!-- Brand -->
         <a href="index.html" title="Home" class="main-header__brand">
-            <img id="logo--alt" class="image_on" src="./public/images/vsa-vic-header-alternate.png" alt="VSA Victoria">
-            <img id="logo" class="image_off" src="./public/images/vsa-vic-header.png" alt="VSA Victoria">
+            <img id="logo--alt" class="image_on" src="./public/assets/logos/vsa-vic-header-alternate.png" alt="VSA Victoria">
+            <img id="logo" class="image_off" src="./public/assets/logos/vsa-vic-header.png" alt="VSA Victoria">
         </a>
         <!-- Mobile navigation button toggle -->
         <div class="main-header__menu">
@@ -84,24 +84,27 @@
                 </div>
                 <div class="chapters__items">
                     <div class="chapters__item chapters__item--left">
-                        <img src="./public/images/vsa-monash-logo.png" alt="VSA Monash Logo">
+                        <img src="./public/assets/logos/vsa-monash-logo.png" alt="VSA Monash Logo">
                         <h3> Monash University </h3>
                     </div>
                     <div class="chapters__item chapters__item--right">
-                        <img src="./public/images/vsa-uom-logo.png" alt="VSA The University of Melbourne Logo">
+                        <img src="./public/assets/logos/vsa-uom-logo.png" alt="VSA The University of Melbourne Logo">
                         <h3> The University of Melbourne </h3>
                     </div>
                     <div class="chapters__item chapters__item--left">
-                        <img src="./public/images/vsa-rmit-logo.png" alt="VSA RMIT Logo">
+                        <img src="./public/assets/logos/vsa-rmit-logo.png" alt="VSA RMIT Logo">
                         <h3> RMIT University </h3>
                     </div>
                 </div>
             </div>
             <div class="presentation-section__latest-events">
                 <h2> WHAT WE HAVE BEEN UP TO </h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/3u13-Tiaz80" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <p> Tap on event for more info. </p>
                 <div class="latest-events__feed">
-                    <div class="feed__thumbnail" tabIndex=0>
+                    <div class="feed__thumbnail" tabIndex=0> <!-- tabIndex=0 allows hover events to work properly on mobile Safari -->
                         <div class="feed__thumbnail-image"></div>
                         <div class="feed__thumbnail-overlay">
                             <a href="https://www.facebook.com/events/534886540698023/">VIEW FACEBOOK EVENT</a>
@@ -143,6 +146,9 @@
                     </div>
                     <div class="social-media__links-icon__circle">
                         <a href="https://www.linkedin.com/company/vsavictoria/about/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="social-media__links-icon__circle">
+                        <a href="https://www.youtube.com/channel/UC5_oB_6wQa5R5q853akNNHA"><i class="fab fa-youtube"></i></a>
                     </div>
                 </li>
                 

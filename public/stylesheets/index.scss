@@ -16,9 +16,9 @@ $white: #ffffff;
         grid-row: row-1-start / row-2-end;
         grid-column: col-start 1 / col-start 13;
 
-        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../images/hero-image-1.jpg') center center no-repeat;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
 
-        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../images/hero-image-1.jpg') center center no-repeat;
+        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
         background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -283,27 +283,41 @@ $white: #ffffff;
             //CSS3 blur filter creates a white outline around the image. To avoid this, scale the image a little larger and clip at the edges.
             -webkit-transform: scale(1.02);
                     transform: scale(1.02);
-            transition: transform 0.5s;
+            overflow: hidden;
+
+            &:hover {
+                .feed__thumbnail-image {
+                    -webkit-filter: blur(3px);
+                            filter: blur(3px);
+                    transform: scale(1.1);
+                }
+                .feed__thumbnail-overlay {
+                    opacity: 0.8;
+                    a {
+                        pointer-events: auto;
+                    }
+                }
+            }
 
             &:nth-child(1) {
                 grid-column: col-1-start / col-3-end;
                 grid-row: row-1-start / span 1;
                 .feed__thumbnail-image {
-                    background-image: url('../images/feed/image-1.jpg');
+                    background-image: url('../assets/event-posters/image-1.jpg');
                 }
             }
             &:nth-child(2) {
                 grid-column: col-1-start / col-3-end;
                 grid-row: row-2-start / span 1;
                 .feed__thumbnail-image {
-                    background-image: url('../images/feed/image-2.jpg');
+                    background-image: url('../assets/event-posters/image-2.jpg');
                 }
             }
             &:nth-child(3) {
                 grid-column: col-1-start / col-3-end;
                 grid-row: row-3-start / span 1;
                 .feed__thumbnail-image {
-                    background-image: url('../images/feed/image-3.jpg');
+                    background-image: url('../assets/event-posters/image-3.jpg');
                 }
             }
 
@@ -312,6 +326,7 @@ $white: #ffffff;
                 background-size: cover;
                 height: 100%;
                 width: 100%;
+                transition: transform 0.5s;
             }
             
             .feed__thumbnail-overlay {
@@ -352,23 +367,23 @@ $white: #ffffff;
                     }
                 }
             }
-
-            &:hover {
-                transform: scale(1.1);
-
-                .feed__thumbnail-image {
-                    -webkit-filter: blur(3px);
-                            filter: blur(3px);
-                    
-                }
-                .feed__thumbnail-overlay {
-                    opacity: 0.8;
-                    a {
-                        pointer-events: auto;
-                    }
-                }
-            }
         }
+    }
+}
+
+.video-container {
+    // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+    height: 0;
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 

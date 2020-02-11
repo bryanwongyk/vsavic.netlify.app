@@ -161,33 +161,33 @@ footer {
         border-radius: 15%;
     }
     .toggle-button__bar-1--clicked {
-        -webkit-animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards;
-                animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards;
+        -webkit-animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
+                animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
     }
 
     .toggle-button__bar-2--clicked {
-        -webkit-animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards;
-                animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards;
+        -webkit-animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards ease-in;
+                animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards ease-in;
     }
 
     .toggle-button__bar-3--clicked {
-        -webkit-animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards;
-                animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards;
+        -webkit-animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards ease-in;
+                animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards ease-in;
     }
 
     .toggle-button__bar-1--clicked-off {
-        -webkit-animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards;
-                animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards;
+        -webkit-animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards ease-in;
+                animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards ease-in;
     }
 
     .toggle-button__bar-2--clicked-off {
-        -webkit-animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards;
-                animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards;
+        -webkit-animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards ease-in;
+                animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards ease-in;
     }
 
     .toggle-button__bar-3--clicked-off {
-        -webkit-animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards;
-                animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards;
+        -webkit-animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards ease-in;
+                animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards ease-in;
     }
 }
 

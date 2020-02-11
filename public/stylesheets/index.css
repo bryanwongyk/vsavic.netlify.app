@@ -9,8 +9,8 @@
 .hero-section .hero-section__image {
   grid-row: row-1-start/row-2-end;
   grid-column: col-start 1/col-start 13;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url("../images/hero-image-1.jpg") center center no-repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/hero-image-1.jpg") center center no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -231,34 +231,46 @@
   width: 100%;
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
-  transition: transform 0.5s;
+  overflow: hidden;
+}
+.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-image {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  transform: scale(1.1);
+}
+.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-overlay {
+  opacity: 0.8;
+}
+.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-overlay a {
+  pointer-events: auto;
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(1) {
   grid-column: col-1-start/col-3-end;
   grid-row: row-1-start/span 1;
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(1) .feed__thumbnail-image {
-  background-image: url("../images/feed/image-1.jpg");
+  background-image: url("../assets/event-posters/image-1.jpg");
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(2) {
   grid-column: col-1-start/col-3-end;
   grid-row: row-2-start/span 1;
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(2) .feed__thumbnail-image {
-  background-image: url("../images/feed/image-2.jpg");
+  background-image: url("../assets/event-posters/image-2.jpg");
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(3) {
   grid-column: col-1-start/col-3-end;
   grid-row: row-3-start/span 1;
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail:nth-child(3) .feed__thumbnail-image {
-  background-image: url("../images/feed/image-3.jpg");
+  background-image: url("../assets/event-posters/image-3.jpg");
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail .feed__thumbnail-image {
   background-position: center;
   background-size: cover;
   height: 100%;
   width: 100%;
+  transition: transform 0.5s;
 }
 .presentation-section__latest-events .latest-events__feed .feed__thumbnail .feed__thumbnail-overlay {
   position: absolute;
@@ -291,18 +303,20 @@
   color: #ed8eba;
   cursor: pointer;
 }
-.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover {
-  transform: scale(1.1);
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
-.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-image {
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
-}
-.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-overlay {
-  opacity: 0.8;
-}
-.presentation-section__latest-events .latest-events__feed .feed__thumbnail:hover .feed__thumbnail-overlay a {
-  pointer-events: auto;
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .fade-reveal {
