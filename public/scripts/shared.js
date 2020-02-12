@@ -5,7 +5,6 @@ const   $BRAND                      = document.querySelector('.main-header__bran
         $LOGO                       = document.querySelector('#logo'),
         $LOGO_ALT                   = document.querySelector('#logo--alt'),
         $MAIN_HEADER                = document.querySelector('.main-header'),
-        $MENU_LABEL                 = document.querySelector('#menu-label'),
         $MOBILE_NAV                 = document.querySelector('.mobile-nav'),
         $MOBILE_NAV_BG              = document.querySelector('.mobile-nav__background'),
         $MOBILE_NAV_ITEM            = document.querySelectorAll('.mobile-nav__item'),
@@ -170,9 +169,6 @@ function openToggleAnimation() {
         $TOGGLE_BTN_BARS[i].classList.remove('header__element--white');
         $TOGGLE_BTN_BARS[i].classList.add(`toggle-button__bar-${i+1}--clicked`);
     }
-
-    // Change label of toggle button to indicate it can be clicked on to close the mobile menu.
-    $MENU_LABEL.textContent = "CLOSE";
 }
 
 function closeToggleAnimation() {
@@ -198,6 +194,4 @@ function closeToggleAnimation() {
             $TOGGLE_BTN_BARS[i].classList.remove(`toggle-button__bar-${i+1}--clicked-off`);
         }
     }, timeOutDelay)
-    // Change label of toggle button to indicate it can be clicked on to open the mobile menu.
-    $MENU_LABEL.textContent = "MENU";
 }

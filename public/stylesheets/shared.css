@@ -118,13 +118,6 @@ footer .main-footer__copyright {
   -webkit-box-align: center;
   align-items: center;
 }
-.main-header__menu label {
-  margin-left: 10px;
-  font-size: 1.1rem;
-  font-family: Montserrat, sans-serif;
-  font-weight: 600;
-  color: #ed8eba;
-}
 
 .toggle-button {
   cursor: pointer;
@@ -494,6 +487,19 @@ footer .main-footer__copyright {
 
 .unclickable {
   pointer-events: none;
+}
+
+.text-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+.text-container p {
+  margin: 60px 0;
+}
+
+.header {
+  text-align: center;
 }
 
 /*# sourceMappingURL=shared.css.map */

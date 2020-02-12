@@ -2,24 +2,9 @@ main {
   margin-top: 70.4px;
 }
 
-.text-container {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-.text-container:nth-child(2) {
-  text-align: center;
-}
-.text-container p {
-  margin: 60px 0;
-}
-
 .text-highlight {
   font-weight: bold;
   border-bottom: 3px solid #f07423;
-}
-
-.header {
-  text-align: center;
 }
 
 .img-container {
