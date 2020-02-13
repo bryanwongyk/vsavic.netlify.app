@@ -51,6 +51,7 @@
   border: 2px #ed8eba solid;
   transform-origin: bottom;
   transform: scale(1.1);
+  box-shadow: 1px 5px 10px #888888;
 }
 
 .filter-container {
@@ -99,6 +100,7 @@ select {
   height: 100%;
   cursor: pointer;
   padding: 15px 15px;
+  font-size: 1rem;
   -webkit-appearance: none;
 }
 select:focus {
@@ -130,6 +132,40 @@ select:focus {
 
 .poster-gallery__slideshow-container {
   position: relative;
+}
+
+#highlighted-slide__name {
+  text-align: center;
+  margin: 10% 0;
+}
+
+#highlighted-slide__link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  background: #fff;
+  color: black;
+  border: #3b5998 1px solid;
+  padding: 15px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #3b5998;
+}
+#highlighted-slide__link:hover {
+  background: #3b5998;
+  color: white;
+}
+#highlighted-slide__link i {
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+.poster-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=events.css.map */
