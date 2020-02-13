@@ -547,6 +547,10 @@ footer {
     pointer-events: none;
 }
 
+.introduction-text {
+    margin-top: 160px; // Height of header plus height of h1 text margin-top
+}
+
 .text-container {
     margin-left: 10%;
     margin-right: 10%;

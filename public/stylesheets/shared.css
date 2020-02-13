@@ -489,6 +489,10 @@ footer .main-footer__copyright {
   pointer-events: none;
 }
 
+.introduction-text {
+  margin-top: 160px;
+}
+
 .text-container {
   margin-left: 10%;
   margin-right: 10%;

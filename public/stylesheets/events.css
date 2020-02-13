@@ -1,0 +1,77 @@
+.poster-section {
+  margin: 0 10%;
+}
+
+.poster-section__highlighted-poster {
+  width: 100%;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+.scrolling-container {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling-container .card {
+  display: inline-block;
+  width: 30%;
+}
+
+.filter-container {
+  display: none;
+}
+
+.filter-button {
+  border: 2px #424b54 solid;
+  padding: 5%;
+  font-family: Roboto, san-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  text-align: center;
+  color: #424b54;
+  background: transparent;
+}
+.filter-button:hover {
+  cursor: pointer;
+  border-color: #ed8eba;
+  color: #ed8eba;
+}
+.filter-button:focus {
+  outline: none;
+}
+
+.filter-mobile-container {
+  position: relative;
+  width: 300px;
+  margin: 50px auto;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid black;
+}
+.filter-mobile-container i {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(0, -50%);
+  pointer-events: none;
+}
+
+select {
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 15px 15px;
+  -webkit-appearance: none;
+}
+select:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=events.css.map */

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VSA Victoria</title>
+    <link rel="stylesheet" href="../public/stylesheets/shared.css">
+    <link rel="stylesheet" href="../public/stylesheets/events.css">
+    <link rel="icon" href="../public/assets/logos/favicon.jpg">
+    <script src="https://kit.fontawesome.com/045284b3ec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="main-header header__element--white">
+        <!-- Brand -->
+        <a href="../index.html" title="Home" class="main-header__brand">
+            <img id="logo" class="brand-hover--disable" src="../public/assets/logos/vsa-vic-header.png" alt="VSA Victoria">
+        </a>
+        <!-- Mobile navigation button toggle -->
+        <div class="main-header__menu">
+            <button class="toggle-button">
+                <span class="toggle-button__bar header__element--grey"></span>
+                <span class="toggle-button__bar header__element--grey"></span>
+                <span class="toggle-button__bar header__element--grey"></span>
+            </button>
+        </div>
+        <!-- Mobile navigation bar-->
+        <nav class="mobile-nav mobile-nav__hide">
+            <div class="mobile-nav__background"></div>
+            <ul class="mobile-nav__items">
+                <li class="mobile-nav__item"> 
+                    <a href="./about.html">ABOUT</a>
+                    <div class="mobile-nav__item-highlight"></div>
+                </li>
+                <li class="mobile-nav__item"> 
+                    <a href="./committee.html">COMMITTEE</a>
+                    <div class="mobile-nav__item-highlight"></div>
+                </li>
+                <li class="mobile-nav__item"> 
+                    <a href="./events.html">EVENTS</a>
+                    <div class="mobile-nav__item-highlight"></div>
+                </li>
+                <li class="mobile-nav__item"> 
+                    <a href="./sponsors.html">SPONSORS</a>
+                    <div class="mobile-nav__item-highlight"></div>
+                </li>
+                <li class="mobile-nav__item"> 
+                    <a href="./contact.html">CONTACT</a>
+                    <div class="mobile-nav__item-highlight"></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="introduction-text">
+            <div class="text-container">
+                <h1 class="header"> EVENTS </h1>
+                <p class="content">
+                    VSA holds many events throughout the year with our most popular ones ranging from food events to social events. There's always something on at one of our three University campuses across Victoria or even volunteering opportunities with us. Take a look and follow our social media to make sure you don't miss our next one!
+                </p>
+            </div>
+        </section>
+        <section class="poster-section">
+            <img class="poster-section__highlighted-poster" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
+            <h2 class="header"> PAST EVENTS </h2>
+            <h3 class="header"> Tap on event for more info... </h3>
+
+            <label for="event-filter">Filter: </label>
+            <div class="filter-mobile-container">
+                <select onchange="updateGallery()" id="event-filter">
+                    <option value="all" selected>SHOW ALL</option>
+                    <option value="vic">VSA VICTORIA</option>
+                    <option value="monash">VSA MONASH</option>
+                    <option value="uom">VSA UNIVERSITY OF MELBOURNE</option>
+                    <option value="rmit">VSA RMIT</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <!-- Keep buttons for desktop view, but make it a dropdown list in mobile view-->
+            <div class="filter-container">
+                <button class="filter-button"> SHOW ALL </button>
+                <button class="filter-button"> VSA VICTORIA </button>
+                <button class="filter-button"> VSA MONASH </button>
+                <button class="filter-button"> VSA UNIVERSITY OF MELBOURNE </button>
+                <button class="filter-button"> VSA RMIT </button>
+            </div>
+            <div class="poster-section__gallery">
+                <div class="poster-section__gallery-slide">
+                    <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
+                </div>
+
+                <div class="scrolling-container">
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-charity-dinner-poster.jpg">
+                    </div>
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-ball-poster.jpg">
+                    </div>
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-camp-reunion-poster.jpg">
+                    </div>
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-camp-poster.jpg">
+                    </div>
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
+                    </div>
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
+                    </div>
+                    <div class="card">
+                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
+                    </div>
+                  </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="main-footer">
+        <nav>
+            <ul class="main-footer__links">
+                <li class="main-footer__link">
+                    <a href="#">
+                        Contact us
+                    </a>
+                </li>
+                <li class="main-footer__link social-media__links">
+                    <!-- Social media icons/links -->
+                    <div class="social-media__links-icon__circle">
+                        <a href="https://www.facebook.com/vsavictoria/"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="social-media__links-icon__circle">
+                        <a href="https://www.instagram.com/vsa.vic/?hl=en"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="social-media__links-icon__circle">
+                        <a href="https://www.linkedin.com/company/vsavictoria/about/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="social-media__links-icon__circle">
+                        <a href="https://www.youtube.com/channel/UC5_oB_6wQa5R5q853akNNHA"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </li>
+                
+            </ul>
+            <div class="main-footer__copyright">
+                <!-- date to be changed via JavaScript-->
+                <p> © VSA Victoria <span id="copyright-year"></span></p>
+            </div>
+        </nav>
+
+    </footer>
+
+    <script src="../public/scripts/shared.js"></script>
+    <script src="../public/scripts/events.js"></script>
+</body>
+</html>
