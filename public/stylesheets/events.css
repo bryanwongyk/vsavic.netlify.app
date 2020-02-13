@@ -21,6 +21,7 @@
 }
 
 .scrolling-container {
+  direction: ltr;
   width: 100%;
   height: 180px;
   padding-top: 10%;
@@ -48,6 +49,7 @@
 
 .card--clicked {
   border: 2px #ed8eba solid;
+  transform-origin: bottom;
   transform: scale(1.1);
 }
 
