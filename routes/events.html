@@ -61,13 +61,8 @@
             </div>
         </section>
         <section class="poster-section">
-            <img class="poster-section__highlighted-poster" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
-            <h2 class="header"> PAST EVENTS </h2>
-            <h3 class="header"> Tap on event for more info... </h3>
-
-            <label for="event-filter">Filter: </label>
             <div class="filter-mobile-container">
-                <select onchange="updateGallery()" id="event-filter">
+                <select onchange="filterUpdateGallery()" id="event-filter">
                     <option value="all" selected>SHOW ALL</option>
                     <option value="vic">VSA VICTORIA</option>
                     <option value="monash">VSA MONASH</option>
@@ -84,34 +79,16 @@
                 <button class="filter-button"> VSA UNIVERSITY OF MELBOURNE </button>
                 <button class="filter-button"> VSA RMIT </button>
             </div>
-            <div class="poster-section__gallery">
-                <div class="poster-section__gallery-slide">
-                    <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
+            <div class="poster-gallery">
+                <div class="poster-gallery__slideshow-container">
+                    <!-- tabindex makes it possible to focus on slideshow-->
+                    <div id="poster-gallery__slideshow-images" class="scrolling-container"></div>
+                    <a class="prev" onclick="clickScrollLeft()">&#10094;</a>
+                    <a class="next" onclick="clickScrollRight()">&#10095;</a>
                 </div>
-
-                <div class="scrolling-container">
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-charity-dinner-poster.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-ball-poster.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-camp-reunion-poster.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2019-camp-poster.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
-                    </div>
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
-                    </div>
-                    <div class="card">
-                        <img class="slide-image" src="../public/assets/event-posters/vsa-vic-events/2020-camp-poster.png">
-                    </div>
-                  </div>
+                <div id="highlighted-slide" class="poster-gallery__highlighted-slide poster-gallery__highlighted-slide--hidden">
+                    <img id="highlighted-slide__image" class="slide-image" src="#">
+                </div>
             </div>
         </section>
 
