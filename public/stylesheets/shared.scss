@@ -143,13 +143,17 @@ footer {
     border: none;
     outline: none;
 
+    &:hover {
+        .toggle-button__bar {
+            background: $pink;
+        }
+    }
+
     .toggle-button__bar {
         display: block;
         width: 24px;
         height: 3.2px;
         margin: 4.8px 0;
-        -webkit-transition: background 0.3s;
-        transition: background 0.3s;
         border-radius: 15%;
     }
     .toggle-button__bar-1--clicked {

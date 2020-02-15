@@ -9,8 +9,7 @@ var     $CARDS,
         isCardSelected = false,
         cardSelectedIndex,
         eventCount = 0,
-        allImgSrcs = ["../public/assets/event-posters/vsa-vic/2020-camp.png", "../public/assets/event-posters/vsa-rmit/2019-little-lunch.jpg", "../public/assets/event-posters/vsa-uom/2019-kahoot.jpg", "../public/assets/event-posters/vsa-rmit/2019-agm.jpg", "../public/assets/event-posters/vsa-rmit/2019-com-tam.jpg", "../public/assets/event-posters/vsa-uom/2019-sport.jpg", "../public/assets/event-posters/vsa-vic/2019-charity-dinner.jpg", "../public/assets/event-posters/vsa-vic/2019-alumni-night.jpg", "../public/assets/event-posters/vsa-monash/2019-agm.png", "../public/assets/event-posters/vsa-monash/2019-mid-autumn.jpg", "../public/assets/event-posters/vsa-uom/2019-agm.jpg", "../public/assets/event-posters/vsa-monash/2019-sport.png", "../public/assets/event-posters/vsa-vic/2019-ball.jpg", "../public/assets/event-posters/vsa-monash/2019-pho-night.png", "../public/assets/event-posters/vsa-vic/2019-camp-reunion.jpg", "../public/assets/event-posters/vsa-vic/2019-camp.jpg"],
-        eventCategories = [], // Each index in eventCategories corresponds to the respective matching index of the event in imgSrcs e.g. if vic is in index 1 of eventCategories, then index 1 of imgSrcs is an image of a VSA VIC event.
+        allImgSrcs = ["../public/assets/event-posters/vsa-vic/2020-camp.png", "../public/assets/event-posters/vsa-rmit/2019-little-lunch.jpg", "../public/assets/event-posters/vsa-uom/2019-kahoot.jpg", "../public/assets/event-posters/vsa-rmit/2019-agm.jpg", "../public/assets/event-posters/vsa-rmit/2019-com-tam.jpg", "../public/assets/event-posters/vsa-uom/2019-sport.jpg", "../public/assets/event-posters/vsa-vic/2019-charity-dinner.jpg", "../public/assets/event-posters/vsa-vic/2019-alumni-night.jpg", "../public/assets/event-posters/vsa-monash/2019-agm.png", "../public/assets/event-posters/vsa-monash/2019-mid-autumn.jpg", "../public/assets/event-posters/vsa-uom/2019-agm.jpg", "../public/assets/event-posters/vsa-collabs/2019-sport.png", "../public/assets/event-posters/vsa-vic/2019-ball.jpg", "../public/assets/event-posters/vsa-monash/2019-pho-night.png", "../public/assets/event-posters/vsa-vic/2019-camp-reunion.jpg", "../public/assets/event-posters/vsa-vic/2019-camp.jpg"],
         allEventLinks = [  "https://www.facebook.com/events/870768526685134/", 
                         "https://www.facebook.com/events/967524880278099/", 
                         "https://www.facebook.com/events/1183216525203485/", 
@@ -44,6 +43,24 @@ var     $CARDS,
                         "VSA Monash Presents: Annual PHO NIGHT 2019",
                         "VSA presents: Apocalypse",
                         "Operation: VSA O-Camp 2019"
+                    ],
+        // Each index in eventCategories corresponds to the respective matching index of the event in imgSrcs e.g. if vic is in index 1 of eventCategories, then index 1 of imgSrcs is an image of a VSA VIC event.
+        eventCategories = [["vic"], 
+                    ["rmit"], 
+                    ["uom"], 
+                    ["rmit"], 
+                    ["rmit"], 
+                    ["uom"],
+                    ["vic"],
+                    ["vic"],
+                    ["monash"],
+                    ["monash"],
+                    ["uom"],
+                    ["monash", "uom"],
+                    ["vic"],
+                    ["monash"],
+                    ["vic"],
+                    ["vic"]
                     ];
 
 initGallery();
@@ -69,20 +86,9 @@ function updateGallery(imgSrcs, eventNames, eventLinks) {
     
     // Populate gallery with images given in imgSrcs
     imgSrcs.forEach((imgSrc) => {
-        // Categorise event posters based on the committee (e.g. vic, monash, rmit, uom).
-        let category = imgSrc.indexOf('vsa');
-        // Gets substring starting from index e.g. vsa-vic/2020-camp.png
-        category = imgSrc.substring(category);
-        //e.g. ['vsa-vic', '2020-camp.png']
-        category = category.split('/');
-        //e.g. vic
-        category = category[0].substr((4));
-
         // Add gallery cards to HTML
         let newCardHtml = `<div class="card"><img class="slide-image" src=${imgSrc}></div>`;
         $SCROLLING_SLIDESHOW.insertAdjacentHTML('beforeend', newCardHtml);
-
-        eventCategories.push(category);
     });
 
     // Set $CARDS to newly added HTML elements, and set event listeners.
@@ -121,11 +127,15 @@ function filterUpdateGallery() {
     if ($DROPDOWN_VALUE === 'all') {
         updateGallery(allImgSrcs);
     } else {
+        // Iterate through each event
         for (let i=0; i < eventCount; i++) {
-            if (eventCategories[i] === $DROPDOWN_VALUE) {
-                filteredImgSrcs.push(allImgSrcs[i]);
-                filteredEventNames.push(allEventNames[i]);
-                filteredEventLinks.push(allEventLinks[i]);
+            // Iterate through each category in an event's category array (to account for possible event collaborations e.g. VSA UoM x VSA Monash: Dodgeball)
+            for (let j=0; j < eventCategories[i].length; j++) {
+                if (eventCategories[i][j] === $DROPDOWN_VALUE) {
+                    filteredImgSrcs.push(allImgSrcs[i]);
+                    filteredEventNames.push(allEventNames[i]);
+                    filteredEventLinks.push(allEventLinks[i]);
+                }
             }
         }
         updateGallery(filteredImgSrcs, filteredEventNames, filteredEventLinks);

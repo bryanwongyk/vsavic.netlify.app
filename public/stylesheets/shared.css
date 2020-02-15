@@ -127,13 +127,14 @@ footer .main-footer__copyright {
   border: none;
   outline: none;
 }
+.toggle-button:hover .toggle-button__bar {
+  background: #ed8eba;
+}
 .toggle-button .toggle-button__bar {
   display: block;
   width: 24px;
   height: 3.2px;
   margin: 4.8px 0;
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
   border-radius: 15%;
 }
 .toggle-button .toggle-button__bar-1--clicked {
