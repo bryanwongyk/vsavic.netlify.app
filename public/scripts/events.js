@@ -26,7 +26,7 @@ var     $CARDS,
                         "https://www.facebook.com/events/2503319103024637/", 
                         "https://www.facebook.com/events/309829899680150/", 
                         "https://www.facebook.com/events/396846704197244/"
-                    ],
+                         ],
         allEventNames = [  "Prison Break: VSA O-Camp 2020", 
                         "RMIT VSA Presents: Little Lunch", 
                         "VSA UoM Presents: Kahoot Night", 
@@ -43,7 +43,7 @@ var     $CARDS,
                         "VSA Monash Presents: Annual PHO NIGHT 2019",
                         "VSA presents: Apocalypse",
                         "Operation: VSA O-Camp 2019"
-                    ],
+                        ],
         // Each index in eventCategories corresponds to the respective matching index of the event in imgSrcs e.g. if vic is in index 1 of eventCategories, then index 1 of imgSrcs is an image of a VSA VIC event.
         eventCategories = [["vic"], 
                     ["rmit"], 

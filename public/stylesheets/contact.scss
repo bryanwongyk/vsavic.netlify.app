@@ -1,0 +1,62 @@
+$pink: #ed8eba;
+$grey: #424b54;
+$white: #ffffff;
+
+.contact-form {
+    width: 80%;
+    margin: 0 auto;
+    
+    label{
+        display: block;
+        width: 100%;
+        margin-top: 3%;
+    }
+    input[type="text"]{
+        width: 100%;
+        border: 2px solid #ccc;
+        padding: 8px 5px;
+        // ADD FONT OR INHERIT FONT
+
+    }
+    textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        // ADD FONT OR INHERIT FONT
+
+    }
+    .contact-form__button {
+        text-align: center;
+
+        button {
+            border: none;
+            width: 50%;
+            padding: 4% 10%;
+        
+            font-family: Roboto, san-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            // text-align: center;
+            text-transform: uppercase;
+
+            color: white;
+        
+            background: $pink;
+
+            &:hover {
+                cursor: pointer;
+                background: #fca5ce;
+                text-shadow: none;
+                color: white;
+            }
+        
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+img {
+    width: 100px;
+    height: auto;
+}

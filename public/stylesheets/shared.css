@@ -128,7 +128,7 @@ footer .main-footer__copyright {
   outline: none;
 }
 .toggle-button:hover .toggle-button__bar {
-  background: #ed8eba;
+  background-color: #ed8eba;
 }
 .toggle-button .toggle-button__bar {
   display: block;
@@ -136,6 +136,7 @@ footer .main-footer__copyright {
   height: 3.2px;
   margin: 4.8px 0;
   border-radius: 15%;
+  transition: background-color 0.2s;
 }
 .toggle-button .toggle-button__bar-1--clicked {
   -webkit-animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
@@ -371,6 +372,7 @@ footer .main-footer__copyright {
   font-size: 2rem;
   color: black;
   text-decoration: none;
+  transition: color 0.2s;
 }
 .mobile-nav .mobile-nav__items .mobile-nav__item a:hover {
   color: #ed8eba;

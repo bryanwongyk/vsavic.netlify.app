@@ -142,10 +142,9 @@ footer {
     padding: 0;
     border: none;
     outline: none;
-
     &:hover {
         .toggle-button__bar {
-            background: $pink;
+            background-color: $pink;
         }
     }
 
@@ -155,6 +154,7 @@ footer {
         height: 3.2px;
         margin: 4.8px 0;
         border-radius: 15%;
+        transition: background-color 0.2s;
     }
     .toggle-button__bar-1--clicked {
         -webkit-animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
@@ -416,6 +416,7 @@ footer {
                 font-size: 2rem;
                 color: black;
                 text-decoration: none;
+                transition: color 0.2s;
                 &:hover {
                     color: $pink;
                 }
