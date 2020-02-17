@@ -48,7 +48,7 @@ main a {
 }
 
 footer {
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
 }
 footer a {
   color: #ffffff;
@@ -371,7 +371,10 @@ footer .main-footer__copyright {
   transition: opacity 0.2s linear;
 }
 .mobile-nav .mobile-nav__items .mobile-nav__item {
-  margin: 32px 0;
+  margin: 10% 0;
+}
+.mobile-nav .mobile-nav__items .mobile-nav__item:hover .mobile-nav__item-highlight {
+  animation: mobile-nav__item-highlight-animation 0.4s forwards;
 }
 .mobile-nav .mobile-nav__items .mobile-nav__item a {
   font-size: 2rem;
@@ -397,16 +400,10 @@ footer .main-footer__copyright {
   width: 0%;
   height: 3px;
   background: #ed8eba;
-  -webkit-transition: width 0.5s;
-  transition: width 0.5s;
   margin-top: 5px;
-}
-
-.mobile-nav__item-highlight--active {
-  -webkit-animation: mobile-nav__item-highlight-animation 0.4s forwards;
-  animation: mobile-nav__item-highlight-animation 0.4s forwards;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
+  margin-left: 10%;
+  -webkit-animation: mobile-nav__item-highlight-animation--out 0.4s;
+  animation: mobile-nav__item-highlight-animation--out 0.4s;
 }
 
 @-webkit-keyframes mobile-nav__item-highlight-animation {
@@ -414,7 +411,7 @@ footer .main-footer__copyright {
     width: 0%;
   }
   100% {
-    width: 100%;
+    width: 80%;
   }
 }
 @keyframes mobile-nav__item-highlight-animation {
@@ -422,7 +419,15 @@ footer .main-footer__copyright {
     width: 0%;
   }
   100% {
-    width: 100%;
+    width: 80%;
+  }
+}
+@keyframes mobile-nav__item-highlight-animation--out {
+  0% {
+    width: 80%;
+  }
+  100% {
+    width: 0%;
   }
 }
 .mobile-nav__hide {
