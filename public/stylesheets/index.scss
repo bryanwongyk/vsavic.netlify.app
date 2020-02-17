@@ -75,7 +75,7 @@ $white: #ffffff;
         
         .scroll-cta__button {
             border: 2px white solid;
-            padding: 10%;
+            padding: 20px;
 
             font-family: Roboto, san-serif;
             font-weight: 900;
@@ -145,7 +145,7 @@ $white: #ffffff;
 }
 
 .presentation-section {
-    padding-top: 15%;
+    // padding-top: 15%;
     background: $white;
 }
 
@@ -161,6 +161,7 @@ $white: #ffffff;
             align-items: center;
 
     height: 300px;
+    margin-top: 20%;
 
     h2 {
         color: $pink;
@@ -168,21 +169,20 @@ $white: #ffffff;
     }
 
     p {
-        margin: 10%;
+        margin: 0 10%;
         text-align: center;
     }
 }
 
 .presentation-section__chapters {
-    margin-top: 10%;
+    margin-top: 20%;
     overflow: hidden;
 
     h2 {
         color: lightblue;
         text-align: center;
         font-size: 2.2rem;
-        margin: 0;
-        padding: 0 5%;
+        margin-bottom: 10%;
     }
 
     h3 {
@@ -192,13 +192,13 @@ $white: #ffffff;
     .chapters__items {
         position: relative;
         margin: 5% 0;
-        height: 900px;
+        height: 800px;
 
         .chapters__item {
             position: absolute;
-            background: lightblue;
+            background-color: lightblue;
             width: 100vw;
-            height: 33.33%;
+            height: 25.1%;
 
             display: -webkit-box;
 
@@ -220,22 +220,27 @@ $white: #ffffff;
             transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 
             img {
-                max-width: 200px;
-                max-height: 200px;
-                margin-bottom: 20px;
+                max-width: 150px;
+                max-height: auto;
             }
             &:nth-child(1) {
+                -webkit-transform: translateX(100vw);
+                        transform: translateX(100vw);
+            }
+            &:nth-child(2) {
+                top: 25%;
+                left: 0%;
                 -webkit-transform: translateX(-100vw);
                         transform: translateX(-100vw);
             }
-            &:nth-child(2) {
-                top: 33%;
+            &:nth-child(3) {
+                top: 50%;
                 left: 0%;
                 -webkit-transform: translateX(100vw);
                         transform: translateX(100vw);
             }
-            &:nth-child(3) {
-                top: 66%;
+            &:nth-child(4) {
+                top: 75%;
                 left: 0%;
                 -webkit-transform: translateX(-100vw);
                         transform: translateX(-100vw);
@@ -259,115 +264,14 @@ $white: #ffffff;
 }
 
 .presentation-section__latest-events {
-    margin-top: 80px;
+    margin-top: 20%;
+    margin-left: 8%;
+    margin-right: 8%;
     text-align: center;
     
     h2 {
-        color: #424b54;
-        padding: 0 5%;
-    
-    }
-
-    .latest-events__feed {
-        display: grid;
-        grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end col-3-start] 1fr [col-3-end];
-        grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-3-start] 1fr [row-3-end];
-
-        width: 100vw;
-        height: 600px;
-
-        .feed__thumbnail {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            //CSS3 blur filter creates a white outline around the image. To avoid this, scale the image a little larger and clip at the edges.
-            -webkit-transform: scale(1.02);
-                    transform: scale(1.02);
-            overflow: hidden;
-
-            &:hover {
-                .feed__thumbnail-image {
-                    -webkit-filter: blur(3px);
-                            filter: blur(3px);
-                    transform: scale(1.1);
-                }
-                .feed__thumbnail-overlay {
-                    opacity: 0.8;
-                    a {
-                        pointer-events: auto;
-                    }
-                }
-            }
-
-            &:nth-child(1) {
-                grid-column: col-1-start / col-3-end;
-                grid-row: row-1-start / span 1;
-                .feed__thumbnail-image {
-                    background-image: url('../assets/event-posters/image-1.jpg');
-                }
-            }
-            &:nth-child(2) {
-                grid-column: col-1-start / col-3-end;
-                grid-row: row-2-start / span 1;
-                .feed__thumbnail-image {
-                    background-image: url('../assets/event-posters/image-2.jpg');
-                }
-            }
-            &:nth-child(3) {
-                grid-column: col-1-start / col-3-end;
-                grid-row: row-3-start / span 1;
-                .feed__thumbnail-image {
-                    background-image: url('../assets/event-posters/image-3.jpg');
-                }
-            }
-
-            .feed__thumbnail-image {
-                background-position: center;
-                background-size: cover;
-                height: 100%;
-                width: 100%;
-                transition: transform 0.5s;
-            }
-            
-            .feed__thumbnail-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-
-                height: 100%;
-                width: 100%;
-                background-color: rgba(0,0,0,0.5);
-                
-                opacity: 0;
-                -webkit-transition: opacity 0.5s ease;
-                transition: opacity 0.5s ease;
-
-                // Text styling
-                display: -webkit-box;
-                display: flex;
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                        flex-direction: column;
-                -webkit-box-pack: center;
-                        justify-content: center;
-                a {
-                    color: $white;
-                    text-decoration: none;
-                    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-                    0px 8px 13px rgba(0,0,0,0.1),
-                    0px 18px 23px rgba(0,0,0,0.1);
-                    pointer-events: none;
-
-                    letter-spacing: 0.3rem;
-                    &:hover {
-                        color: $pink;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
+        color: $grey;
+        border-left: $pink 8px solid;
     }
 }
 
@@ -375,8 +279,8 @@ $white: #ffffff;
     // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-    height: 0;
+    padding-top: 25px;
+    margin-top: 18%;
     
     iframe {
         position: absolute;
@@ -385,6 +289,13 @@ $white: #ffffff;
         width: 100%;
         height: 100%;
     }
+}
+
+.latest-events__poster {
+    width: 100%;
+    margin-top: 18%;
+    cursor: pointer;
+    
 }
 
 .fade-reveal {

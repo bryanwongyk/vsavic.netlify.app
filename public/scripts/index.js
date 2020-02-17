@@ -1,14 +1,14 @@
 // Scroll animations
 
 const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item--left'),
-        $CHAP_RIGHT                 = document.querySelector('.chapters__item--right'),
+        $CHAP_RIGHT                 = document.querySelectorAll('.chapters__item--right'),
         $CHAP_HEADER                = document.querySelector('.chapters__header'),
         $CTA_ARROW                  = document.querySelector('.scroll-cta__arrow'),
         $CTA_BUTTON                 = document.querySelector('.scroll-cta__button'),
         $HERO_IMAGE                 = document.querySelector('.hero-section__image'),
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
         $INTRO                      = document.querySelector('.presentation-section__intro'),
-        SCROLL_Y_BREAKPOINTS        = [130, 500, 680, 950, 1190];
+        SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 840, 1060, 1280];
         
 var heroHidden = false;
 
@@ -47,7 +47,6 @@ function initOnScrollContentAnimations() {
         - The call to action button in the hero section should fade out.
         - The hero image should fade out.
         - The chapter section text should fade in.
-    As the user scrolls back to before this breakpoint, elements should return to their initial state.
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[1]) {
         $CTA_ARROW.style.opacity = 0;
@@ -57,6 +56,7 @@ function initOnScrollContentAnimations() {
         $CHAP_HEADER.classList.add('fade-reveal');
         heroHidden = true;
     } else {
+        // As the user scrolls back to before this breakpoint, these elements should return to their initial state.
         $CTA_ARROW.style.opacity = 1;
         $CTA_BUTTON.style.opacity = 1;
         $HERO_IMAGE.style.opacity = 1;
@@ -77,7 +77,7 @@ function initOnScrollContentAnimations() {
         As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[3]) {
-        $CHAP_RIGHT.classList.add('slide-in');
+        $CHAP_RIGHT[0].classList.add('slide-in');
     }
     /*
         As the user scrolls past the 5th breakpoint:
@@ -86,7 +86,14 @@ function initOnScrollContentAnimations() {
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
         $CHAP_LEFT[1].classList.add('slide-in');
-
+    }
+        /*
+        As the user scrolls past the 6th breakpoint:
+            - The fourth chapter should slide in from the left.
+        As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
+    */
+   if (window.scrollY > SCROLL_Y_BREAKPOINTS[5]) {
+        $CHAP_RIGHT[1].classList.add('slide-in');
     }
 }
 
