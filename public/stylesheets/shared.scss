@@ -67,6 +67,10 @@ footer {
     }
 }
 
+::selection {
+    background: $pink; /* WebKit/Blink Browsers */
+  }
+
 .main-header {
     display: -webkit-box;
     display: flex;

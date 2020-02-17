@@ -4,7 +4,7 @@ $white: #ffffff;
 
 .contact-form {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 10%;
     
     label{
         display: block;
@@ -31,6 +31,7 @@ $white: #ffffff;
             border: none;
             width: 50%;
             padding: 4% 10%;
+            margin-top: 60px;
         
             font-family: Roboto, san-serif;
             font-weight: 900;
@@ -56,7 +57,71 @@ $white: #ffffff;
     }
 }
 
-img {
-    width: 100px;
+.contact-details-section {
+    display: grid;
+    grid-template-rows: repeat(4, [row-start] 1fr [row-end]);
+    margin: 10% 10%;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10% 0;
+}
+
+.contact-details__text {
+    text-align: center;
+
+}
+
+.contact-details__logo-image {
+    width: 75px;
     height: auto;
+}
+
+.contact-details__social-media {
+    text-align: center;
+    width: 80%;
+    margin-top: 2%;
+    i {
+        color: $grey;
+        margin: 0 8%;
+        transition: color 0.2s;
+        font-size: 15px;
+    }
+}
+
+.social-media__fb {
+    &:hover {
+        color: #3b5998;
+    }
+}
+
+.social-media__ig {
+    &:hover {
+        color: #E1306C;
+    }
+}
+
+.social-media__li {
+    &:hover {
+        color: #2867B2;
+    }
+}
+
+.social-media__yt {
+    &:hover {
+        color: #FF0000;
+    }
+}
+// .contact-details__text {
+    
+// }
+
+.text--highlight {
+    font-weight: 900;
+    display: block;
 }

@@ -58,6 +58,11 @@ footer .main-footer__copyright {
   text-align: center;
 }
 
+::selection {
+  background: #ed8eba;
+  /* WebKit/Blink Browsers */
+}
+
 .main-header {
   display: -webkit-box;
   display: flex;
