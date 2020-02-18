@@ -5,10 +5,10 @@ const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item
         $CHAP_HEADER                = document.querySelector('.chapters__header'),
         $CTA_ARROW                  = document.querySelector('.scroll-cta__arrow'),
         $CTA_BUTTON                 = document.querySelector('.scroll-cta__button'),
-        $HERO_IMAGE                 = document.querySelector('.hero-section__image'),
+        $HERO_SECTION               = document.querySelector('.hero-section'),
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
         $INTRO                      = document.querySelector('.presentation-section__intro'),
-        SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 840, 1060, 1280];
+        SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 775, 840, 1060, 1280];
         
 var heroHidden = false;
 
@@ -51,7 +51,6 @@ function initOnScrollContentAnimations() {
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[1]) {
         $CTA_ARROW.style.opacity = 0;
         $CTA_BUTTON.style.opacity = (1-(window.scrollY/700));
-        $HERO_IMAGE.style.opacity = (1-(window.scrollY/700));
         $CHAP_HEADER.classList.remove('fade-hide');
         $CHAP_HEADER.classList.add('fade-reveal');
         heroHidden = true;
@@ -59,7 +58,6 @@ function initOnScrollContentAnimations() {
         // As the user scrolls back to before this breakpoint, these elements should return to their initial state.
         $CTA_ARROW.style.opacity = 1;
         $CTA_BUTTON.style.opacity = 1;
-        $HERO_IMAGE.style.opacity = 1;
         heroHidden = false;
     }
 
@@ -77,6 +75,13 @@ function initOnScrollContentAnimations() {
         As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[3]) {
+        $HERO_SECTION.style.opacity = 0;
+        $HERO_SECTION.style.pointerEvents = 'none';
+    } else {
+        $HERO_SECTION.style.opacity = 1;
+        $HERO_SECTION.style.pointerEvents = 'auto';
+    }
+    if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
         $CHAP_RIGHT[0].classList.add('slide-in');
     }
     /*
@@ -84,7 +89,7 @@ function initOnScrollContentAnimations() {
             - The third chapter should slide in from the left.
         As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
     */
-    if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
+    if (window.scrollY > SCROLL_Y_BREAKPOINTS[5]) {
         $CHAP_LEFT[1].classList.add('slide-in');
     }
         /*
@@ -92,7 +97,7 @@ function initOnScrollContentAnimations() {
             - The fourth chapter should slide in from the left.
         As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
     */
-   if (window.scrollY > SCROLL_Y_BREAKPOINTS[5]) {
+   if (window.scrollY > SCROLL_Y_BREAKPOINTS[6]) {
         $CHAP_RIGHT[1].classList.add('slide-in');
     }
 }

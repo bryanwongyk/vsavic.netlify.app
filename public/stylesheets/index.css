@@ -1,4 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap");
+.hero-section:before {
+  position: fixed;
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
+  transform: scale(1.2);
+}
+
 .hero-section {
   height: 100vh;
   max-width: 100vw;
@@ -6,26 +24,12 @@
   grid-template-rows: [row-1-start] 75% [row-1-end row-2-start] 25% [row-2-end];
   grid-template-columns: repeat(12, [col-start] 1fr);
 }
-.hero-section .hero-section__image {
+.hero-section .hero-section__text {
   grid-row: row-1-start/row-2-end;
   grid-column: col-start 1/col-start 13;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%;
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
@@ -126,7 +130,7 @@
   -webkit-box-align: center;
   align-items: center;
   height: 300px;
-  margin-top: 20%;
+  padding-top: 20%;
 }
 .presentation-section__intro h2 {
   color: #ed8eba;
