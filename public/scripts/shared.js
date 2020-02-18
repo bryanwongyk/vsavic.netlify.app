@@ -9,6 +9,7 @@ const   $BRAND                      = document.querySelector('.main-header__bran
         $MOBILE_NAV_BG              = document.querySelector('.mobile-nav__background'),
         $MOBILE_NAV_ITEM            = document.querySelectorAll('.mobile-nav__item'),
         $MOBILE_NAV_ITEMS_LIST      = document.querySelector('.mobile-nav__items'),
+        $MOBILE_NAV_SOCIAL_MEDIA    = document.querySelector('#mobile-nav__social-media'),
         $TOGGLE_BTN                 = document.querySelector('.toggle-button'),
         $TOGGLE_BTN_BARS            = document.querySelectorAll('.toggle-button__bar');
 
@@ -68,7 +69,6 @@ function openMobileMenu() {
     let timeOutDelay = 100;
 
     // Change the display of $MOBILE_NAV from 'none' to 'flex'.
-    $MOBILE_NAV.classList.remove('mobile-nav__hide');
     $MOBILE_NAV.classList.add('mobile-nav__open');
 
     /* 
@@ -88,6 +88,7 @@ function openMobileMenu() {
         }
         // Trigger transition in of menu items.
         $MOBILE_NAV_ITEMS_LIST.classList.add('mobile-nav__items--reveal');
+        $MOBILE_NAV_SOCIAL_MEDIA.classList.add('mobile-nav__items--reveal');
     }, timeOutDelay);
 
     // To prevent scrolling on the body while the mobile menu is open. This will also cause the page to automatically scroll to the top.
@@ -118,21 +119,15 @@ function closeMobileMenu() {
    
     // Execute transition that hides the links.
     $MOBILE_NAV_ITEMS_LIST.classList.remove('mobile-nav__items--reveal');
-    $MOBILE_NAV_ITEMS_LIST.classList.add('mobile-nav__items--hide');
+    $MOBILE_NAV_SOCIAL_MEDIA.classList.remove('mobile-nav__items--reveal');
 
     // Execute transition that hides the mobile menu background.
-    $MOBILE_NAV_BG.classList.add('mobile-nav__background--close');
     $MOBILE_NAV_BG.classList.remove('mobile-nav__background--open');
 
     // AFTER the transitions are done
     setTimeout(() => {
         // Set display of the mobile nav-bar menu to 'none'
         $MOBILE_NAV.classList.remove('mobile-nav__open');
-        $MOBILE_NAV.classList.add('mobile-nav__hide');
-
-        // Remove the classes added to animate the closure of the items and background.
-        $MOBILE_NAV_ITEMS_LIST.classList.remove('mobile-nav__items--hide');
-        $MOBILE_NAV_BG.classList.remove('mobile-nav__background--close');
     }, timeOutDelay);
 
     // Make brand clickable again.
