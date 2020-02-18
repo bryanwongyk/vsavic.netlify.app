@@ -21,8 +21,6 @@ $white: #ffffff;
     -o-background-size: cover;
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
-
-    transform: scale(1.2);
 }
 
 .hero-section {
@@ -271,6 +269,7 @@ $white: #ffffff;
     margin-left: 8%;
     margin-right: 8%;
     text-align: center;
+    opacity: 0;
     
     h2 {
         color: $grey;
@@ -324,10 +323,10 @@ $white: #ffffff;
     }
 }
 
-@media only screen and (max-device-width: 1366px) {
-    .hero-section .hero-section__image {
-      background-attachment: scroll;
-    }
-  }
+// @media only screen and (max-device-width: 1366px) {
+//     .hero-section .hero-section__image {
+//       background-attachment: scroll;
+//     }
+//   }
 
   

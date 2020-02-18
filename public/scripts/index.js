@@ -8,7 +8,8 @@ const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item
         $HERO_SECTION               = document.querySelector('.hero-section'),
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
         $INTRO                      = document.querySelector('.presentation-section__intro'),
-        SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 775, 840, 1060, 1280];
+        $LATEST_EVENTS              = document.querySelector('.presentation-section__latest-events'),
+        SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 775, 840, 1060, 1280, 1440];
         
 var heroHidden = false;
 
@@ -51,7 +52,6 @@ function initOnScrollContentAnimations() {
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[1]) {
         $CTA_ARROW.style.opacity = 0;
         $CTA_BUTTON.style.opacity = (1-(window.scrollY/700));
-        $CHAP_HEADER.classList.remove('fade-hide');
         $CHAP_HEADER.classList.add('fade-reveal');
         heroHidden = true;
     } else {
@@ -99,6 +99,9 @@ function initOnScrollContentAnimations() {
     */
    if (window.scrollY > SCROLL_Y_BREAKPOINTS[6]) {
         $CHAP_RIGHT[1].classList.add('slide-in');
+    }
+    if (window.scrollY > SCROLL_Y_BREAKPOINTS[7]) {
+        $LATEST_EVENTS.classList.add('fade-reveal');
     }
 }
 

@@ -72,20 +72,22 @@ function openMobileMenu() {
     $MOBILE_NAV.classList.add('mobile-nav__open');
 
     /* 
-    Hide the brand and make it unclickable.
     By setting the opacity of the brand to '0' and removing hover events, rather than setting its display to 'none', the position of the toggle button can still be 
     maintained in the header flexbox container in relation to the brand.
     */
-    $BRAND.classList.add('hidden');
-    $BRAND.classList.add('unclickable');
 
     // Execute transition in of menu background AFTER the mobile-nav's display is changed from 'none' (otherwise it will not execute).
     setTimeout(() => {
         $MOBILE_NAV_BG.classList.add('mobile-nav__background--open');  
 
         if (isOnPage('index.html')) {
-            resetHeader();
+                // Replace alternate logo with original logo that does not have hover effects.
+            $LOGO_ALT.classList.remove('image_on');
+            $LOGO_ALT.classList.add('brand-alt-hover--disable');
+            $LOGO.classList.remove('image_off');
+            $LOGO.classList.add('brand-hover--disable');
         }
+        
         // Trigger transition in of menu items.
         $MOBILE_NAV_ITEMS_LIST.classList.add('mobile-nav__items--reveal');
         $MOBILE_NAV_SOCIAL_MEDIA.classList.add('mobile-nav__items--reveal');
@@ -124,15 +126,15 @@ function closeMobileMenu() {
     // Execute transition that hides the mobile menu background.
     $MOBILE_NAV_BG.classList.remove('mobile-nav__background--open');
 
+    if (isOnPage('index.html')) {
+        resetHeader();
+    }
+
     // AFTER the transitions are done
     setTimeout(() => {
         // Set display of the mobile nav-bar menu to 'none'
         $MOBILE_NAV.classList.remove('mobile-nav__open');
     }, timeOutDelay);
-
-    // Make brand clickable again.
-    $BRAND.classList.remove('hidden');
-    $BRAND.classList.remove('unclickable');
 
     // Make body scroll-able again.
     $BODY.style.position = 'static';

@@ -133,28 +133,28 @@ main a {
   transition: background-color 0.2s;
 }
 .toggle-button .toggle-button__bar-1--clicked {
-  -webkit-animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
-  animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
+  -webkit-animation: toggle-button__bar-1-clicked__animation 0.2s 1 forwards ease-in;
+  animation: toggle-button__bar-1-clicked__animation 0.2s 1 forwards ease-in;
 }
 .toggle-button .toggle-button__bar-2--clicked {
-  -webkit-animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards ease-in;
-  animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards ease-in;
+  -webkit-animation: toggle-button__bar-2-clicked__animation 0.2s 1 forwards ease-in;
+  animation: toggle-button__bar-2-clicked__animation 0.2s 1 forwards ease-in;
 }
 .toggle-button .toggle-button__bar-3--clicked {
-  -webkit-animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards ease-in;
-  animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards ease-in;
+  -webkit-animation: toggle-button__bar-3-clicked__animation 0.2s 1 forwards ease-in;
+  animation: toggle-button__bar-3-clicked__animation 0.2s 1 forwards ease-in;
 }
 .toggle-button .toggle-button__bar-1--clicked-off {
-  -webkit-animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards ease-in;
-  animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards ease-in;
+  -webkit-animation: toggle-button__bar-1-clicked-off__animation 0.2s 1 forwards ease-in;
+  animation: toggle-button__bar-1-clicked-off__animation 0.2s 1 forwards ease-in;
 }
 .toggle-button .toggle-button__bar-2--clicked-off {
-  -webkit-animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards ease-in;
-  animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards ease-in;
+  -webkit-animation: toggle-button__bar-2-clicked-off__animation 0.2s 1 forwards ease-in;
+  animation: toggle-button__bar-2-clicked-off__animation 0.2s 1 forwards ease-in;
 }
 .toggle-button .toggle-button__bar-3--clicked-off {
-  -webkit-animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards ease-in;
-  animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards ease-in;
+  -webkit-animation: toggle-button__bar-3-clicked-off__animation 0.2s 1 forwards ease-in;
+  animation: toggle-button__bar-3-clicked-off__animation 0.2s 1 forwards ease-in;
 }
 
 @-webkit-keyframes toggle-button__bar-1-clicked__animation {
@@ -358,7 +358,7 @@ main a {
   transition: opacity 0.2s linear;
 }
 .mobile-nav .mobile-nav__items .mobile-nav__item {
-  margin: 15% 0;
+  margin: 8% 0;
 }
 .mobile-nav .mobile-nav__items .mobile-nav__item:hover .mobile-nav__item-highlight {
   animation: mobile-nav__item-highlight-animation 0.4s forwards;
@@ -378,6 +378,11 @@ main a {
   transition-delay: 0.4s;
 }
 
+.mobile-nav__item--current {
+  color: #e94c95 !important;
+  font-weight: 600;
+}
+
 .mobile-nav__item-highlight {
   width: 0%;
   height: 3px;
@@ -392,7 +397,7 @@ main a {
   display: flex;
   justify-content: space-between;
   width: 50%;
-  margin-top: 15%;
+  margin-top: 10%;
   opacity: 0;
   -webkit-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear;
@@ -469,6 +474,7 @@ main a {
   font-family: Montserrat, sans-serif;
   font-size: 0.7rem;
   color: #59636d;
+  margin-top: 5%;
 }
 .main-footer .main-footer__links {
   font-family: Roboto, sans-serif;
@@ -520,6 +526,7 @@ main a {
 }
 
 .text-container {
+  background-color: white;
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
@@ -530,6 +537,14 @@ main a {
 
 .header {
   text-align: center;
+  margin-bottom: 0;
+}
+
+.header-highlight {
+  margin: 0 auto;
+  height: 4px;
+  width: 40%;
+  background-color: #ed8eba;
 }
 
 /*# sourceMappingURL=shared.css.map */

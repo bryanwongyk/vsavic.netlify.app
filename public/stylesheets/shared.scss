@@ -150,33 +150,33 @@ main {
         transition: background-color 0.2s;
     }
     .toggle-button__bar-1--clicked {
-        -webkit-animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
-                animation: toggle-button__bar-1-clicked__animation 0.3s 1 forwards ease-in;
+        -webkit-animation: toggle-button__bar-1-clicked__animation 0.2s 1 forwards ease-in;
+                animation: toggle-button__bar-1-clicked__animation 0.2s 1 forwards ease-in;
     }
 
     .toggle-button__bar-2--clicked {
-        -webkit-animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards ease-in;
-                animation: toggle-button__bar-2-clicked__animation 0.3s 1 forwards ease-in;
+        -webkit-animation: toggle-button__bar-2-clicked__animation 0.2s 1 forwards ease-in;
+                animation: toggle-button__bar-2-clicked__animation 0.2s 1 forwards ease-in;
     }
 
     .toggle-button__bar-3--clicked {
-        -webkit-animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards ease-in;
-                animation: toggle-button__bar-3-clicked__animation 0.3s 1 forwards ease-in;
+        -webkit-animation: toggle-button__bar-3-clicked__animation 0.2s 1 forwards ease-in;
+                animation: toggle-button__bar-3-clicked__animation 0.2s 1 forwards ease-in;
     }
 
     .toggle-button__bar-1--clicked-off {
-        -webkit-animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards ease-in;
-                animation: toggle-button__bar-1-clicked-off__animation 0.3s 1 forwards ease-in;
+        -webkit-animation: toggle-button__bar-1-clicked-off__animation 0.2s 1 forwards ease-in;
+                animation: toggle-button__bar-1-clicked-off__animation 0.2s 1 forwards ease-in;
     }
 
     .toggle-button__bar-2--clicked-off {
-        -webkit-animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards ease-in;
-                animation: toggle-button__bar-2-clicked-off__animation 0.3s 1 forwards ease-in;
+        -webkit-animation: toggle-button__bar-2-clicked-off__animation 0.2s 1 forwards ease-in;
+                animation: toggle-button__bar-2-clicked-off__animation 0.2s 1 forwards ease-in;
     }
 
     .toggle-button__bar-3--clicked-off {
-        -webkit-animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards ease-in;
-                animation: toggle-button__bar-3-clicked-off__animation 0.3s 1 forwards ease-in;
+        -webkit-animation: toggle-button__bar-3-clicked-off__animation 0.2s 1 forwards ease-in;
+                animation: toggle-button__bar-3-clicked-off__animation 0.2s 1 forwards ease-in;
     }
 }
 
@@ -401,7 +401,7 @@ main {
         transition: opacity 0.2s linear;
     
         .mobile-nav__item {
-            margin: 15% 0;
+            margin: 8% 0;
 
             &:hover {
                 .mobile-nav__item-highlight {
@@ -428,6 +428,11 @@ main {
     }
 }
 
+.mobile-nav__item--current {
+    color: #e94c95 !important;
+    font-weight: 600;
+}
+
 .mobile-nav__item-highlight {
     width: 0%;
     height: 3px;
@@ -443,7 +448,7 @@ main {
     display: flex;
     justify-content: space-between;
     width: 50%;
-    margin-top: 15%;
+    margin-top: 10%;
 
     opacity: 0;
     // Have to make sure the fadeout is shorter than the time needed to fade out the background.
@@ -531,7 +536,7 @@ main {
         font-family: Montserrat, sans-serif;
         font-size: 0.7rem;
         color: #59636d;
-
+        margin-top: 5%;
     }
 
     .main-footer__links {
@@ -589,6 +594,7 @@ main {
 }
 
 .text-container {
+    background-color: white;
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
@@ -600,4 +606,12 @@ main {
 
 .header {
     text-align: center;
+    margin-bottom: 0;
+}
+
+.header-highlight {
+    margin: 0 auto;
+    height: 4px;
+    width: 40%;
+    background-color: $pink;
 }
