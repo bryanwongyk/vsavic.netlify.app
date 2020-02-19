@@ -9,9 +9,12 @@ const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
         $INTRO                      = document.querySelector('.presentation-section__intro'),
         $LATEST_EVENTS              = document.querySelector('.presentation-section__latest-events'),
+        $SLIDESHOW_SLIDES           = document.querySelectorAll('.slideshow__slide'),
+        $SLIDESHOW_TABS              = document.querySelectorAll('.slideshow__tab'),
         SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 775, 840, 1060, 1280, 1440];
         
 var heroHidden = false;
+var slideIndex = 0; // Index corresponds to the current slide being displayed in the hero section.
 
 initIndex();
 
@@ -21,6 +24,60 @@ function initIndex(){
         initOnScrollContentAnimations();
         initOnScrollHeaderAnimations();
     };
+    initHeaderSlideshow();
+}
+
+function initHeaderSlideshow() {
+    // Add event listeners to slide tabs to make them clickable
+    for (let i=0; i<$SLIDESHOW_TABS.length; i++) {
+        $SLIDESHOW_TABS[i].addEventListener('click', () => {
+            // Set the slide index to the slide that has been clicked on.
+            slideIndex = i;
+            // Initially remove all slides from display
+            for (let j=0; j<$SLIDESHOW_SLIDES.length; j++) {
+                $SLIDESHOW_SLIDES[j].style.display = "none";
+                $SLIDESHOW_TABS[j].classList.remove('slideshow__tab--active');
+            }
+            // Display the slide image corresponding to the clicked tab.
+            $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+            $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
+            slideIndex ++;
+
+            // Reset the interval timer
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => {
+                if (slideIndex === $SLIDESHOW_SLIDES.length) {
+                    slideIndex = 0;
+                }
+                for (let i=0; i<$SLIDESHOW_SLIDES.length; i++) {
+                    $SLIDESHOW_SLIDES[i].style.display = "none";
+                    $SLIDESHOW_TABS[i].classList.remove('slideshow__tab--active');
+                }
+                $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+                $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
+                slideIndex ++;
+            }, 3000);
+        });
+    }
+
+    // Play initial slide first, and make its tab active.
+    $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+    $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
+    slideIndex ++;
+
+    // Every interval, display the next slide, and make its respective tab active.
+    var slideTimer = setInterval(() => {
+        if (slideIndex === $SLIDESHOW_SLIDES.length) {
+            slideIndex = 0;
+        }
+        for (let i=0; i<$SLIDESHOW_SLIDES.length; i++) {
+            $SLIDESHOW_SLIDES[i].style.display = "none";
+            $SLIDESHOW_TABS[i].classList.remove('slideshow__tab--active');
+        }
+        $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+        $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
+        slideIndex ++;
+    }, 3000);
 }
 
 function initOnScrollContentAnimations() {
