@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap");
 .slideshow__tabs {
   grid-row: row-3-start/row-3-end;
-  grid-column: col-start 1/col-start 13;
-  width: 100%;
+  grid-column: col-start 3/col-end 10;
+  width: 80%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -10,13 +10,13 @@
 
 .slideshow__tab {
   width: 15%;
-  border-radius: 25%;
+  padding-top: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
 
 .slideshow__tab--active {
-  border-bottom: 3px solid white;
+  border-bottom: 2.5px solid white;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -24,7 +24,7 @@
   height: 100vh;
   max-width: 100vw;
   display: grid;
-  grid-template-rows: [row-1-start] 60% [row-1-end row-2-start] 35% [row-2-end row-3-start] 5% [row-3-end];
+  grid-template-rows: [row-1-start] 65% [row-1-end row-2-start] 25% [row-2-end row-3-start] 10% [row-3-end];
   grid-template-columns: repeat(12, [col-start] 1fr);
 }
 .hero-section .hero-section__slideshow {
@@ -112,7 +112,7 @@
 }
 .hero-section .hero-section__scroll-cta .scroll-cta__button {
   border: 2px white solid;
-  padding: 20px;
+  padding: 10px;
   font-family: Roboto, san-serif;
   font-weight: 900;
   font-size: 1rem;
@@ -290,7 +290,7 @@
   padding-bottom: 56.25%;
   /* 16:9 */
   padding-top: 25px;
-  margin-top: 18%;
+  margin-top: 20%;
 }
 .video-container iframe {
   position: absolute;
@@ -300,10 +300,29 @@
   height: 100%;
 }
 
-.latest-events__poster {
+.latest-events__latest-event {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.latest-event__poster {
   width: 100%;
-  margin-top: 18%;
   cursor: pointer;
+}
+
+.latest-event__poster-badge {
+  position: absolute;
+  top: -4%;
+  left: -3%;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  background: linear-gradient(to right, #ed8eba, #eb9ec3);
+  box-shadow: 5px 5px 8px #21212169;
+  font-family: Roboto, san-serif;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .fade-reveal {

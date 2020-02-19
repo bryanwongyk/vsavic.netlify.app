@@ -9,8 +9,8 @@ var     $CARDS,
         isCardSelected = false,
         cardSelectedIndex,
         eventCount = 0,
-        allImgSrcs = ["../public/assets/event-posters/vsa-vic/2020-camp.png", "../public/assets/event-posters/vsa-rmit/2019-little-lunch.jpg", "../public/assets/event-posters/vsa-uom/2019-kahoot.jpg", "../public/assets/event-posters/vsa-rmit/2019-agm.jpg", "../public/assets/event-posters/vsa-rmit/2019-com-tam.jpg", "../public/assets/event-posters/vsa-uom/2019-sport.jpg", "../public/assets/event-posters/vsa-vic/2019-charity-dinner.jpg", "../public/assets/event-posters/vsa-vic/2019-alumni-night.jpg", "../public/assets/event-posters/vsa-monash/2019-agm.png", "../public/assets/event-posters/vsa-monash/2019-mid-autumn.jpg", "../public/assets/event-posters/vsa-uom/2019-agm.jpg", "../public/assets/event-posters/vsa-collabs/2019-sport.png", "../public/assets/event-posters/vsa-vic/2019-ball.jpg", "../public/assets/event-posters/vsa-monash/2019-pho-night.png", "../public/assets/event-posters/vsa-vic/2019-camp-reunion.jpg", "../public/assets/event-posters/vsa-vic/2019-camp.jpg"],
-        allEventLinks = [  "https://www.facebook.com/events/870768526685134/", 
+        allImgSrcs = ["../public/assets/event-posters/vsa-rmit/2019-little-lunch.jpg", "../public/assets/event-posters/vsa-uom/2019-kahoot.jpg", "../public/assets/event-posters/vsa-rmit/2019-agm.jpg", "../public/assets/event-posters/vsa-rmit/2019-com-tam.jpg", "../public/assets/event-posters/vsa-uom/2019-sport.jpg", "../public/assets/event-posters/vsa-vic/2019-charity-dinner.jpg", "../public/assets/event-posters/vsa-vic/2019-alumni-night.jpg", "../public/assets/event-posters/vsa-monash/2019-agm.png", "../public/assets/event-posters/vsa-monash/2019-mid-autumn.jpg", "../public/assets/event-posters/vsa-uom/2019-agm.jpg", "../public/assets/event-posters/vsa-collabs/2019-sport.png", "../public/assets/event-posters/vsa-vic/2019-ball.jpg", "../public/assets/event-posters/vsa-monash/2019-pho-night.png", "../public/assets/event-posters/vsa-vic/2019-camp-reunion.jpg", "../public/assets/event-posters/vsa-vic/2019-camp.jpg"],
+        allEventLinks = [
                         "https://www.facebook.com/events/967524880278099/", 
                         "https://www.facebook.com/events/1183216525203485/", 
                         "https://www.facebook.com/events/2407960442863953/", 
@@ -27,7 +27,7 @@ var     $CARDS,
                         "https://www.facebook.com/events/309829899680150/", 
                         "https://www.facebook.com/events/396846704197244/"
                          ],
-        allEventNames = [  "Prison Break: VSA O-Camp 2020", 
+        allEventNames = [
                         "RMIT VSA Presents: Little Lunch", 
                         "VSA UoM Presents: Kahoot Night", 
                         "RMIT VSA Presents: Annual General Meeting (AGM) 2019", 
@@ -45,7 +45,7 @@ var     $CARDS,
                         "Operation: VSA O-Camp 2019"
                         ],
         // Each index in eventCategories corresponds to the respective matching index of the event in imgSrcs e.g. if vic is in index 1 of eventCategories, then index 1 of imgSrcs is an image of a VSA VIC event.
-        eventCategories = [["vic"], 
+        eventCategories = [
                     ["rmit"], 
                     ["uom"], 
                     ["rmit"], 
@@ -125,7 +125,7 @@ function filterUpdateGallery() {
     var filteredEventLinks = [];
     
     if ($DROPDOWN_VALUE === 'all') {
-        updateGallery(allImgSrcs);
+        updateGallery(allImgSrcs, allEventNames, allEventLinks);
     } else {
         // Iterate through each event
         for (let i=0; i < eventCount; i++) {

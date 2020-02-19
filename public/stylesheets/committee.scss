@@ -43,7 +43,7 @@
 
 
 .committee-container {
-    margin: 10% 0;
+    margin-top: 10%;
 }
 
 
@@ -75,6 +75,15 @@
         .member__name, .member__position {
             text-align: center;
             vertical-align: top;
+            font-family: Montserrat, sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .member__position {
+            font-weight: 600;
+        }
+        .member__name {
+            margin-top: 5px;
         }
     }
 }

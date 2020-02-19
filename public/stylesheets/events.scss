@@ -3,8 +3,29 @@ $grey: #424b54;
 $white: #ffffff;
 
 .poster-section {
-    margin: 0 10%;
+    margin: 10% 10% 0 10%;
+
+    h2 {
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    h4 {
+        margin: 48px 0 48px 0;
+        font-style: italic;
+        text-align: center;
+    }
+
+    label {
+        font-family: Roboto, san-serif;
+        font-size: 1rem;
+    }
+
+    .filter-mobile-container {
+        margin-top: 10px;
+    }
 }
+
 .poster-section__highlighted-poster {
     width: 100%;
 }
@@ -176,13 +197,13 @@ select {
     text-decoration: none;
     background: #fff;
     color: black;
-    border: #3b5998 1px solid;
-    padding: 15px;
+    border: $grey 1px solid;
+    padding: 10px;
     margin: 0 auto;
     border-radius: 5px;
 
     font-size: 0.8rem;
-    color: #3b5998;
+    color: $grey;
     
     &:hover {
         background:#3b5998;
@@ -190,8 +211,9 @@ select {
     }
 
     i {
-        font-size: 30px;
+        font-size: 1rem;
         margin-right: 15px;
+        color: #3b5998;
     }
 }
 
@@ -199,4 +221,60 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.content__list {
+    list-style: none;
+    text-align: left;
+    border-left: 4px solid $pink;
+    padding-left: 50px;
+    
+ 
+}
+
+.content__list-paragraph {
+    font-weight: bold;
+}
+
+.latest-event__container {
+    margin-top: 10%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    // background: #f9b3d5;
+    padding: 8%;
+
+    .latest-event {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            // box-shadow: 5px 5px 8px rgba(206,127,165,0.7);
+        }
+    
+        .latest-event__badge {
+            position: absolute;
+            top: -4%;
+            left: -3%;
+            color: white;
+            padding: 10px 20px 10px 20px;
+            background: linear-gradient(to right, $pink, rgb(235, 158, 195));
+            box-shadow: 5px 5px 8px #21212169;
+
+            font-family: Roboto, san-serif;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+}
+
+.latest-event__fb {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 32px;
+    text-align: center;
+    text-decoration: none;
+    color: $grey;
 }

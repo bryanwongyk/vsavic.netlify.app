@@ -1,5 +1,21 @@
 .poster-section {
-  margin: 0 10%;
+  margin: 10% 10% 0 10%;
+}
+.poster-section h2 {
+  margin-bottom: 0px;
+  text-align: center;
+}
+.poster-section h4 {
+  margin: 48px 0 48px 0;
+  font-style: italic;
+  text-align: center;
+}
+.poster-section label {
+  font-family: Roboto, san-serif;
+  font-size: 1rem;
+}
+.poster-section .filter-mobile-container {
+  margin-top: 10px;
 }
 
 .poster-section__highlighted-poster {
@@ -146,26 +162,74 @@ select:focus {
   text-decoration: none;
   background: #fff;
   color: black;
-  border: #3b5998 1px solid;
-  padding: 15px;
+  border: #424b54 1px solid;
+  padding: 10px;
   margin: 0 auto;
   border-radius: 5px;
   font-size: 0.8rem;
-  color: #3b5998;
+  color: #424b54;
 }
 #highlighted-slide__link:hover {
   background: #3b5998;
   color: white;
 }
 #highlighted-slide__link i {
-  font-size: 30px;
+  font-size: 1rem;
   margin-right: 15px;
+  color: #3b5998;
 }
 
 .poster-gallery {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.content__list {
+  list-style: none;
+  text-align: left;
+  border-left: 4px solid #ed8eba;
+  padding-left: 50px;
+}
+
+.content__list-paragraph {
+  font-weight: bold;
+}
+
+.latest-event__container {
+  margin-top: 10%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 8%;
+}
+.latest-event__container .latest-event {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.latest-event__container .latest-event img {
+  width: 100%;
+}
+.latest-event__container .latest-event .latest-event__badge {
+  position: absolute;
+  top: -4%;
+  left: -3%;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  background: linear-gradient(to right, #ed8eba, #eb9ec3);
+  box-shadow: 5px 5px 8px #21212169;
+  font-family: Roboto, san-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.latest-event__fb {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  text-align: center;
+  text-decoration: none;
+  color: #424b54;
 }
 
 /*# sourceMappingURL=events.css.map */

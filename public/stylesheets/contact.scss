@@ -9,21 +9,33 @@ $white: #ffffff;
     label{
         display: block;
         width: 100%;
-        margin-top: 3%;
+        margin: 3% 0 1% 0;
+        font-family: Roboto, san-serif;
+        font-size: 1rem;
     }
-    input[type="text"]{
+    input {
+        margin-bottom: 10px;
+        background-color: $white;
+    }
+
+    input[type="text"], input[type="email"], textarea{
         width: 100%;
         border: 2px solid #ccc;
         padding: 8px 5px;
         // ADD FONT OR INHERIT FONT
+        font-family: Roboto, san-serif;
 
+        &:focus {
+            outline: none;
+            border-color: $pink;
+        }
     }
-    textarea {
-        width: 100%;
-        border: 1px solid #ccc;
-        // ADD FONT OR INHERIT FONT
 
+    :invalid {
+        border-color: red !important;
+        background: #faacac;
     }
+
     .contact-form__button {
         text-align: center;
 

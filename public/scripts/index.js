@@ -93,11 +93,15 @@ function initOnScrollContentAnimations() {
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[0]) {
         $HERO_TEXT.style.opacity = (1-(window.scrollY/250));
+        $CTA_ARROW.style.opacity = 0;
+        $CTA_BUTTON.style.opacity = (1-(window.scrollY/700));
 
         $INTRO.classList.remove('fade-hide');
         $INTRO.classList.add('fade-reveal');
     } else {
         $HERO_TEXT.style.opacity = 1;
+        $CTA_ARROW.style.opacity = 1;
+        $CTA_BUTTON.style.opacity = 1;
     }
 
     /*
@@ -107,14 +111,10 @@ function initOnScrollContentAnimations() {
         - The chapter section text should fade in.
     */
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[1]) {
-        $CTA_ARROW.style.opacity = 0;
-        $CTA_BUTTON.style.opacity = (1-(window.scrollY/700));
         $CHAP_HEADER.classList.add('fade-reveal');
         heroHidden = true;
     } else {
         // As the user scrolls back to before this breakpoint, these elements should return to their initial state.
-        $CTA_ARROW.style.opacity = 1;
-        $CTA_BUTTON.style.opacity = 1;
         heroHidden = false;
     }
 

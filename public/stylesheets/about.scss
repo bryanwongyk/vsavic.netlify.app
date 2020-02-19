@@ -62,7 +62,7 @@ main {
 .button-container {
     display: flex;
     justify-content: center;
-    margin: 10% 0;
+    margin-top: 10%;
 }
 
 .default-cta__button {
@@ -73,9 +73,18 @@ main {
     font-weight: 900;
     font-size: 1rem;
     text-align: center;
+    text-decoration: none;
     color: $grey;
 
     background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        margin-left: 10%;
+    }
 
     &:hover {
         cursor: pointer;

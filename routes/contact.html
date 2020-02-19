@@ -33,7 +33,7 @@
                     <div class="mobile-nav__item-highlight"></div>
                 </li>
                 <li class="mobile-nav__item"> 
-                    <a href="./about.html">ABOUT</a>
+                    <a href="./about.html">ABOUT US</a>
                     <div class="mobile-nav__item-highlight"></div>
                 </li>
                 <li class="mobile-nav__item"> 
@@ -77,12 +77,12 @@
                 <input type="text" name="name" id="name">
     
                 <label for="email"> E-mail * </label>
-                <input type="text" name="_replyto" id="email">
+                <input type="email" name="_replyto" id="email">
     
                 <label for="subject">Subject *</label>
                 <input type="text" name="subject">
     
-                <label for="message">Your message </label>
+                <label for="message">Your message * </label>
                 <textarea name="message" id="message"></textarea>
     
                 <div class="contact-form__button">
@@ -164,29 +164,41 @@
 
     <footer class="main-footer">
         <nav>
+            <div class="main-footer__cta">
+                <p> Message us to join as a member today! </p>
+            </div>
+            <div>
+                <a href="../index.html">
+                    <img class="main-footer__logo" src="../public/assets/logos/vsa-vic-header.png" alt="VSA Victoria Logo"> 
+                </a>
+            </div>
             <ul class="main-footer__links">
                 <li class="main-footer__link">
-                    <a href="#">
+                    <a href="./about.html">
+                        About Us
+                    </a>
+                </li>
+                <li class="main-footer__link">
+                    <a href="./contact.html">
                         Contact us
                     </a>
                 </li>
-                <li class="main-footer__social-media">
-                    <!-- Social media icons/links -->
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.facebook.com/vsavictoria/"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.instagram.com/vsa.vic/?hl=en"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.linkedin.com/company/vsavictoria/about/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.youtube.com/channel/UC5_oB_6wQa5R5q853akNNHA"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </li>
-                
             </ul>
+            <div class="main-footer__social-media">
+                <!-- Social media icons/links -->
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.facebook.com/vsavictoria/"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.instagram.com/vsa.vic/?hl=en"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.linkedin.com/company/vsavictoria/about/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.youtube.com/channel/UC5_oB_6wQa5R5q853akNNHA"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
             <div class="main-footer__copyright">
                 <!-- date to be changed via JavaScript-->
                 <p> © VSA Victoria <span id="copyright-year"></span></p>

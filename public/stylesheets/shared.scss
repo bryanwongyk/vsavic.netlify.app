@@ -45,10 +45,17 @@ main {
     h3 {
         font-family: Montserrat, sans-serif;
         font-weight: 600;  
+        font-size: 1.4rem;
     }
-    p {
+    h4 {
+        font-family: Montserrat, sans-serif;
+        font-weight: 400;  
+        font-size: 1rem;
+    }
+    p, ul {
         font-family: Montserrat, sans-serif;
         line-height: 1.9rem;
+        font-size: 1rem;
     }
     a {
         font-weight: 400;
@@ -472,6 +479,8 @@ main {
                 justify-content: center;
         -webkit-box-align: center;
                 align-items: center;
+
+        transition: background 0.2s;
         
     
         &:hover {
@@ -517,9 +526,17 @@ main {
     display: flex;
 }
 
+.main-footer__logo {
+    width: 75px;
+    height: auto;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
 .main-footer {
     background: white;
-    padding: 32px;
+    margin-top: 15%;
+    margin-bottom: 16px;
     grid-area: footer;
     text-align: center;
 
@@ -527,33 +544,46 @@ main {
         margin: 0;
     }
 
+    .main-footer__cta {
+        background-color: black;
+        color: white;
+        padding: 8% 0;
+        text-transform: uppercase;
+        font-family: Bebas Neue, san-serif;
+        letter-spacing: 1px;
+    }
+
     .main-footer__copyright {
         font-family: Roboto, sans-serif;
         color: $grey;
-        font-size: 1rem;
+        font-size: 0.7rem;
+        margin-top: 32px;
+        margin-bottom: 0px;
     }
     .main-footer__watermark {
         font-family: Montserrat, sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         color: #59636d;
-        margin-top: 5%;
+        margin-top: 16px;
     }
 
     .main-footer__links {
         font-family: Roboto, sans-serif;
         list-style: none;
         padding: 0;
+        margin-top: 16px;
+        margin-bottom: 0px;
 
         .main-footer__link {
-            margin: 5% 0;
+            margin-bottom: 1%;
             a {
-                font-size: 1rem;
+                font-size: 0.8rem;
                 color: black;
                 text-decoration: none; 
                 text-transform: uppercase;  
                 
                 &:hover {
-                    color: $grey;
+                    color: $pink;
                 }
             }
         }
@@ -563,15 +593,18 @@ main {
 .main-footer__social-media {
     display: -webkit-box;
     display: flex;
-    -webkit-box-pack: center;
-            justify-content: center;
+    justify-content: space-around;
     -webkit-box-align: center;
             align-items: center;
+    margin-top: 32px;
+    margin-bottom: 0px;
+    margin-left: 10%;
+    margin-right: 10%;
 
     .main-footer__social-media-link {
-        margin: 5px 5px;
     
         i {
+            font-size: 1.1rem;
             color: black;
             &:hover {
                 cursor: pointer;
@@ -600,7 +633,7 @@ main {
     text-align: center;
 
     p {
-        margin: 60px 0;
+        margin: 48px 0;
     }
 }
 

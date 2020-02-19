@@ -37,10 +37,17 @@ main h2 {
 main h3 {
   font-family: Montserrat, sans-serif;
   font-weight: 600;
+  font-size: 1.4rem;
 }
-main p {
+main h4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+main p, main ul {
   font-family: Montserrat, sans-serif;
   line-height: 1.9rem;
+  font-size: 1rem;
 }
 main a {
   font-weight: 400;
@@ -417,6 +424,7 @@ main a {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
+  transition: background 0.2s;
 }
 .mobile-nav__social-media i:hover {
   background-color: #ed8eba;
@@ -456,56 +464,77 @@ main a {
   display: flex;
 }
 
+.main-footer__logo {
+  width: 75px;
+  height: auto;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
 .main-footer {
   background: white;
-  padding: 32px;
+  margin-top: 15%;
+  margin-bottom: 16px;
   grid-area: footer;
   text-align: center;
 }
 .main-footer p, .main-footer a {
   margin: 0;
 }
+.main-footer .main-footer__cta {
+  background-color: black;
+  color: white;
+  padding: 8% 0;
+  text-transform: uppercase;
+  font-family: Bebas Neue, san-serif;
+  letter-spacing: 1px;
+}
 .main-footer .main-footer__copyright {
   font-family: Roboto, sans-serif;
   color: #424b54;
-  font-size: 1rem;
+  font-size: 0.7rem;
+  margin-top: 32px;
+  margin-bottom: 0px;
 }
 .main-footer .main-footer__watermark {
   font-family: Montserrat, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: #59636d;
-  margin-top: 5%;
+  margin-top: 16px;
 }
 .main-footer .main-footer__links {
   font-family: Roboto, sans-serif;
   list-style: none;
   padding: 0;
+  margin-top: 16px;
+  margin-bottom: 0px;
 }
 .main-footer .main-footer__links .main-footer__link {
-  margin: 5% 0;
+  margin-bottom: 1%;
 }
 .main-footer .main-footer__links .main-footer__link a {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
 }
 .main-footer .main-footer__links .main-footer__link a:hover {
-  color: #424b54;
+  color: #ed8eba;
 }
 
 .main-footer__social-media {
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
+  justify-content: space-around;
   -webkit-box-align: center;
   align-items: center;
-}
-.main-footer__social-media .main-footer__social-media-link {
-  margin: 5px 5px;
+  margin-top: 32px;
+  margin-bottom: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .main-footer__social-media .main-footer__social-media-link i {
+  font-size: 1.1rem;
   color: black;
 }
 .main-footer__social-media .main-footer__social-media-link i:hover {
@@ -532,7 +561,7 @@ main a {
   text-align: center;
 }
 .text-container p {
-  margin: 60px 0;
+  margin: 48px 0;
 }
 
 .header {

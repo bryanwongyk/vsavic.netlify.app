@@ -40,7 +40,7 @@
 }
 
 .committee-container {
-  margin: 10% 0;
+  margin-top: 10%;
 }
 
 .committee-container__name {
@@ -69,6 +69,14 @@
 .committee-container__members .member .member__name, .committee-container__members .member .member__position {
   text-align: center;
   vertical-align: top;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.8rem;
+}
+.committee-container__members .member .member__position {
+  font-weight: 600;
+}
+.committee-container__members .member .member__name {
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=committee.css.map */

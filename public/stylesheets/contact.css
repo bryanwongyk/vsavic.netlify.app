@@ -5,16 +5,27 @@
 .contact-form label {
   display: block;
   width: 100%;
-  margin-top: 3%;
+  margin: 3% 0 1% 0;
+  font-family: Roboto, san-serif;
+  font-size: 1rem;
 }
-.contact-form input[type=text] {
+.contact-form input {
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+.contact-form input[type=text], .contact-form input[type=email], .contact-form textarea {
   width: 100%;
   border: 2px solid #ccc;
   padding: 8px 5px;
+  font-family: Roboto, san-serif;
 }
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid #ccc;
+.contact-form input[type=text]:focus, .contact-form input[type=email]:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: #ed8eba;
+}
+.contact-form :invalid {
+  border-color: red !important;
+  background: #faacac;
 }
 .contact-form .contact-form__button {
   text-align: center;

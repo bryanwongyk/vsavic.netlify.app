@@ -33,7 +33,7 @@
                     <div class="mobile-nav__item-highlight"></div>
                 </li>
                 <li class="mobile-nav__item"> 
-                    <a href="./about.html">ABOUT</a>
+                    <a href="./about.html">ABOUT US</a>
                     <div class="mobile-nav__item-highlight"></div>
                 </li>
                 <li class="mobile-nav__item"> 
@@ -63,16 +63,42 @@
     </header>
     <main>
         <section class="introduction-text">
+            <h1 class="header"> EVENTS </h1>
+            <div class="header-highlight"></div>
+            <div class="latest-event__container">
+                <div class="latest-event">
+                    <img src="../public/assets/event-posters/vsa-vic/2020-camp.png">
+                    <div class="latest-event__badge">COMING SOON</div>
+                </div>
+                <a class="latest-event__fb" href="https://www.facebook.com/vsavictoria/"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <hr>
             <div class="text-container">
-                <h1 class="header"> EVENTS </h1>
-                <div class="header-highlight"></div>
-                <p class="content">
-                    VSA holds many events throughout the year with our most popular ones ranging from food events to social events. There's always something on at one of our three University campuses across Victoria or even volunteering opportunities with us. Take a look and follow our social media to make sure you don't miss our next one!
-                </p>
+                <div class="content">
+                    <p>
+                        VSA holds many events throughout the year ranging from food events, to cultural events, to social events. Sometimes there are even community volunteering opportunities!
+                    </p>
+                    <p class="content__list-paragraph">
+                        Some of our most popular events include our:
+                    </p>
+                    <ul class="content__list">
+                        <li>Annual Camp and Reunion</li>
+                        <li>Annual Ball</li>
+                        <li>Vietnamese Food Stalls</li>
+                        <li>Pho/Bun Nights </li>
+                        <li>Sport Events</li>
+                        <li>End of Exam Parties</li>
+                    </ul>
+                    <p>
+                        There's always something on at one of our three University campuses across Victoria. Take a look and follow our social media to make sure you don't miss our next one!
+                    </p>
+                </div>
             </div>
         </section>
+        <hr>
         <section class="poster-section">
-            <h3> Swipe through and tap on an event to view </h3>
+            <h2>Past Events</h2>
+            <h4> Swipe through and tap on an event to view </h4>
             <label for="event-filter">
                 Filter:
             </label>
@@ -105,39 +131,49 @@
                     <img id="highlighted-slide__image" class="slide-image" src="#" alt="Selected gallery image">
                 </div>
                 <h3 id="highlighted-slide__name"></h3>
-                <a id="highlighted-slide__link" href="#"><i class="fab fa-facebook"></i>VIEW FACEBOOK EVENT</a>
+                <a id="highlighted-slide__link" href="https://www.facebook.com/events/870768526685134/"><i class="fab fa-facebook"></i>VIEW FACEBOOK EVENT</a>
             </div>
         </section>
 
     </main>
 
-
-
     <footer class="main-footer">
         <nav>
+            <div class="main-footer__cta">
+                <p> Message us to join as a member today! </p>
+            </div>
+            <div>
+                <a href="../index.html">
+                    <img class="main-footer__logo" src="../public/assets/logos/vsa-vic-header.png" alt="VSA Victoria Logo"> 
+                </a>
+            </div>
             <ul class="main-footer__links">
                 <li class="main-footer__link">
-                    <a href="#">
+                    <a href="./about.html">
+                        About Us
+                    </a>
+                </li>
+                <li class="main-footer__link">
+                    <a href="./contact.html">
                         Contact us
                     </a>
                 </li>
-                <li class="main-footer__social-media">
-                    <!-- Social media icons/links -->
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.facebook.com/vsavictoria/"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.instagram.com/vsa.vic/?hl=en"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.linkedin.com/company/vsavictoria/about/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="main-footer__social-media-link">
-                        <a href="https://www.youtube.com/channel/UC5_oB_6wQa5R5q853akNNHA"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </li>
-                
             </ul>
+            <div class="main-footer__social-media">
+                <!-- Social media icons/links -->
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.facebook.com/vsavictoria/"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.instagram.com/vsa.vic/?hl=en"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.linkedin.com/company/vsavictoria/about/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="main-footer__social-media-link">
+                    <a href="https://www.youtube.com/channel/UC5_oB_6wQa5R5q853akNNHA"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
             <div class="main-footer__copyright">
                 <!-- date to be changed via JavaScript-->
                 <p> © VSA Victoria <span id="copyright-year"></span></p>
@@ -147,6 +183,7 @@
             </div>
         </nav>
     </footer>
+
 
     <script src="../public/scripts/shared.js"></script>
     <script src="../public/scripts/events.js"></script>
