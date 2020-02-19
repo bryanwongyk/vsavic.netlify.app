@@ -236,19 +236,12 @@ select {
     font-weight: bold;
 }
 
-.latest-event__container {
-    margin-top: 10%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+.latest-event{
+    margin-top: 20%;
     // background: #f9b3d5;
-    padding: 8%;
+    position: relative;
 
-    .latest-event {
-        position: relative;
-        display: flex;
-        justify-content: center;
-
-        img {
+        .latest-event__img {
             width: 100%;
             // box-shadow: 5px 5px 8px rgba(206,127,165,0.7);
         }
@@ -266,7 +259,6 @@ select {
             font-weight: 600;
             font-size: 1rem;
         }
-    }
 }
 
 .latest-event__fb {
@@ -274,6 +266,7 @@ select {
     justify-content: center;
 
     margin-top: 32px;
+    margin-bottom: 32px;
     text-align: center;
     text-decoration: none;
     color: $grey;

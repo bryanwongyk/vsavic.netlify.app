@@ -196,21 +196,14 @@ select:focus {
   font-weight: bold;
 }
 
-.latest-event__container {
-  margin-top: 10%;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding: 8%;
-}
-.latest-event__container .latest-event {
+.latest-event {
+  margin-top: 20%;
   position: relative;
-  display: flex;
-  justify-content: center;
 }
-.latest-event__container .latest-event img {
+.latest-event .latest-event__img {
   width: 100%;
 }
-.latest-event__container .latest-event .latest-event__badge {
+.latest-event .latest-event__badge {
   position: absolute;
   top: -4%;
   left: -3%;
@@ -227,6 +220,7 @@ select:focus {
   display: flex;
   justify-content: center;
   margin-top: 32px;
+  margin-bottom: 32px;
   text-align: center;
   text-decoration: none;
   color: #424b54;

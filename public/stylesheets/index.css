@@ -302,8 +302,6 @@
 
 .latest-events__latest-event {
   position: relative;
-  display: flex;
-  justify-content: center;
   margin-top: 20%;
 }
 
