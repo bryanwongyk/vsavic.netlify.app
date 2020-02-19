@@ -80,16 +80,16 @@ $white: #ffffff;
             opacity: 0;
             
             &:nth-child(1) {
-                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
-                background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.55)), to(rgba(0,0,0,0.55))), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
+                background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
                 background-size: cover;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
             }
             &:nth-child(2) {
-                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../assets/photos/hero-image-2.jpg') center center no-repeat;
-                background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-2.jpg') center center no-repeat;
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.55)), to(rgba(0,0,0,0.55))), url('../assets/photos/hero-image-2.jpg') center center no-repeat;
+                background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('../assets/photos/hero-image-2.jpg') center center no-repeat;
                 background-size: cover;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
@@ -97,8 +97,8 @@ $white: #ffffff;
             }
 
             &:nth-child(3) {
-                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../assets/photos/hero-image-4.jpg') center center no-repeat;
-                background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-4.jpg') center center no-repeat;
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.55)), to(rgba(0,0,0,0.55))), url('../assets/photos/hero-image-4.jpg') center center no-repeat;
+                background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('../assets/photos/hero-image-4.jpg') center center no-repeat;
                 background-size: cover;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
@@ -106,8 +106,8 @@ $white: #ffffff;
             }
 
             &:nth-child(4) {
-                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35)), to(rgba(0,0,0,0.35))), url('../assets/photos/hero-image-3.jpg') center center no-repeat;
-                background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-3.jpg') center center no-repeat;
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.55)), to(rgba(0,0,0,0.55))), url('../assets/photos/hero-image-3.jpg') center center no-repeat;
+                background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('../assets/photos/hero-image-3.jpg') center center no-repeat;
                 background-size: cover;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
