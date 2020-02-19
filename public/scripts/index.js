@@ -35,11 +35,11 @@ function initHeaderSlideshow() {
             slideIndex = i;
             // Initially remove all slides from display
             for (let j=0; j<$SLIDESHOW_SLIDES.length; j++) {
-                $SLIDESHOW_SLIDES[j].style.display = "none";
+                $SLIDESHOW_SLIDES[j].style.opacity = 0;
                 $SLIDESHOW_TABS[j].classList.remove('slideshow__tab--active');
             }
             // Display the slide image corresponding to the clicked tab.
-            $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+            $SLIDESHOW_SLIDES[slideIndex].style.opacity = 1;
             $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
             slideIndex ++;
 
@@ -50,18 +50,18 @@ function initHeaderSlideshow() {
                     slideIndex = 0;
                 }
                 for (let i=0; i<$SLIDESHOW_SLIDES.length; i++) {
-                    $SLIDESHOW_SLIDES[i].style.display = "none";
+                    $SLIDESHOW_SLIDES[i].style.opacity = 0;
                     $SLIDESHOW_TABS[i].classList.remove('slideshow__tab--active');
                 }
-                $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+                $SLIDESHOW_SLIDES[slideIndex].style.opacity = 1;
                 $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
                 slideIndex ++;
-            }, 3000);
+            }, 8000);
         });
     }
 
     // Play initial slide first, and make its tab active.
-    $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+    $SLIDESHOW_SLIDES[slideIndex].style.opacity = 1;
     $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
     slideIndex ++;
 
@@ -71,13 +71,13 @@ function initHeaderSlideshow() {
             slideIndex = 0;
         }
         for (let i=0; i<$SLIDESHOW_SLIDES.length; i++) {
-            $SLIDESHOW_SLIDES[i].style.display = "none";
+            $SLIDESHOW_SLIDES[i].style.opacity = 0;
             $SLIDESHOW_TABS[i].classList.remove('slideshow__tab--active');
         }
-        $SLIDESHOW_SLIDES[slideIndex].style.display = "block";
+        $SLIDESHOW_SLIDES[slideIndex].style.opacity = 1;
         $SLIDESHOW_TABS[slideIndex].classList.add('slideshow__tab--active');
         slideIndex ++;
-    }, 3000);
+    }, 8000);
 }
 
 function initOnScrollContentAnimations() {

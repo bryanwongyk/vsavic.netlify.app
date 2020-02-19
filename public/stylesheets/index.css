@@ -10,7 +10,7 @@
 
 .slideshow__tab {
   width: 15%;
-  border-radius: 12%;
+  border-radius: 25%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
@@ -38,6 +38,14 @@
 .hero-section .hero-section__slideshow .slideshow__slide {
   height: 100vh;
   width: 100vw;
+  transition: opacity 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
 }
 .hero-section .hero-section__slideshow .slideshow__slide:nth-child(1) {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url("../assets/photos/hero-image-1.jpg") center center no-repeat;
