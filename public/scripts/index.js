@@ -1,6 +1,7 @@
 // Scroll animations
 
-const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item--left'),
+const   $CHAP_ITEMS                 = document.querySelector('.chapters__items'),
+        $CHAP_LEFT                  = document.querySelectorAll('.chapters__item--left'),
         $CHAP_RIGHT                 = document.querySelectorAll('.chapters__item--right'),
         $CHAP_HEADER                = document.querySelector('.chapters__header'),
         $CTA_ARROW                  = document.querySelector('.scroll-cta__arrow'),
@@ -9,9 +10,15 @@ const   $CHAP_LEFT                  = document.querySelectorAll('.chapters__item
         $HERO_TEXT                  = document.querySelector('.hero-section__text'),
         $INTRO                      = document.querySelector('.presentation-section__intro'),
         $LATEST_EVENTS              = document.querySelector('.presentation-section__latest-events'),
+        $MAIN_NAV_ITEMS             = document.querySelectorAll('.main-nav__item-text'),
         $SLIDESHOW_SLIDES           = document.querySelectorAll('.slideshow__slide'),
-        $SLIDESHOW_TABS              = document.querySelectorAll('.slideshow__tab'),
-        SCROLL_Y_BREAKPOINTS        = [130, 500, 620, 775, 840, 1060, 1280, 1440];
+        $SLIDESHOW_TABS              = document.querySelectorAll('.slideshow__tab');
+    
+var SCROLL_Y_BREAKPOINTS        = [130, 480, 620, 775, 840, 1060, 1280, 1450];
+
+if (window.matchMedia("(min-width: 750px)").matches) {
+    SCROLL_Y_BREAKPOINTS[7] = 820;
+}
         
 var heroHidden = false;
 var slideIndex = 0; // Index corresponds to the current slide being displayed in the hero section.
@@ -113,6 +120,11 @@ function initOnScrollContentAnimations() {
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[1]) {
         $CHAP_HEADER.classList.add('fade-reveal');
         heroHidden = true;
+
+        if (window.matchMedia("(min-width: 750px").matches) {
+            $CHAP_ITEMS.classList.add('fade-reveal');
+        }
+
     } else {
         // As the user scrolls back to before this breakpoint, these elements should return to their initial state.
         heroHidden = false;
@@ -138,27 +150,31 @@ function initOnScrollContentAnimations() {
         $HERO_SECTION.style.opacity = 1;
         $HERO_SECTION.style.pointerEvents = 'auto';
     }
-    if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
-        $CHAP_RIGHT[0].classList.add('slide-in');
-    }
-    /*
-        As the user scrolls past the 5th breakpoint:
-            - The third chapter should slide in from the left.
-        As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
-    */
-    if (window.scrollY > SCROLL_Y_BREAKPOINTS[5]) {
-        $CHAP_LEFT[1].classList.add('slide-in');
-    }
-        /*
-        As the user scrolls past the 6th breakpoint:
-            - The fourth chapter should slide in from the left.
-        As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
-    */
-   if (window.scrollY > SCROLL_Y_BREAKPOINTS[6]) {
-        $CHAP_RIGHT[1].classList.add('slide-in');
-    }
+
     if (window.scrollY > SCROLL_Y_BREAKPOINTS[7]) {
         $LATEST_EVENTS.classList.add('fade-reveal');
+    }
+
+    if (window.matchMedia("(max-width: 750px)").matches) {
+        if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
+            $CHAP_RIGHT[0].classList.add('slide-in');
+        }
+        /*
+            As the user scrolls past the 5th breakpoint:
+                - The third chapter should slide in from the left.
+            As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
+        */
+        if (window.scrollY > SCROLL_Y_BREAKPOINTS[5]) {
+            $CHAP_LEFT[1].classList.add('slide-in');
+        }
+            /*
+            As the user scrolls past the 6th breakpoint:
+                - The fourth chapter should slide in from the left.
+            As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
+        */
+       if (window.scrollY > SCROLL_Y_BREAKPOINTS[6]) {
+            $CHAP_RIGHT[1].classList.add('slide-in');
+        }
     }
 }
 
@@ -186,6 +202,11 @@ function initOnScrollHeaderAnimations() {
             bar.classList.remove('header__element--white');
             bar.classList.add('header__element--grey');
         });
+        // Make main nav words black
+        $MAIN_NAV_ITEMS.forEach((item) => {
+            item.classList.remove('main-nav__item-text--alt');
+            item.classList.add('main-nav__item-text--original');
+        })
 
 
     }
@@ -204,5 +225,11 @@ function initOnScrollHeaderAnimations() {
             bar.classList.remove('header__element--grey');
             bar.classList.add('header__element--white');
         });
+
+        // Make main nav words white
+        $MAIN_NAV_ITEMS.forEach((item) => {
+            item.classList.add('main-nav__item-text--alt');
+            item.classList.remove('main-nav__item-text--original');
+        })
     }
 }

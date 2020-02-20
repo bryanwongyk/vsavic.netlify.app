@@ -23,7 +23,11 @@ body {
 }
 
 header {
-    a {
+    .main-nav__item {
+        font-weight: 600;
+        font-family: Montserrat, san-serif;    
+    }
+    .mobile-nav__item {
         font-weight: 400;
         font-family: Montserrat, san-serif;
     }
@@ -65,6 +69,7 @@ main {
 
 ::selection {
     background: $pink; /* WebKit/Blink Browsers */
+    color: white;
   }
 
 .main-header {
@@ -133,6 +138,59 @@ main {
     -webkit-box-align: center;
             align-items: center;
 }
+
+.main-nav {
+    display: none;
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    margin-top: 6px;
+}
+
+.main-nav__item {
+    margin: 0 1rem;
+    position: relative;
+
+    &:hover a:after {
+        right: 0;
+    }
+}
+
+.main-nav__item-text--alt {
+    color: white;
+}
+
+.main-nav__item-text--original {
+    color: black;
+}
+
+
+.main-nav__item-text {
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 0.2rem 0;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 100%;        // sets it to 100% to the left from the right edge of the nearest ancestor
+        border-bottom: 2px solid $pink;
+        transition: right 0.5s;
+    }
+}
+
+.main-nav__item-text:hover,
+.main-nav__item:active {
+    color: $pink;
+}
+  
 
 .toggle-button {
     cursor: pointer;
@@ -534,8 +592,8 @@ main {
 }
 
 .main-footer {
-    background: white;
-    margin-top: 15%;
+    background: transparent;
+    margin-top: 75px;
     margin-bottom: 16px;
     grid-area: footer;
     text-align: center;
@@ -547,7 +605,7 @@ main {
     .main-footer__cta {
         background-color: black;
         color: white;
-        padding: 8% 0;
+        padding: 30px 0;
         text-transform: uppercase;
         font-family: Bebas Neue, san-serif;
         letter-spacing: 1px;
@@ -647,4 +705,28 @@ main {
     height: 4px;
     width: 40%;
     background-color: $pink;
+}
+
+@media (min-width: 750px) {
+    .main-header__menu {
+        display: none;
+    }
+    .main-nav {
+        display: flex;
+    }
+    .main-header__brand {
+        margin-right: 0;
+    }
+
+    .main-nav__item {
+
+        &:hover {
+            .mobile-nav__item-highlight {
+                animation: mobile-nav__item-highlight-animation 0.4s forwards;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
 }

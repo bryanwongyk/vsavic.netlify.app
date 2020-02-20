@@ -17,6 +17,26 @@
             <img id="logo--alt" class="image_on" src="./public/assets/logos/vsa-vic-header-alternate.png" alt="VSA Victoria Alternate Logo">
             <img id="logo" class="image_off" src="./public/assets/logos/vsa-vic-header.png" alt="VSA Victoria Logo">
         </a>
+        <!-- Main navigation bar -->
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a class="main-nav__item-text main-nav__item-text--alt" href="./routes/about.html">ABOUT US</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__item-text main-nav__item-text--alt" href="./routes/committee.html">COMMITTEE</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__item-text main-nav__item-text--alt" href="./routes/events.html">EVENTS</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__item-text main-nav__item-text--alt" href="./routes/sponsors.html">SPONSORS</a>
+                </li>
+                <li class="main-nav__item">
+                    <a class="main-nav__item-text main-nav__item-text--alt" href="./routes/contact.html">CONTACT</a>
+                </li>
+            </ul>
+        </nav>
         <!-- Mobile navigation button toggle -->
         <div class="main-header__menu">
             <button class="toggle-button">
@@ -115,15 +135,21 @@
                 </div>
             </div>
             <div class="presentation-section__latest-events">
-                <h2> WHAT WE HAVE BEEN UP TO </h2>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/3u13-Tiaz80" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="latest-events__latest-event">
-                    <a href="https://www.facebook.com/events/870768526685134/">
-                        <img class="latest-event__poster" src="public/assets/event-posters/vsa-vic/2020-camp.png" alt="VSA Victoria 2020 Camp">
-                        <div class="latest-event__poster-badge">COMING SOON</div>
-                    </a>
+                <h2> <span class="header--border-highlight">WHAT WE HAVE BEEN UP TO</span> </h2>
+                <div class="latest-events-container">
+                    <div class="video-container">
+                        <div class="video-container__wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/3u13-Tiaz80" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="latest-events__latest-event">
+                        <div class="latest-event__wrapper">
+                            <a href="https://www.facebook.com/events/870768526685134/">
+                                <img class="latest-event__poster" src="public/assets/event-posters/vsa-vic/2020-camp.png" alt="VSA Victoria 2020 Camp">
+                                <div class="latest-event__poster-badge">COMING SOON</div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

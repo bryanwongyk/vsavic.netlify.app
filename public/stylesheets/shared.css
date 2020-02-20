@@ -16,7 +16,11 @@ body {
   grid-template-areas: "main" "footer";
 }
 
-header a {
+header .main-nav__item {
+  font-weight: 600;
+  font-family: Montserrat, san-serif;
+}
+header .mobile-nav__item {
   font-weight: 400;
   font-family: Montserrat, san-serif;
 }
@@ -57,6 +61,7 @@ main a {
 ::selection {
   background: #ed8eba;
   /* WebKit/Blink Browsers */
+  color: white;
 }
 
 .main-header {
@@ -118,6 +123,55 @@ main a {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin-top: 6px;
+}
+
+.main-nav__item {
+  margin: 0 1rem;
+  position: relative;
+}
+.main-nav__item:hover a:after {
+  right: 0;
+}
+
+.main-nav__item-text--alt {
+  color: white;
+}
+
+.main-nav__item-text--original {
+  color: black;
+}
+
+.main-nav__item-text {
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0.2rem 0;
+}
+.main-nav__item-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 100%;
+  border-bottom: 2px solid #ed8eba;
+  transition: right 0.5s;
+}
+
+.main-nav__item-text:hover,
+.main-nav__item:active {
+  color: #ed8eba;
 }
 
 .toggle-button {
@@ -472,8 +526,8 @@ main a {
 }
 
 .main-footer {
-  background: white;
-  margin-top: 15%;
+  background: transparent;
+  margin-top: 75px;
   margin-bottom: 16px;
   grid-area: footer;
   text-align: center;
@@ -484,7 +538,7 @@ main a {
 .main-footer .main-footer__cta {
   background-color: black;
   color: white;
-  padding: 8% 0;
+  padding: 30px 0;
   text-transform: uppercase;
   font-family: Bebas Neue, san-serif;
   letter-spacing: 1px;
@@ -574,6 +628,24 @@ main a {
   height: 4px;
   width: 40%;
   background-color: #ed8eba;
+}
+
+@media (min-width: 750px) {
+  .main-header__menu {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+  }
+
+  .main-header__brand {
+    margin-right: 0;
+  }
+
+  .main-nav__item:hover .mobile-nav__item-highlight {
+    animation: mobile-nav__item-highlight-animation 0.4s forwards;
+  }
 }
 
 /*# sourceMappingURL=shared.css.map */
