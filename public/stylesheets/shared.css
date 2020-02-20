@@ -27,7 +27,6 @@ header .mobile-nav__item {
 
 main {
   grid-area: main;
-  height: 97%;
 }
 main h1 {
   font-family: Bebas Neue, san-serif;
@@ -527,7 +526,6 @@ main a {
 
 .main-footer {
   background: transparent;
-  margin-top: 75px;
   margin-bottom: 16px;
   grid-area: footer;
   text-align: center;
@@ -628,6 +626,32 @@ main a {
   height: 4px;
   width: 40%;
   background-color: #ed8eba;
+}
+
+.default-cta__button {
+  border: 2px #424b54 solid;
+  padding: 18px;
+  font-family: Roboto, san-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #424b54;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default-cta__button i {
+  margin-left: 10%;
+}
+.default-cta__button:hover {
+  cursor: pointer;
+  border-color: #ed8eba;
+  color: #ed8eba;
+}
+.default-cta__button:focus {
+  outline: none;
 }
 
 @media (min-width: 750px) {

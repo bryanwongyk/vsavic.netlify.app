@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap");
 .slideshow__tabs {
   grid-row: row-3-start/row-3-end;
-  grid-column: col-start 3/col-end 10;
+  grid-column: col-start 3/col-start 13;
   width: 80%;
   display: flex;
   justify-content: space-around;
@@ -9,7 +9,7 @@
 }
 
 .slideshow__tab {
-  width: 15%;
+  width: 50px;
   padding-top: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
@@ -24,7 +24,7 @@
   height: 100vh;
   max-width: 100vw;
   display: grid;
-  grid-template-rows: [row-1-start] 65% [row-1-end row-2-start] 25% [row-2-end row-3-start] 10% [row-3-end];
+  grid-template-rows: [row-1-start] 50% [row-1-end row-2-start] 40% [row-2-end row-3-start] 10% [row-3-end];
   grid-template-columns: repeat(12, [col-start] 1fr);
 }
 .hero-section .hero-section__slideshow {
@@ -214,7 +214,7 @@
 }
 .presentation-section__chapters .chapters__items {
   position: relative;
-  margin: 16px 0;
+  margin-top: 16px;
   height: 800px;
 }
 .presentation-section__chapters p {
@@ -276,10 +276,65 @@
   transform: translateX(0vw) !important;
 }
 
+.presentation-section__index {
+  display: block;
+  width: 100vw;
+  height: 800px;
+}
+
+.index__committee-direct {
+  overflow: hidden;
+  height: 33.33%;
+  position: relative;
+}
+.index__committee-direct .img-container {
+  background: url("../assets/photos/index-1-dt.png") center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.index__events-direct {
+  overflow: hidden;
+  height: 33.33%;
+  position: relative;
+}
+.index__events-direct .img-container {
+  background: url("../assets/photos/index-2-dt.png") center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.index__sponsors-direct {
+  overflow: hidden;
+  height: 33.33%;
+  position: relative;
+}
+.index__sponsors-direct .img-container {
+  background: url("../assets/photos/index-3.png") center center;
+  background-size: cover;
+  height: 100%;
+}
+
+.direct-button {
+  position: absolute;
+  color: white;
+  border-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+.direct-button:hover {
+  cursor: pointer;
+  background: white;
+  text-shadow: none;
+  color: black;
+}
+
 .presentation-section__latest-events {
-  margin-top: 75px;
-  margin-left: 8%;
-  margin-right: 8%;
+  padding: 75px 8%;
   opacity: 0;
   text-align: center;
 }
@@ -378,6 +433,28 @@
     transform: none !important;
     height: 200px !important;
   }
+
+  .presentation-section__index {
+    display: grid;
+    grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end];
+    grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end];
+    grid-template-areas: "index-1 index-2" "index-3 index-3";
+  }
+
+  .index__committee-direct {
+    grid-area: index-1;
+    height: 100%;
+  }
+
+  .index__events-direct {
+    grid-area: index-2;
+    height: 100%;
+  }
+
+  .index__sponsors-direct {
+    grid-area: index-3;
+    height: 100%;
+  }
 }
 @media (min-width: 1200px) {
   .latest-events-container {
@@ -387,6 +464,13 @@
   }
   .latest-events-container .video-container {
     margin: 0;
+  }
+
+  .slideshow__tabs {
+    grid-column: col-start 2/col-start 6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 .header--border-highlight {

@@ -64,35 +64,3 @@ main {
     justify-content: center;
     margin-top: 10%;
 }
-
-.default-cta__button {
-    border: 2px $grey solid;
-    padding: 5%;
-
-    font-family: Roboto, san-serif;
-    font-weight: 900;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: none;
-    color: $grey;
-
-    background: transparent;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    i {
-        margin-left: 10%;
-    }
-
-    &:hover {
-        cursor: pointer;
-        border-color: $pink;
-        color: $pink;
-    }
-
-    &:focus {
-        outline: none;
-    }
-}
