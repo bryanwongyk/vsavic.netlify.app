@@ -2,7 +2,7 @@
 
 $pink: #ed8eba;
 $grey: #424b54;
-$white: #ffffff;
+$white: #fdfdfd;
 
 // .hero-section:before {
 //     position: fixed;
@@ -56,7 +56,7 @@ $white: #ffffff;
     max-width: 100vw;
 
     display: grid;
-    grid-template-rows: [row-1-start] 50% [row-1-end row-2-start] 40% [row-2-end row-3-start] 10% [row-3-end];
+    grid-template-rows: [row-1-start] 65% [row-1-end row-2-start] 25% [row-2-end row-3-start] 10% [row-3-end];
     grid-template-columns: repeat(12, [col-start] 1fr);
 
     .hero-section__slideshow {
@@ -169,7 +169,7 @@ $white: #ffffff;
             font-weight: 900;
             font-size: 1rem;
             text-align: center;
-            color: white;
+            color: $white;
             text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
             0px 8px 13px rgba(0,0,0,0.1),
             0px 18px 23px rgba(0,0,0,0.1);
@@ -250,6 +250,7 @@ $white: #ffffff;
 
     padding-top: 75px;
 
+
     h2 {
         color: $pink;
         font-size: 2.2rem;
@@ -268,7 +269,8 @@ $white: #ffffff;
     overflow: hidden;
 
     h2 {
-        color: rgb(155, 230, 244);
+        // color: rgb(155, 230, 244);
+        color: #2e282a;
         // color: black;
         text-align: center;
         font-size: 2.2rem;
@@ -296,7 +298,7 @@ $white: #ffffff;
 
 .chapters__item {
     position: absolute;
-    background-color: #ACECF7;
+    // background-color: #17bebb;
     width: 100vw;
     height: 25.1%;
 
@@ -355,7 +357,8 @@ $white: #ffffff;
 .presentation-section__index {
     display: block;
     width: 100vw;
-    height: 800px;
+    height: 799px;
+    margin-top: 75px;
 }
 
 .index__committee-direct {
@@ -385,7 +388,6 @@ $white: #ffffff;
 .index__sponsors-direct {
     overflow: hidden;
     height: 33.33%;
-    // filter: grayscale(1);
     position: relative;
     .img-container {
         background: url('../assets/photos/index-3.png') center center;
@@ -396,8 +398,8 @@ $white: #ffffff;
 
 .direct-button {
     position: absolute;
-    color: white;
-    border-color: white;
+    color: $white;
+    border-color: $white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -410,6 +412,7 @@ $white: #ffffff;
         background: white;
         text-shadow: none;
         color: black;
+        border: none;
     }
 }
 
@@ -418,8 +421,12 @@ $white: #ffffff;
     padding: 75px 8%;
     opacity: 0;
     text-align: center;
+    background: #222;
     h2 {
-        color: $grey;
+        display: inline-block;
+        padding-bottom: 5px;
+        color: $white;
+        border-bottom: 3px solid $pink;
     }
 }
 
@@ -437,6 +444,7 @@ $white: #ffffff;
         padding-top: 25px;
         margin-top: 75px;
         height: 0;
+        box-shadow: 5px 5px 8px #02020269;
         
         iframe {
             position: absolute;
@@ -467,6 +475,7 @@ $white: #ffffff;
     // height: auto;
     max-height: 375px;
     width: auto;
+    box-shadow: 5px 5px 8px #02020269;
     
 }
 
@@ -474,7 +483,7 @@ $white: #ffffff;
     position: absolute;
     top: -4%;
     left: -3%;
-    color: white;
+    color: $white;
     padding: 10px 20px 10px 20px;
     width: 150px;
     background: linear-gradient(to right, $pink, rgb(235, 158, 195));
@@ -509,6 +518,10 @@ $white: #ffffff;
 }
 
 @media (min-width: 750px) {
+    .scroll-cta__button {
+        font-size: 1.5rem !important;
+        padding: 15px !important;
+    }
     .chapters__items {
         display: flex;
         width: 100%;
@@ -556,7 +569,6 @@ $white: #ffffff;
     .latest-events-container {
         display: flex;
         justify-content: space-around;
-        align-items: center;
 
         .video-container {
             margin: 0;
@@ -581,9 +593,3 @@ $white: #ffffff;
 //       background-attachment: scroll;
 //     }
 //   }
-
-.header--border-highlight {
-    display: inline-block;
-    border-left: $pink 8px solid;
-    padding-left: 30px;
-}
