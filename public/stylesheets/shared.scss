@@ -592,6 +592,7 @@ main {
 
 .main-footer {
     background: transparent;
+    margin-top: 75px;
     margin-bottom: 16px;
     grid-area: footer;
     text-align: center;
@@ -689,17 +690,22 @@ main {
     text-align: center;
 
     p {
-        margin: 48px 0;
+        // margin: 48px 0;
+        font-size: 0.8rem;
     }
 }
 
 .header {
     text-align: center;
-    margin-bottom: 0;
+    margin: 0;
+}
+
+section {
+    margin-top: 75px;
 }
 
 .header-highlight {
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
     height: 4px;
     width: 40%;
     background-color: $pink;
@@ -756,7 +762,4 @@ main {
             }
         }
     }
-}
-
-@media (min-width: 1200px) {
 }

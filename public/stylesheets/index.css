@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap");
+section {
+  margin: 0;
+}
+
+.main-footer {
+  margin-top: 0;
+}
+
 .slideshow__tabs {
   grid-row: row-3-start/row-3-end;
   grid-column: col-start 3/col-start 13;

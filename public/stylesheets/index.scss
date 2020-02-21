@@ -23,6 +23,13 @@ $white: #fdfdfd;
 //     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../assets/photos/hero-image-1.jpg') center center no-repeat;
 // }
 
+section {
+    margin: 0;
+}
+.main-footer {
+    margin-top: 0;
+}
+
 .slideshow__tabs {
     // position: absolute;
     // top: 95%;
