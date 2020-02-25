@@ -11,6 +11,14 @@ main {
     border-bottom: 3px solid rgba(240, 116, 35, 1);
 }
 
+.text-container {
+
+    p {
+        // margin: 48px 0;
+        font-size: 0.8rem;
+    }
+}
+
 
 .img-container {
     position: relative;
@@ -118,36 +126,36 @@ main {
     }
     .about-us{
         // grid-area: about-us;
-        width: 50vw;
+        width: 50%;
         order: 1;
     }
     .about-us-img{
         // grid-area: about-us-img;
-        width: 50vw;
+        width: 50%;
         order: 2;
     }
     .stats{
         // grid-area: stats;
-        width: 50vw;
+        width: 50%;
         order: 4;
     }
     .stats-img{
         // grid-area: stats-img;
-        width: 50vw;
+        width: 50%;
         order: 3;
     }
     .follow{
         // grid-area: follow;
-        width: 50vw;
+        width: 50%;
         order: 5;
     }
     .follow-img{
         // grid-area: follow-img;
-        width: 50vw;
+        width: 50%;
         order: 6;
     }
     .follow-us__links {
-        width: 50vw;
+        width: 50%;
     }
 }
 

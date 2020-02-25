@@ -603,10 +603,6 @@ main a {
   pointer-events: none;
 }
 
-.introduction-text {
-  margin-top: 100px;
-}
-
 .text-container {
   background-color: white;
   margin-left: 10%;
@@ -614,7 +610,7 @@ main a {
   text-align: center;
 }
 .text-container p {
-  font-size: 0.8rem;
+  margin: 32px 0;
 }
 
 .header {
@@ -627,7 +623,7 @@ section {
 }
 
 .header-highlight {
-  margin: 0 auto 32px auto;
+  margin: 0 auto;
   height: 4px;
   width: 40%;
   background-color: #ed8eba;
@@ -674,6 +670,10 @@ section {
 
   .main-nav__item:hover .mobile-nav__item-highlight {
     animation: mobile-nav__item-highlight-animation 0.4s forwards;
+  }
+
+  .header-highlight {
+    width: 150px;
   }
 }
 

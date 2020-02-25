@@ -19,6 +19,18 @@
   z-index: 1;
 }
 
+.header-banner {
+  background: url("../assets/photos/test.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 300px;
+  width: 100%;
+}
+
+.header {
+  margin-top: 75px;
+}
+
 .vsa-vic-logo {
   background: url("../assets/logos/vsa-vic-logo.png") no-repeat;
   background-size: 100% auto;
@@ -37,10 +49,6 @@
 .vsa-rmit-logo {
   background: url("../assets/logos/vsa-rmit-logo.png") no-repeat;
   background-size: 100% auto;
-}
-
-.committee-container {
-  margin-top: 10%;
 }
 
 .committee-container__name {

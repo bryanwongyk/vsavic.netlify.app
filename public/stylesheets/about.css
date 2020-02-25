@@ -7,6 +7,10 @@ main {
   border-bottom: 3px solid #f07423;
 }
 
+.text-container p {
+  font-size: 0.8rem;
+}
+
 .img-container {
   position: relative;
 }
@@ -86,37 +90,37 @@ main {
   }
 
   .about-us {
-    width: 50vw;
+    width: 50%;
     order: 1;
   }
 
   .about-us-img {
-    width: 50vw;
+    width: 50%;
     order: 2;
   }
 
   .stats {
-    width: 50vw;
+    width: 50%;
     order: 4;
   }
 
   .stats-img {
-    width: 50vw;
+    width: 50%;
     order: 3;
   }
 
   .follow {
-    width: 50vw;
+    width: 50%;
     order: 5;
   }
 
   .follow-img {
-    width: 50vw;
+    width: 50%;
     order: 6;
   }
 
   .follow-us__links {
-    width: 50vw;
+    width: 50%;
   }
 }
 @media (min-width: 1000px) {
