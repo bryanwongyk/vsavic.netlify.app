@@ -16,7 +16,7 @@ A kanban board (Trello) will be used to document tasks to be completed. These ta
 # 3. Technologies
 The website's stack comprises of the following:
 * HTML
-* SCSS
+* SASS
 
 The down-side of not using a CMS (Content Management System) is that the websites' contents must be directly edited in the HTML files themselves.
 
