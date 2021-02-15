@@ -66,8 +66,11 @@ I will be using a 'mobile-first' approach in designing my mock-up, and use media
 
 # 5. Future Improvements
 [ ] Full responsiveness (tablet, desktop)
+
 [ ] Store images on Cloudinary
+
 [ ] Hold data for club events in a database (e.g. MongoDB), rather than hard-coding it in (e.g. Events page)
+
 [ ] Performance optimisation
 
 
