@@ -1,22 +1,15 @@
-<p style="text-align: center; font-weight: bold; font-size: 2rem">vsa-vic-clone v1</p>
+<p style="text-align: center; font-weight: bold; font-size: 2rem">vsa-vic-mock-up v1</p>
 
 ---
-
+>Note: This website was built after completing my first two online courses on front-end development, so there are many improvements that can be made.
 # 1. Overview
 ## 1.1 Summary
-The goal of this project is to practice fundamental front-end web development skills by creating a mock-up website of the Vietnamese Students' Association club.
+The goal of this project is to practice fundamental front-end web development skills by creating a mock-up website for the Vietnamese Students' Association club. This means using pure HTML, CSS, and JavaScript without the use of any other frameworks or libraries.
 
-# 2. Organisation
-## 2.1 Progress Tracking
-A kanban board (Trello) will be used to document tasks to be completed. These tasks will be categorised into one of three columns:
-* TO DO
-* IN PROGRESS
-* COMPLETED
-
-# 3. Technologies
-The website's stack comprises of the following:
-* HTML
-* SASS
+# 2. Technologies
+The stack comprises of the following:
+* HTML, CSS, JavaScript
+* SASS pre-compiler for CSS
 
 The down-side of not using a CMS (Content Management System) is that the websites' contents must be directly edited in the HTML files themselves.
 
@@ -31,7 +24,11 @@ The website is hosted on Netlify.
 | Gray   | ![#424b54](https://placehold.it/15/424b54/000000?text=+) `#424b54`
 
 ## 3.2 Fonts
-TBC
+| Font | Type | Sizes
+| ------ | ----- | --------
+| Montserrat   | San-serif | 400, 600
+| Bebas Neue  | San-serif |400
+| Roboto   | San-serif | 400, 900
 
 # 4. Features
 ## 4.1 Website Structure
@@ -44,6 +41,7 @@ The footer will feature links to the club's social media platforms.
 ### 4.1.3 Landing Page
 The landing page for the website features the following:
 * A hero section composing of images which highlight the club's activities, with prominent text to highlight the club's mission. This hero section spans the entire width of the viewport.
+* Call-to-action buttons to other pages on the website.
 * A list of recent events.
 
 ### 4.1.4 About
@@ -62,7 +60,9 @@ This page will have images of the year's sponsors, with links to the sponsor's w
 This page will feature a contact form, the different social media and emails to contact the clubs' committees.
 
 ## 4.2 Responsiveness
-The current, actual website for the club lacks responsiveness leading to non-user friendly displays on mobile devices. I will be using a 'mobile-first' approach in designing my mock-up, and use media queries to ensure responsiveness.
+> In-progress. The website currently only fits a mobile view, but full responsiveness is still not complete.
+
+I will be using a 'mobile-first' approach in designing my mock-up, and use media queries to ensure responsiveness.
 
 
 
