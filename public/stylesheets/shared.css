@@ -57,6 +57,11 @@ main a {
   font-family: Roboto, san-serif;
 }
 
+.container {
+  height: 100%;
+  width: 100%;
+}
+
 ::selection {
   background: #ed8eba;
   /* WebKit/Blink Browsers */
@@ -674,6 +679,17 @@ section {
 
   .header-highlight {
     width: 150px;
+  }
+}
+@media (min-width: 1000px) {
+  .main-footer {
+    margin-top: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1440px;
   }
 }
 

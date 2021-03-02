@@ -93,3 +93,26 @@
         }
     }
 }
+@media (min-width: 1024px) {
+    .text-wrapper {
+        max-height: 300px;
+    }
+    .header-highlight {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    main {
+        h1 {
+            font-size: 4.5rem;
+        }
+    }
+    .text-wrapper {
+        max-height: 402px;
+    }
+    .text-wrapper {
+        padding: 0 30px;
+    }
+}

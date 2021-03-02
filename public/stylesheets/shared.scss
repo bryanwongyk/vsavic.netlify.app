@@ -66,6 +66,11 @@ main {
     }
 }
 
+.container {
+    height: 100%;
+    width: 100%;
+}
+
 ::selection {
     background: $pink; /* WebKit/Blink Browsers */
     color: white;
@@ -765,5 +770,18 @@ section {
 
     .header-highlight {
         width: 150px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .main-footer {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        margin: 0 auto;
+        max-width: 1440px;
     }
 }
