@@ -60,7 +60,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 100vw;
+  width: 100%;
 }
 .committee-container__members .member {
   width: 30%;
@@ -87,7 +87,20 @@
   margin-top: 5px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
+  .committee-container__members .member {
+    margin: 20px 0;
+  }
+}
+@media (min-width: 1000px) {
+  .committee-container:last-of-type {
+    margin-bottom: 75px;
+  }
+
+  .committee-container__members {
+    flex-wrap: nowrap;
+  }
+
   .text-wrapper {
     max-height: 300px;
   }
@@ -96,7 +109,7 @@
     width: 40%;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   main h1 {
     font-size: 4.5rem;
   }
