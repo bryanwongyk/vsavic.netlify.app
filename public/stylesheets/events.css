@@ -52,7 +52,7 @@
   padding-top: 15px;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow: hidden;
   align-items: center;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -62,20 +62,23 @@
 }
 .scrolling-container .card {
   flex: 0 0 auto;
-  width: 30%;
+  width: 33.3%;
   overflow: hidden;
-  margin: 0 5px;
-  transition: transform 0.4s;
+  margin: 0 2px;
+  transition: all 0.4s;
+}
+.scrolling-container .card img {
+  display: block;
 }
 .scrolling-container .card:hover {
   transform-origin: bottom;
   transform: scale(1.1);
+  margin: 0 20px;
 }
 
 .card--clicked {
   border: 2px #ed8eba solid;
   transform-origin: bottom;
-  transform: scale(1.1);
   box-shadow: 1px 5px 10px #888888;
 }
 
@@ -135,7 +138,7 @@ select:focus {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 30%;
+  top: 33%;
   width: auto;
   padding: 16px;
   color: white;

@@ -63,7 +63,8 @@ $white: #ffffff;
 
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    // overflow-x: auto;
+    overflow: hidden;
     align-items: center;
 
     scroll-behavior: smooth;
@@ -76,25 +77,30 @@ $white: #ffffff;
   
     .card {
         flex: 0 0 auto; // flex-grow, flex-shrink, flex-basis
-        width: 30%;
+        width: 33.3%;
         // max-height: 127px;
         overflow: hidden;
-        margin: 0 5px;
-        transition: transform 0.4s;
+        margin: 0 2px;
+        transition: all 0.4s;   // transition on both the scaling and the margin changing
+
+        img {
+            display: block;
+        }
 
         &:hover {
             // Scale image but stick to the bottom
             transform-origin: bottom;
             transform: scale(1.1);
+            margin: 0 20px;
         }
     }
 }
 
 .card--clicked {
     border: 2px $pink solid;
-    // Keep the image scaled up even if we click on the previous/next buttons (it will go away on mobile if we don't have this as hover effects only apply while an element is still clciked on).
+    // Keep the image scaled up even if we click on the previous/next buttons (it will go away on mobile if we don't have this as hover effects only apply while an element is still clicked on).
     transform-origin: bottom;
-    transform: scale(1.1);
+    // transform: scale(1.1);
     box-shadow: 1px 5px 10px #888888;
 }
 
@@ -168,7 +174,7 @@ select {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 30%;
+    top: 33%;
     width: auto;
     padding: 16px;
     color: white;
