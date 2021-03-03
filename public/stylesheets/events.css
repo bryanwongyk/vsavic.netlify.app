@@ -52,7 +52,7 @@
   padding-top: 15px;
   display: flex;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow-x: auto;
   align-items: center;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
