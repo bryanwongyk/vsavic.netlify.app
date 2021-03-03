@@ -536,9 +536,6 @@ main a {
   grid-area: footer;
   text-align: center;
 }
-.main-footer p, .main-footer a {
-  margin: 0;
-}
 .main-footer .main-footer__cta {
   background-color: black;
   color: white;
@@ -586,10 +583,8 @@ main a {
   justify-content: space-around;
   -webkit-box-align: center;
   align-items: center;
-  margin-top: 32px;
-  margin-bottom: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 32px auto 0px auto;
+  width: 200px;
 }
 .main-footer__social-media .main-footer__social-media-link i {
   font-size: 1.1rem;
