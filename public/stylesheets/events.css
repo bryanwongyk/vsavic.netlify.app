@@ -29,7 +29,7 @@
 }
 
 .events-gallery__highlighted-slide {
-  margin-top: 10%;
+  margin-top: 50px;
 }
 
 .events-gallery__highlighted-slide--hidden {
@@ -268,6 +268,11 @@ select:focus {
 @media (min-width: 900px) {
   .latest-event .latest-event__badge {
     margin-left: 11%;
+  }
+
+  #highlighted-slide__image {
+    max-height: 500px;
+    width: initial;
   }
 }
 @media (min-width: 1000px) {

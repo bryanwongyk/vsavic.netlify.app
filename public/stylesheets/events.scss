@@ -37,7 +37,7 @@ $white: #ffffff;
 }
 
 .events-gallery__highlighted-slide {
-    margin-top: 10%;
+    margin-top: 50px;
 }
 
 .events-gallery__highlighted-slide--hidden {
@@ -51,6 +51,7 @@ $white: #ffffff;
 }
 
 #highlighted-slide__image{
+    // max-height: 500px;
     width: 100%;
 }
 
@@ -320,6 +321,11 @@ select {
         .latest-event__badge {
             margin-left: 11%;
         }
+    }
+
+    #highlighted-slide__image{
+        max-height: 500px;
+        width: initial;
     }
 }
 
