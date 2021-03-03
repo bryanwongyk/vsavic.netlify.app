@@ -681,11 +681,6 @@ section {
     width: 150px;
   }
 }
-@media (min-width: 1000px) {
-  .main-footer {
-    margin-top: 0;
-  }
-}
 @media (min-width: 1440px) {
   .container {
     margin: 0 auto;

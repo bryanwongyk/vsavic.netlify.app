@@ -98,6 +98,10 @@ main .about-us-img {
   .header-highlight {
     width: 40%;
   }
+
+  .main-footer {
+    margin-top: 0;
+  }
 }
 @media (min-width: 1200px) {
   main h1 {

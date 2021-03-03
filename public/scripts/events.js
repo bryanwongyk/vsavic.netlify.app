@@ -3,7 +3,7 @@ const   $DROPDOWN                       = document.querySelector('#event-filter'
         $HIGHLIGHTED_SLIDE_IMAGE        = document.querySelector('#highlighted-slide__image'),
         $HIGHLIGHTED_SLIDE_LINK         = document.querySelector('#highlighted-slide__link'),
         $HIGHLIGHTED_SLIDE_NAME         = document.querySelector('#highlighted-slide__name'),
-        $SCROLLING_SLIDESHOW            = document.querySelector('#poster-gallery__slideshow-images');
+        $SCROLLING_SLIDESHOW            = document.querySelector('#events-gallery__slideshow-images');
 var     $CARDS,
         slideIndex = 0,
         isCardSelected = false,
@@ -200,7 +200,7 @@ function setImg(src, eventNames, eventLinks, index) {
     /**
      * setImg(src) sets the highlighted (enlarged) image on the page to the event given by src.
      */
-    $HIGHLIGHTED_SLIDE.classList.remove('poster-gallery__highlighted-slide--hidden');
+    $HIGHLIGHTED_SLIDE.classList.remove('events-gallery__highlighted-slide--hidden');
     $HIGHLIGHTED_SLIDE_IMAGE.src = src;
     $HIGHLIGHTED_SLIDE_NAME.textContent = eventNames[index];
     $HIGHLIGHTED_SLIDE_LINK.href = eventLinks[index];
