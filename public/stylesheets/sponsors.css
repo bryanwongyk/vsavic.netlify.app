@@ -45,4 +45,13 @@
   margin: 0;
 }
 
+@media (min-width: 1000px) {
+  #sponsor-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 100px;
+  }
+}
+
 /*# sourceMappingURL=sponsors.css.map */
