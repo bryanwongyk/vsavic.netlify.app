@@ -175,3 +175,12 @@ function closeToggleAnimation() {
         }
     }, timeOutDelay)
 }
+
+// Remove mobile nav menu if window resized
+window.addEventListener("resize", function() {
+    if (window.innerWidth > 750){
+        closeMobileMenu();
+        closeToggleAnimation();
+        toggleBtnClicked = false;
+    }
+});
