@@ -748,6 +748,30 @@ section {
     }
 }
 
+.social-media__fb {
+    &:hover {
+        color: #3b5998;
+    }
+}
+
+.social-media__ig {
+    &:hover {
+        color: #E1306C;
+    }
+}
+
+.social-media__li {
+    &:hover {
+        color: #2867B2;
+    }
+}
+
+.social-media__yt {
+    &:hover {
+        color: #FF0000;
+    }
+}
+
 @media (min-width: 750px) {
     .main-header__menu {
         display: none;

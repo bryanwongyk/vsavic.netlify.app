@@ -2,9 +2,23 @@ $pink: #ed8eba;
 $grey: #424b54;
 $white: #ffffff;
 
+.contact-form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 25px;
+}
+
 .contact-form {
     width: 80%;
+    max-width: 500px;
     margin: 0 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
     label{
         display: block;
@@ -31,6 +45,10 @@ $white: #ffffff;
         }
     }
 
+    textarea {
+        resize: none;
+    }
+
     :invalid {
         border-color: red !important;
         background: #faacac;
@@ -38,12 +56,18 @@ $white: #ffffff;
 
     .contact-form__button {
         text-align: center;
+        width: 50%;
 
         button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             border: none;
-            width: 50%;
+            width: 100%;
+            height: 50px;
             padding: 4% 10%;
-            margin-top: 60px;
+            margin-top: 50px;
         
             font-family: Roboto, san-serif;
             font-weight: 900;
@@ -72,7 +96,11 @@ $white: #ffffff;
 .contact-details-section {
     display: grid;
     grid-template-rows: repeat(4, [row-start] 1fr [row-end]);
-    margin: 10% 10%;
+    // margin: 50px 0;
+}
+
+.contact-details:not(:first-child) {
+    margin: 50px 0;
 }
 
 .contact-details {
@@ -80,8 +108,6 @@ $white: #ffffff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    margin: 10% 0;
 }
 
 .contact-details__text {
@@ -97,6 +123,7 @@ $white: #ffffff;
 .contact-details__social-media {
     text-align: center;
     width: 80%;
+    max-width: 530px;
     margin-top: 2%;
     i {
         color: $grey;
@@ -106,29 +133,6 @@ $white: #ffffff;
     }
 }
 
-.social-media__fb {
-    &:hover {
-        color: #3b5998;
-    }
-}
-
-.social-media__ig {
-    &:hover {
-        color: #E1306C;
-    }
-}
-
-.social-media__li {
-    &:hover {
-        color: #2867B2;
-    }
-}
-
-.social-media__yt {
-    &:hover {
-        color: #FF0000;
-    }
-}
 // .contact-details__text {
     
 // }
@@ -136,4 +140,23 @@ $white: #ffffff;
 .text--highlight {
     font-weight: 900;
     display: block;
+}
+
+
+@media (min-width: 1000px) {
+    .contact-details-section{
+        grid-template-rows: 2fr;
+        grid-template-columns: repeat(2, 1fr);
+
+        .contact-details {
+            margin: 0;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-details-section{
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
