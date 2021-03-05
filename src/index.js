@@ -2,7 +2,7 @@
  * Author: Bryan Wong
  * https://github.com/bryanwyk
  */
-import { toggleBtnClicked, $MAIN_HEADER, $LOGO_ALT, $LOGO, $TOGGLE_BTN_BARS } from './shared.js';
+import { toggleBtnClicked, $MAIN_HEADER, $LOGO_ALT, $LOGO, $TOGGLE_BTN_BARS } from './shared';
 var $CHAP_ITEMS = document.querySelector('.chapters__items'), $CHAP_LEFT = document.querySelectorAll('.chapters__item--left'), $CHAP_RIGHT = document.querySelectorAll('.chapters__item--right'), $CHAP_HEADER = document.querySelector('.chapters__header'), $CTA_ARROW = document.querySelector('.scroll-cta__arrow'), $CTA_BUTTON = document.querySelector('.scroll-cta__button'), $HERO_SECTION = document.querySelector('.hero-section'), $HERO_TEXT = document.querySelector('.hero-section__text'), $INTRO = document.querySelector('.presentation-section__intro'), $LATEST_EVENTS = document.querySelector('.presentation-section__latest-events'), $MAIN_NAV_ITEMS = document.querySelectorAll('.main-nav__item-text'), $SLIDESHOW_SLIDES = document.querySelectorAll('.slideshow__slide'), $SLIDESHOW_TABS = document.querySelectorAll('.slideshow__tab');
 var SCROLL_Y_BREAKPOINTS = [130, 480, 620, 775, 840, 1060, 1280, 1450];
 if (window.matchMedia("(min-width: 750px)").matches) {

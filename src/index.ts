@@ -3,7 +3,7 @@
  * https://github.com/bryanwyk
  */
 
-import { toggleBtnClicked, $MAIN_HEADER, $LOGO_ALT, $LOGO, $TOGGLE_BTN_BARS } from './shared.js'; 
+import { toggleBtnClicked, $MAIN_HEADER, $LOGO_ALT, $LOGO, $TOGGLE_BTN_BARS } from './shared'; 
 
 const   $CHAP_ITEMS: (HTMLElement | null) = document.querySelector('.chapters__items'),
         $CHAP_LEFT: (NodeList | null) = document.querySelectorAll('.chapters__item--left'),
