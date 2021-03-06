@@ -177,13 +177,35 @@ var selectCard = function (index) {
  * clickScrollRight is called when the user clicks on the 'next' arrow button on the slideshow to scroll to the right.
  */
 var clickScrollRight = function () {
-    $SCROLLING_SLIDESHOW.scrollLeft += 804;
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+        $SCROLLING_SLIDESHOW.scrollLeft += 804;
+    }
+    else if (window.matchMedia('(min-width: 768px)').matches) {
+        $SCROLLING_SLIDESHOW.scrollLeft += 600;
+    }
+    else if (window.matchMedia('(min-width: 500px)').matches) {
+        $SCROLLING_SLIDESHOW.scrollLeft += 500;
+    }
+    else {
+        $SCROLLING_SLIDESHOW.scrollLeft += 200;
+    }
 };
 /**
  * clickScrollLeft is called when the user clicks on the 'previous' arrow button on the slideshow to scroll to the left.
  */
 var clickScrollLeft = function () {
-    $SCROLLING_SLIDESHOW.scrollLeft -= 804;
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+        $SCROLLING_SLIDESHOW.scrollLeft -= 804;
+    }
+    else if (window.matchMedia('(min-width: 768px)').matches) {
+        $SCROLLING_SLIDESHOW.scrollLeft -= 600;
+    }
+    else if (window.matchMedia('(min-width: 500px)').matches) {
+        $SCROLLING_SLIDESHOW.scrollLeft -= 500;
+    }
+    else {
+        $SCROLLING_SLIDESHOW.scrollLeft -= 200;
+    }
 };
 /**
  * setImg sets the highlighted (enlarged) image on the page to the event given by src.

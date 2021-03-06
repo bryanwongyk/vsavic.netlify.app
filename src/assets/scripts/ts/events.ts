@@ -198,14 +198,30 @@ const selectCard = (index: number): void => {
  * clickScrollRight is called when the user clicks on the 'next' arrow button on the slideshow to scroll to the right.
  */
 const clickScrollRight = (): void => {
-	$SCROLLING_SLIDESHOW!.scrollLeft += 804;
+	if (window.matchMedia('(min-width: 1024px)').matches) {
+		$SCROLLING_SLIDESHOW!.scrollLeft += 804;
+	} else if (window.matchMedia('(min-width: 768px)').matches) {
+		$SCROLLING_SLIDESHOW!.scrollLeft += 600;
+	} else if (window.matchMedia('(min-width: 500px)').matches) {
+		$SCROLLING_SLIDESHOW!.scrollLeft += 500;
+	} else {
+		$SCROLLING_SLIDESHOW!.scrollLeft += 200;
+	}
 };
 
 /**
  * clickScrollLeft is called when the user clicks on the 'previous' arrow button on the slideshow to scroll to the left.
  */
 const clickScrollLeft = (): void => {
-	$SCROLLING_SLIDESHOW!.scrollLeft -= 804;
+	if (window.matchMedia('(min-width: 1024px)').matches) {
+		$SCROLLING_SLIDESHOW!.scrollLeft -= 804;
+	} else if (window.matchMedia('(min-width: 768px)').matches) {
+		$SCROLLING_SLIDESHOW!.scrollLeft -= 600;
+	} else if (window.matchMedia('(min-width: 500px)').matches) {
+		$SCROLLING_SLIDESHOW!.scrollLeft -= 500;
+	} else {
+		$SCROLLING_SLIDESHOW!.scrollLeft -= 200;
+	}
 };
 
 /**
