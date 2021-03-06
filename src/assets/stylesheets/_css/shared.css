@@ -210,8 +210,6 @@ header .mobile-nav__item {
   padding: 0;
   border: none;
   outline: none; }
-  .toggle-button:hover .toggle-button__bar {
-    background-color: #ed8eba; }
   .toggle-button .toggle-button__bar {
     display: block;
     width: 24px;
@@ -535,6 +533,10 @@ header .mobile-nav__item {
   color: #ff0000; }
 
 /* || Media Queries */
+@media (hover: hover) {
+  .toggle-button:hover .toggle-button__bar {
+    background-color: #ed8eba; } }
+
 @media (min-width: 768px) {
   .main-header__menu {
     display: none; }
