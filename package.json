@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "webpack --mode development && eleventy --serve",
     "tsc": "tsc",
-    "scss": "node-sass --sourcemap --watch src/assets/stylesheets/scss -o src/assets/stylesheets/_css"
+    "scss": "node-sass --sourcemap --watch src/assets/stylesheets/scss -o src/assets/stylesheets/_css",
+    "build": "webpack --mode production && eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
