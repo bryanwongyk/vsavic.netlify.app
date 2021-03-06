@@ -465,6 +465,7 @@ header .mobile-nav__item {
   cursor: pointer; }
 
 .main-footer {
+  -webkit-text-size-adjust: 100%;
   background: transparent;
   margin-top: 75px;
   margin-bottom: 16px;

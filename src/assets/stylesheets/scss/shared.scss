@@ -637,6 +637,9 @@ header {
 }
 
 .main-footer {
+	// https://stackoverflow.com/questions/2710764/preserve-html-font-size-when-iphone-orientation-changes-from-portrait-to-landsca
+	-webkit-text-size-adjust: 100%;
+
 	background: transparent;
 	margin-top: 75px;
 	margin-bottom: 16px;
