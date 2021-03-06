@@ -19,7 +19,7 @@ const $CHAP_ITEMS: HTMLElement | null = document.querySelector('.chapters__items
 	$SLIDESHOW_SLIDES: NodeList | null = document.querySelectorAll('.slideshow__slide'),
 	$SLIDESHOW_TABS: NodeList | null = document.querySelectorAll('.slideshow__tab');
 
-let SCROLL_Y_BREAKPOINTS: number[] = [130, 480, 620, 775, 840, 1060, 1280, 1450];
+let SCROLL_Y_BREAKPOINTS: number[] = [130, 480, 620, 775, 840, 1060, 1280, 1800];
 
 if (window.matchMedia('(min-width: 750px)').matches) {
 	SCROLL_Y_BREAKPOINTS[7] = 820;
@@ -118,6 +118,7 @@ const resetSlideInterval = (): void => {
  * e.g. content to appear as the user scrolls down past a specific breakpoint.
  */
 const initOnScrollContentAnimations = (): void => {
+	// DESKTOP BREAKPOINT ANIMATIONS
 	/*
     As the user scrolls past the 1st breakpoint:
         - The hero text should fade out.
@@ -156,35 +157,24 @@ const initOnScrollContentAnimations = (): void => {
 	}
 
 	/*
-        As the user scrolls past the 3rd breakpoint:
-            - The first chapter should slide in from the left.
-        As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
-    */
-	if (window.scrollY > SCROLL_Y_BREAKPOINTS[2]) {
-		let chapter = $CHAP_LEFT[0] as HTMLElement;
-		chapter.classList.add('slide-in');
-	}
-	/*
-        As the user scrolls past the 4th breakpoint:
-            - The second chapter should slide in from the right.
-        As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
-    */
-	if (window.scrollY > SCROLL_Y_BREAKPOINTS[3]) {
-		$HERO_SECTION!.style.opacity = '0';
-		$HERO_SECTION!.style.pointerEvents = 'none';
-	} else {
-		$HERO_SECTION!.style.opacity = '1';
-		$HERO_SECTION!.style.pointerEvents = 'auto';
-	}
-
-	/*
-        As the user scrolls past 
+        As the user scrolls past this breakpoint, the latest events section should fade in.
     */
 	if (window.scrollY > SCROLL_Y_BREAKPOINTS[7]) {
 		$LATEST_EVENTS!.classList.add('fade-reveal');
 	}
 
+	// MOBILE BREAKPOINT ANIMATIONS
 	if (window.matchMedia('(max-width: 750px)').matches) {
+		/*
+			As the user scrolls past the 3rd breakpoint:
+				- The first chapter should slide in from the left.
+			As the user scrolls back to before this breakpoint, the chapter item should stay in its final state.
+			*/
+		if (window.scrollY > SCROLL_Y_BREAKPOINTS[2]) {
+			let chapter = $CHAP_LEFT[0] as HTMLElement;
+			chapter.classList.add('slide-in');
+		}
+
 		if (window.scrollY > SCROLL_Y_BREAKPOINTS[4]) {
 			let chapter = $CHAP_RIGHT[0] as HTMLElement;
 			chapter.classList.add('slide-in');
@@ -197,6 +187,12 @@ const initOnScrollContentAnimations = (): void => {
 		if (window.scrollY > SCROLL_Y_BREAKPOINTS[5]) {
 			let chapter = $CHAP_LEFT[1] as HTMLElement;
 			chapter.classList.add('slide-in');
+
+			$HERO_SECTION!.style.opacity = '0';
+			$HERO_SECTION!.style.pointerEvents = 'none';
+		} else {
+			$HERO_SECTION!.style.opacity = '1';
+			$HERO_SECTION!.style.pointerEvents = 'auto';
 		}
 		/*
             As the user scrolls past the 6th breakpoint:

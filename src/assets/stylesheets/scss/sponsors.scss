@@ -1,11 +1,4 @@
-// Grid for desktop view
-// #sponsor-grid {
-//     // Generate a grid where each row holds 3 sponsors (i.e. 3 columns). The total rows needed would then be Math.floor((total sponsors)/3).
-//     display: grid;
-//     grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
-//     grid-template-rows: repeat(11, [row-start] 1fr [row-end]);
-// }
-
+/* || General */
 .sponsor-year {
 	text-align: center;
 	margin-bottom: 1%;
@@ -57,7 +50,8 @@
 	margin: 0;
 }
 
-@media (min-width: 1000px) {
+/* || Media queries */
+@media (min-width: 1024px) {
 	#sponsor-grid {
 		flex-direction: row;
 		flex-wrap: wrap;

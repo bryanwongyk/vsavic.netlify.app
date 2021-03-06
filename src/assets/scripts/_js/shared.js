@@ -15,20 +15,6 @@ var initSharedElements = function () {
     $COPYRIGHT_YEAR.textContent = currentYear.toString();
 };
 /**
- * isOnPage returns whether or not the user is currently on a given html file (e.g. index.html)
- * @arg HTMLFileNameString - the name of the file as a string
- * @return true - the user is on the given page
- * @return false - the user is not on the given page
- */
-var isOnPage = function (HTMLFileNameString) {
-    var path = window.location.pathname; // Returns the path of the file
-    var page = path.split('/').pop(); // Splits path of file into an array of substrings where '/' is located, and pop last substring which is the name of the html file
-    if (page === HTMLFileNameString) {
-        return true;
-    }
-    return false;
-};
-/**
  * initToggleBtn initialises the on-click event listeners for the toggle button, which enables users to open or close a mobile menu navigation bar.
  */
 var initToggleBtn = function () {
@@ -57,7 +43,7 @@ var openMobileMenu = function () {
     // Execute transition in of menu background AFTER the mobile-nav's display is changed from 'none' (otherwise it will not execute).
     setTimeout(function () {
         $MOBILE_NAV_BG.classList.add('mobile-nav__background--open');
-        if (isOnPage('index.html')) {
+        if (location.pathname == '/') {
             // Replace alternate logo with original logo that does not have hover effects.
             $LOGO_ALT.classList.remove('image_on');
             $LOGO_ALT.classList.add('brand-alt-hover--disable');
@@ -95,7 +81,7 @@ var closeMobileMenu = function () {
     // Execute transition that hides the mobile menu background.
     $MOBILE_NAV_BG.classList.remove('mobile-nav__background--open');
     // If we are on index.html page, reset the header
-    if (isOnPage('index.html')) {
+    if (location.pathname == '/') {
         resetHeader();
     }
     // AFTER the transitions are done, remove the mobile menu
@@ -125,7 +111,7 @@ var closeToggleAnimation = function () {
     // Change toggle buttons back to white only if on index page.
     for (var i = 0; i < $TOGGLE_BTN_BARS.length; i++) {
         var toggleBtnBar = $TOGGLE_BTN_BARS[i];
-        if (isOnPage('index.html')) {
+        if (location.pathname == '/') {
             toggleBtnBar.classList.remove('header__element--grey');
             toggleBtnBar.classList.add('header__element--white');
         }

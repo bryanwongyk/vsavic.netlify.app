@@ -1,3 +1,4 @@
+/* || General styles */
 .hr-with-logo {
 	position: relative;
 	text-align: center;
@@ -7,7 +8,53 @@
 	border: 1px solid #ddd;
 	border-collapse: collapse;
 }
+.header {
+	margin-top: 75px;
+}
 
+.committee-container__name {
+	text-align: center;
+	margin-top: 60px;
+}
+
+.committee-container__members {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.member {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin: 5% 5%;
+
+	.member__photo {
+		height: 108px;
+		width: 108px;
+		margin-bottom: 15px;
+	}
+
+	.member__name,
+	.member__position {
+		text-align: center;
+		vertical-align: top;
+		font-family: Montserrat, sans-serif;
+		font-size: 0.8rem;
+	}
+
+	.member__position {
+		font-weight: 600;
+	}
+	.member__name {
+		margin-top: 5px;
+	}
+}
+
+/* || Images */
 .logo {
 	// https://stackoverflow.com/questions/18142461/horizontal-rule-with-an-image-centered
 	position: absolute;
@@ -27,10 +74,6 @@
 	background-attachment: fixed;
 	height: 300px;
 	width: 100%;
-}
-
-.header {
-	margin-top: 75px;
 }
 
 .vsa-vic-logo {
@@ -53,49 +96,9 @@
 	background-size: 100% auto;
 }
 
-.committee-container__name {
-	text-align: center;
-	margin-top: 60px;
-}
-
-.committee-container__members {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	width: 100%;
-
-	.member {
-		width: 30%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		margin: 5% 5%;
-
-		.member__photo {
-			height: 108px;
-			width: 108px;
-			margin-bottom: 15px;
-		}
-
-		.member__name,
-		.member__position {
-			text-align: center;
-			vertical-align: top;
-			font-family: Montserrat, sans-serif;
-			font-size: 0.8rem;
-		}
-
-		.member__position {
-			font-weight: 600;
-		}
-		.member__name {
-			margin-top: 5px;
-		}
-	}
-}
-
-@media (min-width: 750px) {
+/* || Media queries */
+@media (min-width: 768px) {
+	/* General */
 	.committee-container__members {
 		.member {
 			margin: 20px 0;
@@ -103,31 +106,17 @@
 	}
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
+	/* General */
 	.committee-container:last-of-type {
 		margin-bottom: 75px;
 	}
+
 	.committee-container__members {
 		flex-wrap: nowrap;
 	}
-	.text-wrapper {
-		max-height: 300px;
-	}
+
 	.header-highlight {
 		width: 40%;
-	}
-}
-
-@media (min-width: 1200px) {
-	main {
-		h1 {
-			font-size: 4.5rem;
-		}
-	}
-	.text-wrapper {
-		max-height: 402px;
-	}
-	.text-wrapper {
-		padding: 0 30px;
 	}
 }

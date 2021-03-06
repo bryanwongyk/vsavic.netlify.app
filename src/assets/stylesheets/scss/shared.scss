@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap');
+
+/* || Colours */
 $pink: #ed8eba;
 $grey: #424b54;
 $white: #fdfdfd;
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Bebas+Neue|Roboto:400,900&display=swap');
+/* || Text */
+::selection {
+	background: $pink; /* WebKit/Blink Browsers */
+	color: white;
+}
 
+/* || General styles */
 * {
 	box-sizing: border-box;
 }
@@ -23,17 +31,6 @@ body {
 		'footer';
 }
 
-header {
-	.main-nav__item {
-		font-weight: 600;
-		font-family: Montserrat, san-serif;
-	}
-	.mobile-nav__item {
-		font-weight: 400;
-		font-family: Montserrat, san-serif;
-	}
-}
-
 main {
 	grid-area: main;
 
@@ -41,27 +38,32 @@ main {
 		font-family: Bebas Neue, san-serif;
 		font-size: 4.5rem;
 	}
+
 	h2 {
 		font-weight: 900;
 		font-family: Roboto, san-serif;
 		font-size: 2.2rem;
 	}
+
 	h3 {
 		font-family: Montserrat, sans-serif;
 		font-weight: 600;
 		font-size: 1.4rem;
 	}
+
 	h4 {
 		font-family: Montserrat, sans-serif;
 		font-weight: 400;
 		font-size: 1rem;
 	}
+
 	p,
 	ul {
 		font-family: Montserrat, sans-serif;
 		line-height: 1.9rem;
 		font-size: 1rem;
 	}
+
 	a {
 		font-weight: 400;
 		font-family: Roboto, san-serif;
@@ -73,9 +75,83 @@ main {
 	width: 100%;
 }
 
-::selection {
-	background: $pink; /* WebKit/Blink Browsers */
-	color: white;
+.hidden {
+	opacity: 0;
+}
+
+.unclickable {
+	pointer-events: none;
+}
+
+.text-container {
+	background-color: white;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: center;
+
+	p {
+		margin: 32px 0;
+	}
+}
+
+.header {
+	text-align: center;
+	margin: 0;
+}
+
+section {
+	margin-top: 75px;
+}
+
+.header-highlight {
+	margin: 0 auto;
+	height: 4px;
+	width: 40%;
+	background-color: $pink;
+}
+
+.default-cta__button {
+	border: 2px $grey solid;
+	padding: 18px;
+
+	font-family: Roboto, san-serif;
+	font-weight: 900;
+	font-size: 1rem;
+	text-align: center;
+	text-decoration: none;
+	color: $grey;
+
+	background: transparent;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	i {
+		margin-left: 10%;
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-color: $pink;
+		color: $pink;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+/* || Header  */
+header {
+	.main-nav__item {
+		font-weight: 600;
+		font-family: Montserrat, san-serif;
+	}
+	.mobile-nav__item {
+		font-weight: 400;
+		font-family: Montserrat, san-serif;
+	}
 }
 
 .main-header {
@@ -120,24 +196,6 @@ main {
 	img {
 		height: 3rem;
 	}
-}
-
-.image_off,
-.main-header__brand:hover .image_on {
-	display: none;
-}
-
-.image_on,
-.main-header__brand:hover .image_off {
-	display: block;
-}
-
-.brand-hover--disable {
-	display: block;
-}
-
-.brand-alt-hover--disable {
-	display: none;
 }
 
 .main-header__menu {
@@ -198,6 +256,26 @@ main {
 	color: $pink;
 }
 
+/* || Brand  */
+.image_off,
+.main-header__brand:hover .image_on {
+	display: none;
+}
+
+.image_on,
+.main-header__brand:hover .image_off {
+	display: block;
+}
+
+.brand-hover--disable {
+	display: block;
+}
+
+.brand-alt-hover--disable {
+	display: none;
+}
+
+/* || Toggle Button */
 .toggle-button {
 	cursor: pointer;
 
@@ -251,6 +329,7 @@ main {
 	}
 }
 
+/* || Toggle Button Animations */
 @-webkit-keyframes toggle-button__bar-1-clicked__animation {
 	0% {
 		-webkit-transform: translateY(0);
@@ -419,6 +498,7 @@ main {
 	}
 }
 
+/* || Mobile Navigation */
 .mobile-nav {
 	position: fixed;
 	// menu has a z-index of 100, and as mobile-nav is defined after menu in the html file, it will overlay the MENU button with the same z-index. Note that z-index is relative. Therefore, mobile-nav by default is on the same level as main-header at z-level: 100. Therefore, mobile-nav needs to have a lower z-index explicitly defined where z-level: -1 really means z-level: 99 (as it is relative!)
@@ -553,6 +633,16 @@ main {
 	}
 }
 
+.mobile-nav__hide {
+	display: none;
+}
+
+.mobile-nav__open {
+	display: -webkit-box;
+	display: flex;
+}
+
+/* || Mobile Navigation Animations */
 @-webkit-keyframes mobile-nav__item-highlight-animation {
 	0% {
 		width: 0%;
@@ -580,15 +670,7 @@ main {
 	}
 }
 
-.mobile-nav__hide {
-	display: none;
-}
-
-.mobile-nav__open {
-	display: -webkit-box;
-	display: flex;
-}
-
+/* || Footer */
 .main-footer__logo {
 	width: 75px;
 	height: auto;
@@ -670,78 +752,7 @@ main {
 	}
 }
 
-.hidden {
-	opacity: 0;
-}
-
-.unclickable {
-	pointer-events: none;
-}
-
-// .introduction-text {
-//     margin-top: 100px; // Height of header plus height of h1 text margin-top
-// }
-
-.text-container {
-	background-color: white;
-	margin-left: 10%;
-	margin-right: 10%;
-	text-align: center;
-
-	p {
-		margin: 32px 0;
-		// font-size: 0.8rem;
-	}
-}
-
-.header {
-	text-align: center;
-	margin: 0;
-}
-
-section {
-	margin-top: 75px;
-}
-
-.header-highlight {
-	margin: 0 auto;
-	height: 4px;
-	width: 40%;
-	background-color: $pink;
-}
-
-.default-cta__button {
-	border: 2px $grey solid;
-	padding: 18px;
-
-	font-family: Roboto, san-serif;
-	font-weight: 900;
-	font-size: 1rem;
-	text-align: center;
-	text-decoration: none;
-	color: $grey;
-
-	background: transparent;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	i {
-		margin-left: 10%;
-	}
-
-	&:hover {
-		cursor: pointer;
-		border-color: $pink;
-		color: $pink;
-	}
-
-	&:focus {
-		outline: none;
-	}
-}
-
+/* || Social Media */
 .social-media__fb {
 	&:hover {
 		color: #3b5998;
@@ -766,13 +777,16 @@ section {
 	}
 }
 
-@media (min-width: 750px) {
+/* || Media Queries */
+@media (min-width: 768px) {
 	.main-header__menu {
 		display: none;
 	}
+
 	.main-nav {
 		display: flex;
 	}
+
 	.main-header__brand {
 		margin-right: 0;
 	}

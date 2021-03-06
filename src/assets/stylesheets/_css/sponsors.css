@@ -1,3 +1,4 @@
+/* || General */
 .sponsor-year {
   text-align: center;
   margin-bottom: 1%; }
@@ -36,7 +37,8 @@
   font-size: 0.8rem;
   margin: 0; }
 
-@media (min-width: 1000px) {
+/* || Media queries */
+@media (min-width: 1024px) {
   #sponsor-grid {
     flex-direction: row;
     flex-wrap: wrap;
