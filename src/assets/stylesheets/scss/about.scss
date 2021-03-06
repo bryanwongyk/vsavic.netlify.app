@@ -1,0 +1,257 @@
+$pink: #ed8eba;
+$grey: #424b54;
+$white: #ffffff;
+
+main {
+	margin-top: 70.4px;
+
+	.about-us-img {
+		margin-top: 0;
+	}
+}
+
+.text-highlight {
+	font-weight: bold;
+	border-bottom: 3px solid rgba(240, 116, 35, 1);
+}
+
+.text-container {
+	p {
+		// margin: 48px 0;
+		font-size: 0.8rem;
+	}
+}
+
+.img-container {
+	position: relative;
+
+	.img-container__image {
+		//100% of the container which is the next block-level element which will take up all available space in the parent container.
+		// min-height: 440px;
+		// width: auto;
+		// object-fit: cover;  // need to add a height for object-fit to work.
+		width: 100%;
+
+		// https://stackoverflow.com/questions/7774814/remove-white-space-below-image
+		// Images are inline by default. Change it to block to remove space for descenders.
+		display: block;
+	}
+	.img-container__text-overlay {
+		// https://stackoverflow.com/questions/7720730/how-to-align-absolutely-positioned-alement-to-center
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+
+		h1 {
+			margin: 0 0 10% 0;
+			color: white;
+		}
+	}
+	.img-container__image-underlay {
+		filter: brightness(40%);
+	}
+}
+
+.follow-us__links {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+
+	i {
+		color: white;
+		font-size: 1.5rem;
+
+		&:hover {
+			color: $pink;
+			text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+				0px 18px 23px rgba(0, 0, 0, 0.1);
+			transform: scale(1.1);
+		}
+	}
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
+}
+
+// @media (min-width: 750px) {
+//     main {
+//         // display: flex; //need to use flexbox, as grid does not allow dynamic resizing of rows
+//         // align-items: center;
+//         // flex-wrap: wrap;
+//         // display: grid;
+//         // grid-template-rows: [row-1-start] auto [row-1-end row-2-start] auto [row-2-end row-3-start] auto [row-3-end];
+//         // grid-template-columns: [col-1-start] auto [col-1-end col-2-start] auto [col-2-end];
+//         // grid-template-areas:    "about-us about-us-img"
+//         //                         "stats-img stats"
+//         //                         "follow follow-img"
+//         display: grid;
+//         grid-template-rows: repeat(3, 1fr);
+//         grid-template-columns: repeat(2, 1fr);
+//         h1 {
+//             font-size: 1.7rem;
+//         }
+//     }
+//     section {
+//         margin-top: 0;
+//     }
+
+//     .header-highlight {
+//         width: 75px;
+//     }
+
+//     .text-container {
+//         h1 {
+//             margin-top: 0;
+//         }
+//     }
+
+//     .text-wrapper {
+//         padding: 0% 30px;
+//         // max-height: 200px;
+//         height: 100%;
+//         width: 100%;
+//     }
+
+//     .img-container {
+//         img {
+//             display: block;
+//         }
+//     }
+//     // .button-container {
+//     //     margin-top: 0;
+//     // }
+
+//     .main-footer {
+//         margin-top: 0;
+//     }
+//     .about-us, .stats, .follow {
+//         height: 100%;
+//         width: 100%;
+//     }
+//     .about-us{
+//         order: 1;
+//     }
+//     .about-us-img {
+//         order: 2;
+//     }
+//     .stats{
+//         order: 4;
+//     }
+//     .stats-img{
+//         order: 3;
+//     }
+//     .follow{
+//         order: 5;
+//     }
+//     .follow-img{
+//         order: 6;
+//     }
+// .about-us{
+//     // grid-area: about-us;
+//     width: 50%;
+//     order: 1;
+// }
+// .about-us-img{
+//     // grid-area: about-us-img;
+//     width: 50%;
+//     order: 2;
+// }
+// .stats{
+//     // grid-area: stats;
+//     width: 50%;
+//     order: 4;
+// }
+// .stats-img{
+//     // grid-area: stats-img;
+//     width: 50%;
+//     order: 3;
+// }
+// .follow{
+//     // grid-area: follow;
+//     width: 50%;
+//     order: 5;
+// }
+// .follow-img{
+//     // grid-area: follow-img;
+//     width: 50%;
+//     order: 6;
+// }
+// .follow-us__links {
+//     width: 50%;
+// }
+// }
+
+// @media (min-width: 750px) {
+//     .img-container__image {
+//         max-height:
+//     }
+// }
+
+@media (min-width: 1000px) {
+	main {
+		h1 {
+			font-size: 2.7rem;
+		}
+		.container {
+			display: grid;
+			grid-template-rows: repeat(3, 1fr);
+			grid-template-columns: repeat(2, 1fr);
+
+			section {
+				margin-top: 0;
+				display: flex;
+				align-items: center;
+			}
+
+			.about-us {
+				order: 1;
+			}
+			.about-us-img {
+				order: 2;
+			}
+			.stats {
+				order: 4;
+			}
+			.stats-img {
+				order: 3;
+			}
+			.follow {
+				order: 5;
+			}
+			.follow-img {
+				order: 6;
+			}
+		}
+	}
+
+	.text-wrapper {
+		max-height: 300px;
+	}
+	.header-highlight {
+		width: 40%;
+	}
+
+	.main-footer {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 1200px) {
+	main {
+		h1 {
+			font-size: 4.5rem;
+		}
+	}
+	.text-wrapper {
+		max-height: 402px;
+	}
+	.text-wrapper {
+		padding: 0 30px;
+	}
+}

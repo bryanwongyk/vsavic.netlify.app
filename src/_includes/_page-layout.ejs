@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include _head.ejs %>
+</head>
+<body>
+    <% include _page-header.ejs %>
+    <main>
+        <%- content %>
+    </main>
+    <% include _footer.ejs %>
+    <script type="module" src="<%- rootPath %>assets/scripts/_js/shared.js"></script>
+</body>
+</html>

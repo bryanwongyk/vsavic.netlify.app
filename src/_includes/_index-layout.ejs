@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include _head.ejs %>
+</head>
+<body>
+    <% include _index-header.ejs %>
+    <main>
+        <%- content %>
+    </main>
+    <% include _footer.ejs %>
+    <script src="<%- rootPath %>bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+---
+layout: _events-page-layout.ejs
+title: Events | VSA Victoria
+stylesheet: events
+rootPath: ../../
+---
+
+<div class="container">
+	<section class="introduction-text">
+		<h1 class="header">EVENTS</h1>
+		<div class="header-highlight"></div>
+		<div class="text-container">
+			<div class="latest-event">
+				<img
+					class="latest-event__img"
+					src="https://res.cloudinary.com/dh2vjeabe/image/upload/v1614993332/event-posters/vsa-vic/2020-camp_zvtcl1.png"
+					alt="VSA Victoria 2020 Camp"
+				/>
+				<div class="latest-event__badge">COMING SOON</div>
+			</div>
+			<a class="latest-event__fb" href="https://www.facebook.com/events/870768526685134/"
+				><i class="fab fa-facebook-f social-media__fb"></i
+			></a>
+		</div>
+		<hr />
+		<div class="text-container">
+			<div class="content">
+				<p>
+					VSA holds many events throughout the year ranging from food events, to cultural events, to social
+					events. Sometimes there are even community volunteering opportunities!
+				</p>
+				<p class="content__list-paragraph">Some of our most popular events include our:</p>
+				<ul class="content__list">
+					<li>Annual Camp and Reunion</li>
+					<li>Annual Ball</li>
+					<li>Vietnamese Food Stalls</li>
+					<li>Pho/Bun Nights</li>
+					<li>Sport Events</li>
+					<li>End of Exam Parties</li>
+				</ul>
+				<p>
+					There's always something on at one of our three University campuses across Victoria. Take a look and
+					follow our social media to make sure you don't miss our next one!
+				</p>
+			</div>
+		</div>
+	</section>
+	<hr />
+	<section class="events-section">
+		<h2>Past Events</h2>
+		<h4>Swipe through and tap on an event to view</h4>
+		<div class="events-container">
+			<label for="events-filter"> Filter </label>
+			<div class="filter-mobile-container">
+				<select onchange="filterUpdateGallery()" id="events-filter">
+					<option value="all" selected>SHOW ALL</option>
+					<option value="vic">VSA VICTORIA</option>
+					<option value="monash">VSA MONASH</option>
+					<option value="uom">VSA THE UNIVERSITY OF MELBOURNE</option>
+					<option value="rmit">VSA RMIT</option>
+				</select>
+				<i class="fas fa-chevron-down"></i>
+			</div>
+		</div>
+		<!-- Keep buttons for desktop view, but make it a dropdown list in mobile view-->
+		<div class="filter-container">
+			<button class="filter-button">SHOW ALL</button>
+			<button class="filter-button">VSA VICTORIA</button>
+			<button class="filter-button">VSA MONASH</button>
+			<button class="filter-button">VSA UNIVERSITY OF MELBOURNE</button>
+			<button class="filter-button">VSA RMIT</button>
+		</div>
+		<div class="events-gallery">
+			<div class="events-gallery__slideshow-container">
+				<!-- tabindex makes it possible to focus on slideshow, allowing for keypress events-->
+				<div id="events-gallery__slideshow-images" class="scrolling-container" tabindex="0"></div>
+				<a class="prev" onclick="clickScrollLeft()">&#10094;</a>
+				<a class="next" onclick="clickScrollRight()">&#10095;</a>
+			</div>
+			<div
+				id="highlighted-slide"
+				class="events-gallery__highlighted-slide events-gallery__highlighted-slide--hidden"
+			>
+				<img id="highlighted-slide__image" src="#" alt="Selected Gallery Image" />
+			</div>
+			<h3 id="highlighted-slide__name"></h3>
+			<a id="highlighted-slide__link" href="https://www.facebook.com/events/870768526685134/"
+				><i class="fab fa-facebook"></i>VIEW FACEBOOK EVENT</a
+			>
+		</div>
+	</section>
+</div>

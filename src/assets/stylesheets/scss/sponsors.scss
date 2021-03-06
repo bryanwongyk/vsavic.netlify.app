@@ -1,0 +1,67 @@
+// Grid for desktop view
+// #sponsor-grid {
+//     // Generate a grid where each row holds 3 sponsors (i.e. 3 columns). The total rows needed would then be Math.floor((total sponsors)/3).
+//     display: grid;
+//     grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+//     grid-template-rows: repeat(11, [row-start] 1fr [row-end]);
+// }
+
+.sponsor-year {
+	text-align: center;
+	margin-bottom: 1%;
+}
+
+#sponsor-grid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.sponsor-grid__sponsor {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin: 8% 0;
+
+		h3 {
+			margin-top: 8%;
+			margin-bottom: 3%;
+		}
+		p {
+			margin: 0 0;
+		}
+	}
+}
+
+.sponsor-grid__sponsor-image {
+	height: 100px;
+	width: 100px;
+
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover {
+		transform: scale(1.1);
+		filter: grayscale(100%);
+	}
+}
+
+.disclaimer {
+	text-align: center;
+	font-size: 0.8rem;
+	font-style: italic;
+}
+
+.sponsor-instruction {
+	text-align: center;
+	font-size: 0.8rem;
+	margin: 0;
+}
+
+@media (min-width: 1000px) {
+	#sponsor-grid {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin: 0 100px;
+	}
+}
