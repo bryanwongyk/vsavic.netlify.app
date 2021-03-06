@@ -401,7 +401,7 @@ header .mobile-nav__item {
     -webkit-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear; }
     .mobile-nav .mobile-nav__items .mobile-nav__item {
-      margin: 8% 0; }
+      margin: 1vh 0; }
       .mobile-nav .mobile-nav__items .mobile-nav__item:hover .mobile-nav__item-highlight {
         animation: mobile-nav__item-highlight-animation 0.4s forwards; }
       .mobile-nav .mobile-nav__items .mobile-nav__item a {
@@ -433,7 +433,7 @@ header .mobile-nav__item {
   display: flex;
   justify-content: space-between;
   width: 50%;
-  margin-top: 10%;
+  margin-top: 5vh;
   opacity: 0;
   -webkit-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear; }

@@ -552,7 +552,7 @@ header {
 		transition: opacity 0.2s linear;
 
 		.mobile-nav__item {
-			margin: 8% 0;
+			margin: 1vh 0;
 
 			&:hover {
 				.mobile-nav__item-highlight {
@@ -599,7 +599,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	width: 50%;
-	margin-top: 10%;
+	margin-top: 5vh;
 
 	opacity: 0;
 	// Have to make sure the fadeout is shorter than the time needed to fade out the background.
