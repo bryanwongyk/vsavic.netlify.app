@@ -13,7 +13,7 @@ Since then, I have upgraded it to implement <b>ES6 syntax, TypeScript, Eleventy,
   <br>
 </p>
 
-<hr>
+<br>
 
 # Getting started
 
@@ -32,6 +32,8 @@ Since then, I have upgraded it to implement <b>ES6 syntax, TypeScript, Eleventy,
 ## Production
 ```yarn run build```
 
+<br>
+
 # Features
 ## Pages
 - Landing page
@@ -43,6 +45,8 @@ Since then, I have upgraded it to implement <b>ES6 syntax, TypeScript, Eleventy,
 
 ## Responsiveness
 The website is developed with a mobile-first approach, and supports various breakpoints via media queries.
+
+<br>
 
 # Styling
 
